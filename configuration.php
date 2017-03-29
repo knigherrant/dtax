@@ -18,7 +18,7 @@ class JConfig {
 	public $db = 'dtax';
 	public $dbprefix = 'd_';
 	public $live_site = '';
-	public $secret = '9ZnjvCL6G7XqlGqh';
+	public $secret = 'eZgvJKOk4g1xttKK';
 	public $gzip = '0';
 	public $error_reporting = 'default';
 	public $helpurl = 'https://help.joomla.org/proxy/index.php?keyref=Help{major}{minor}:{keyref}';
@@ -31,7 +31,7 @@ class JConfig {
 	public $offset = 'UTC';
 	public $mailonline = '1';
 	public $mailer = 'mail';
-	public $mailfrom = 'dev@joomlavi.com';
+	public $mailfrom = 'dev@phpkungfu.club';
 	public $fromname = 'Dtax';
 	public $sendmail = '/usr/sbin/sendmail';
 	public $smtpauth = '0';
@@ -56,8 +56,8 @@ class JConfig {
 	public $unicodeslugs = '0';
 	public $feed_limit = '10';
 	public $feed_email = 'none';
-	public $log_path = 'D:\\php.dev\\dtax\\administrator/logs';
-	public $tmp_path = 'D:\\php.dev\\dtax/tmp';
+	public $log_path = 'D:\\php.kungfu\\dtax\\administrator/logs';
+	public $tmp_path = 'D:\\php.kungfu\\dtax/tmp';
 	public $lifetime = '15';
 	public $session_handler = 'database';
 }
