@@ -62,6 +62,10 @@ $listDirn	= $this->state->get('list.direction');
                 </th>
     
                 <th class='left'>
+                    <?php echo JHtml::_('grid.sort',  'Company', 'a.company', $listDirn, $listOrder); ?>
+                </th>
+                
+                <th class='left'>
                     <?php echo JHtml::_('grid.sort',  'URL', 'a.link', $listDirn, $listOrder); ?>
                 </th>
 
@@ -105,7 +109,9 @@ $listDirn	= $this->state->get('list.direction');
                             <?php echo $this->escape($item->title); ?>
                         <?php endif; ?>
                     </td>
-                    
+                     <td data-field="<?php echo JText::_('Company');?>">
+                         <?php echo $item->company; ?>
+                     </td>
                     <td data-field="<?php echo JText::_('URL');?>">
                         
                         <a target="_blank" href="<?php echo $item->link; ?>" ><?php echo $item->link; ?></a>

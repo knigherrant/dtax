@@ -53,7 +53,7 @@ class jSont extends DTaxHelper{
         static $cpa;
         if(!isset($cpa[$userid])){
             $db = JFactory::getDbo();
-            $cpa[$userid] = $db->setQuery('SELECT *, CONCAT(firstname, " " ,midname, " " ,lastname) as cpa FROM #__dtax_cpas WHERE userid=' . $userid)->loadObject();
+            $cpa[$userid] = $db->setQuery('SELECT * FROM #__dtax_company WHERE userid=' . $userid)->loadObject();
             if($cpa[$userid]){
                 if(!$cpa[$userid]->logo) $cpa[$userid]->logo = JUri::root () . 'components/com_dtax/assets/images/no_logo.png';
             }
@@ -241,10 +241,10 @@ class jSont extends DTaxHelper{
         return $location;
     }
     
-    public static function getOptionCpa(){
+    public static function getOptionCompany(){
         $db = JFactory::getDbo();
-        $lists = $db->setQuery('SELECT CONCAT(firstname," ",midname," ",lastname) as name, id   FROM #__dtax_cpas ')->loadObjectList();
-        $options[] = JHTML::_('select.option','', '- Select CPA -');
+        $lists = $db->setQuery('SELECT company as name, id   FROM #__dtax_company ')->loadObjectList();
+        $options[] = JHTML::_('select.option','', '- Select Company -');
         foreach ($lists as $l){
             $options[] = JHTML::_('select.option',$l->id, $l->name);
         }
@@ -507,7 +507,7 @@ class jSont extends DTaxHelper{
             'employees' => JText::_('COM_DTAX_TITLE_EMPLOYEES'),
             'taxreturns' => JText::_('COM_DTAX_TITLE_TAXRETURNS'),
             'emails' => JText::_('COM_DTAX_TITLE_EMAIL'),
-            'menus' => JText::_('COM_DTAX_TITLE_MENUS'),
+            'links' => JText::_('COM_DTAX_TITLE_MENUS'),
             'configs' => JText::_('COM_DTAX_TITLE_CONFIG'),
             
         );

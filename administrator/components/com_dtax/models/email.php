@@ -14,7 +14,7 @@ jimport('joomla.application.component.modeladmin');
 /**
  * DTax model.
  */
-class DTaxModelLink extends JModelAdmin
+class DTaxModelEmail extends JModelAdmin
 {
 	/**
 	 * @var		string	The prefix to use with controller messages.
@@ -32,7 +32,7 @@ class DTaxModelLink extends JModelAdmin
 	 * @return	JTable	A database object
 	 * @since	1.6
 	 */
-	public function getTable($type = 'Link', $prefix = 'DTaxTable', $config = array())
+	public function getTable($type = 'Email', $prefix = 'DTaxTable', $config = array())
 	{
 		return JTable::getInstance($type, $prefix, $config);
 	}
@@ -51,7 +51,7 @@ class DTaxModelLink extends JModelAdmin
 		$app	= JFactory::getApplication();
 
 		// Get the form.
-		$form = $this->loadForm('com_dtax.link', 'link', array('control' => 'jform', 'load_data' => $loadData));
+		$form = $this->loadForm('com_dtax.email', 'email', array('control' => 'jform', 'load_data' => $loadData));
         
         
 		if (empty($form)) {
@@ -70,17 +70,12 @@ class DTaxModelLink extends JModelAdmin
 	protected function loadFormData()
 	{
 		// Check the session for previously entered form data.
-		$data = JFactory::getApplication()->getUserState('com_dtax.edit.link.data', array());
+		$data = JFactory::getApplication()->getUserState('com_dtax.edit.email.data', array());
 
 		if (empty($data)) {
 			$data = $this->getItem();
             
 		}
-                
-                if(is_object($data) and !$data->id){
-                    $data->created = JFactory::getDate()->toSql();
-                    $data->created_by = JFactory::getUser()->id;
-                }
 
 		return $data;
 	}
@@ -97,24 +92,17 @@ class DTaxModelLink extends JModelAdmin
 	{
 		if ($item = parent::getItem($pk)) {
 
-			//Do any procesing on fields here if needed
-
 		}
 
 		return $item;
 	}
 
-
-    protected function generateNewTitle($catid, $alias, $title)
-    {
-        // Alter the title & alias
-        $table = $this->getTable();
-        while ($table->load(array('alias' => $alias))){
-            if ($title == $table->title){
-                $title = JString::increment($title);
-            }
-            $alias = JString::increment($alias, 'dash');
+	
+        
+        function save($data) {
+            if(empty($data['created'])) $data['created'] = JFactory::getDate ()->toSql ();
+            //jSont::upgradeUser($data['email']);
+            return parent::save($data);
         }
-        return array($title, $alias);
-    }
+
 }

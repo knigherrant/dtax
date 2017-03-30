@@ -13,7 +13,7 @@ jimport('joomla.application.component.modellist');
 /**
  * Methods supporting a list of DTax records.
  */
-class DTaxModelCustomers extends JModelList {
+class DTaxModelEmails extends JModelList {
 
     /**
      * Constructor.
@@ -26,14 +26,14 @@ class DTaxModelCustomers extends JModelList {
         if (empty($config['filter_fields'])) {
             $config['filter_fields'] = array(
                 'id', 'a.id',
-                'firstname', 'a.firstname',
-                'midname', 'a.midname',
-                'lastname', 'a.lastname',
-                'phone', 'a.phone',
-                'email', 'u.email',
+                'taxpayer', 'a.taxpayer',
                 'company', 'a.company',
-                'cpa', 'cpa',
-                'account', 'a.account',
+                'phone', 'a.phone',
+                'email', 'a.email',
+                'preparer', 'a.preparer',
+                
+                'created', 'a.created',
+                'featured', 'a.featured',
             );
         }
 
@@ -102,9 +102,8 @@ class DTaxModelCustomers extends JModelList {
                         'list.select', 'DISTINCT a.*'
                 )
         );
-        $query->from('`#__dtax_customers` AS a');
-        $query->select('company ' );
-        $query->join( 'LEFT', '`#__dtax_company` AS c ON c.id=a.cpaid');
+        $query->from('`#__dtax_email` AS a');
+        
         // Filter by search in title
         $search = $this->getState('filter.search');
         if (!empty($search)) {
@@ -112,16 +111,10 @@ class DTaxModelCustomers extends JModelList {
                 $query->where('a.id = ' . (int) substr($search, 3));
             } else {
                 $search = $db->Quote('%' . $db->escape($search, true) . '%');
-				$query->where('LOWER(u.name) LIKE ' . $search 
-                                        . ' OR LOWER(a.firstname) LIKE ' . $search
-                                        . ' OR LOWER(a.lastname) LIKE ' . $search
-                                        . ' OR LOWER(a.midname) LIKE ' . $search
-                                        . ' OR LOWER(a.company) LIKE ' . $search
-                                        );
+                $query->where('LOWER(a.taxpayer) LIKE ' . $search . ' OR LOWER(cpa) LIKE ' . $search);
             }
         }
-     
-
+        
         // Add the list ordering clause.
         $orderCol = $this->state->get('list.ordering');
         $orderDirn = $this->state->get('list.direction');
@@ -135,7 +128,7 @@ class DTaxModelCustomers extends JModelList {
     public function getItems() {
         $items = parent::getItems();
         foreach ($items as $item){
-            $item->name = $item->firstname . ' ' .$item->midname . ' ' . $item->lastname;
+            //$item->name = $item->firstname . ' ' .$item->midname . ' ' . $item->lastname;
         }
         return $items;
     }

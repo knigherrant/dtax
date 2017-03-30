@@ -26,6 +26,7 @@ class DTaxModelLinks extends JModelList {
         if (empty($config['filter_fields'])) {
             $config['filter_fields'] = array(
 				'id', 'a.`id`',
+                'company', 'c.`company`',
 				'title', 'a.`title`',
 				'image', 'a.`image`',
 				'link', 'a.`link`',
@@ -106,6 +107,8 @@ class DTaxModelLinks extends JModelList {
 		);
 		$query->from('`#__dtax_links` AS a');
 
+                $query->select('company ' );
+                $query->join( 'LEFT', '`#__dtax_company` AS c ON c.id=a.company_id');
 
 	
 		// Filter by published state

@@ -9,84 +9,65 @@
 // No direct access
 defined('_JEXEC') or die;
 
-use Joomla\Utilities\ArrayHelper;
 /**
- * links Table class
- *
- * @since  1.6
+ * expense Table class
  */
-class DTaxTablelink extends JTable
+class DTaxTableEmail extends JTable
 {
+
 	/**
 	 * Constructor
 	 *
-	 * @param   JDatabase  &$db  A database connector object
+	 * @param JDatabase A database connector object
 	 */
 	public function __construct(&$db)
 	{
-		parent::__construct('#__dtax_links', 'id', $db);
+		parent::__construct('#__dtax_email', 'id', $db);
 	}
 
 	/**
 	 * Overloaded bind function to pre-process the params.
 	 *
-	 * @param   array  $array   Named array
-	 * @param   mixed  $ignore  Optional array of properties to ignore
+	 * @param    array        Named array
 	 *
 	 * @return    null|string    null is operation was satisfactory, otherwise returns an error
-	 *
-	 * @see       JTable:bind
+	 * @see        JTable:bind
 	 * @since      1.5
 	 */
 	public function bind($array, $ignore = '')
 	{
+
             
                
+		
+                //if(empty($array['userid'])) $array['userid'] = JFactory::getUser ()->id;
+				if(!$array['created'] || $array['created'] = '0000-00-00 00:00:00') $array['created'] = JFactory::getDate ()->toSql ();
                 if(!$array['created_by']) $array['created_by'] = JFactory::getUser ()->id;
-
-		if ($array['id'] == 0)
-		{
-			$array['created_by'] = JFactory::getUser()->id;
-		}
-		$task = JFactory::getApplication()->input->get('task');
-
-		if ($task == 'apply' || $task == 'save')
-
-		{
-			$array['date_updated'] = JFactory::getDate()->toSql();
-		}
-		$input = JFactory::getApplication()->input;
-		$task = $input->getString('task', '');
-
 		if (isset($array['params']) && is_array($array['params']))
 		{
-			$registry = new JRegistry;
+			$registry = new JRegistry();
 			$registry->loadArray($array['params']);
 			$array['params'] = (string) $registry;
 		}
 
 		if (isset($array['metadata']) && is_array($array['metadata']))
 		{
-			$registry = new JRegistry;
+			$registry = new JRegistry();
 			$registry->loadArray($array['metadata']);
 			$array['metadata'] = (string) $registry;
 		}
-
-		if (!JFactory::getUser()->authorise('core.admin', 'com_dtax.links.' . $array['id']))
+		if (!JFactory::getUser()->authorise('core.admin', 'com_dtax.expense.' . $array['id']))
 		{
-			$actions         = JAccess::getActions('com_dtax', 'links');
-			$default_actions = JAccess::getAssetRules('com_dtax.links.' . $array['id'])->getData();
+			$actions         = JFactory::getACL()->getActions('com_dtax', 'expense');
+			$default_actions = JFactory::getACL()->getAssetRules('com_dtax.expense.' . $array['id'])->getData();
 			$array_jaccess   = array();
-
 			foreach ($actions as $action)
 			{
 				$array_jaccess[$action->name] = $default_actions[$action->name];
 			}
-
 			$array['rules'] = $this->JAccessRulestoArray($array_jaccess);
 		}
-
-		// Bind the rules for ACL where supported.
+		//Bind the rules for ACL where supported.
 		if (isset($array['rules']) && is_array($array['rules']))
 		{
 			$this->setRules($array['rules']);
@@ -98,23 +79,18 @@ class DTaxTablelink extends JTable
 	/**
 	 * This function convert an array of JAccessRule objects into an rules array.
 	 *
-	 * @param   array  $jaccessrules  An array of JAccessRule objects.
-	 *
-	 * @return array
+	 * @param type $jaccessrules an arrao of JAccessRule objects.
 	 */
 	private function JAccessRulestoArray($jaccessrules)
 	{
 		$rules = array();
-
 		foreach ($jaccessrules as $action => $jaccess)
 		{
 			$actions = array();
-
 			foreach ($jaccess->getData() as $group => $allow)
 			{
 				$actions[$group] = ((bool) $allow);
 			}
-
 			$rules[$action] = $actions;
 		}
 
@@ -123,17 +99,15 @@ class DTaxTablelink extends JTable
 
 	/**
 	 * Overloaded check function
-	 *
-	 * @return bool
 	 */
 	public function check()
 	{
-		// If there is an ordering column and this is a new row then get the next ordering value
+
+		//If there is an ordering column and this is a new row then get the next ordering value
 		if (property_exists($this, 'ordering') && $this->id == 0)
 		{
 			$this->ordering = self::getNextOrder();
 		}
-		
 
 		return parent::check();
 	}
@@ -143,16 +117,13 @@ class DTaxTablelink extends JTable
 	 * table.  The method respects checked out rows by other users and will attempt
 	 * to checkin rows that it can after adjustments are made.
 	 *
-	 * @param   mixed    $pks     An optional array of primary key values to update. If
-	 *                            not set the instance property value is used.
-	 * @param   integer  $state   The publishing state. eg. [0 = unpublished, 1 = published]
-	 * @param   integer  $userId  The user id of the user performing the operation.
+	 * @param    mixed    An optional array of primary key values to update.  If not
+	 *                    set the instance property value is used.
+	 * @param    integer  The publishing state. eg. [0 = unpublished, 1 = published]
+	 * @param    integer  The user id of the user performing the operation.
 	 *
 	 * @return    boolean    True on success.
-	 *
 	 * @since    1.0.4
-	 *
-	 * @throws Exception
 	 */
 	public function publish($pks = null, $state = 1, $userId = 0)
 	{
@@ -174,7 +145,9 @@ class DTaxTablelink extends JTable
 			// Nothing to set publishing state on, return false.
 			else
 			{
-				throw new Exception(500, JText::_('JLIB_DATABASE_ERROR_NO_ROWS_SELECTED'));
+				$this->setError(JText::_('JLIB_DATABASE_ERROR_NO_ROWS_SELECTED'));
+
+				return false;
 			}
 		}
 
@@ -216,12 +189,13 @@ class DTaxTablelink extends JTable
 			$this->state = $state;
 		}
 
+		$this->setError('');
+
 		return true;
 	}
 
 	/**
 	 * Define a namespaced asset name for inclusion in the #__assets table
-	 *
 	 * @return string The asset name
 	 *
 	 * @see JTable::_getAssetName
@@ -230,27 +204,22 @@ class DTaxTablelink extends JTable
 	{
 		$k = $this->_tbl_key;
 
-		return 'com_dtax.links.' . (int) $this->$k;
+		return 'com_dtax.expense.' . (int) $this->$k;
 	}
 
 	
-	/**
-	 * Delete a record according to its primary key
-	 *
-	 * @param   mixed  $pk  Primary key value to delete. Optional.
-	 *
-	 * @return bool
-	 */
+
 	public function delete($pk = null)
 	{
 		$this->load($pk);
 		$result = parent::delete($pk);
-
 		if ($result)
 		{
+
 			
 		}
 
 		return $result;
 	}
+
 }

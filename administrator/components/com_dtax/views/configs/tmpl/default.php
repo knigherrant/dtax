@@ -24,10 +24,10 @@ $doc->addScript(JUri::base() . 'components/com_dtax/assets/js/jsconfigs.js');
         else {
 
             if (task != 'configs.cancel' && document.formvalidator.isValid(document.id('configs-form'))) {
-                jvConfigs.setValueItems('taxformCategories');
-                jvConfigs.setValueItems('invoiceCategories');
-                jvConfigs.setValueItems('expensesCategories');
-                jvConfigs.setValueItems('receiptCategories');
+                //jvConfigs.setValueItems('taxformCategories');
+                //jvConfigs.setValueItems('invoiceCategories');
+                //jvConfigs.setValueItems('expensesCategories');
+                //jvConfigs.setValueItems('receiptCategories');
                 Joomla.submitform(task, document.getElementById('configs-form'));
             }
             else {
@@ -48,6 +48,7 @@ $doc->addScript(JUri::base() . 'components/com_dtax/assets/js/jsconfigs.js');
         <div id="j-main-container">
             <?php endif;?>
             <div class="row-fluid form-horizontal" >
+                <!--
                 <div id="addCategories" class="span12">
                     <div id="taxformCategory" class="span3">
                         <legend>Tax Forms</legend>
@@ -78,6 +79,7 @@ $doc->addScript(JUri::base() . 'components/com_dtax/assets/js/jsconfigs.js');
                 </div>
                 <div class="clearfix"></div>
                 <br/>
+                -->
                 <div>
                     <b>Notifications When Tax Return is Submited From App </b>
                 </div>

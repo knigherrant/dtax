@@ -39,7 +39,7 @@
             <menu link="option=com_dtax&amp;view=employees" view="employees"  alt="DTax/employees">COM_DTAX_TITLE_EMPLOYEES</menu>
             <menu link="option=com_dtax&amp;view=taxreturns" view="taxreturns" alt="DTax/taxreturns">COM_DTAX_TITLE_TAXRETURNS</menu>
             <menu link="option=com_dtax&amp;view=emails" view="emails" alt="DTax/emails">COM_DTAX_TITLE_EMAIL</menu>
-            <menu link="option=com_dtax&amp;view=menus" view="menus" alt="DTax/menus">COM_DTAX_TITLE_MENUS</menu>
+            <menu link="option=com_dtax&amp;view=links" view="links" alt="DTax/links">COM_DTAX_TITLE_MENUS</menu>
             <menu link="option=com_dtax&amp;view=configs" view="configs" alt="DTax/configs">COM_DTAX_TITLE_CONFIG</menu>
             
         </submenu>

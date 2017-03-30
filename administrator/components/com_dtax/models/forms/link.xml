@@ -7,6 +7,14 @@
             description="JGLOBAL_FIELD_ID_DESC" /> 
 
      
+              <field name="company_id" type="company"
+                
+            label="Company"
+            description="Company" 
+                
+                
+                 required="true"  /> 
+              
 
        <field name="title" type="text"
                 
