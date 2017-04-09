@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset name="basic" >
+       <field name="taxpayer" type="text" size="40" class="inputbox" hint="Taxpayer" label="Taxpayer" description="Taxpayer" /> 
+       <field name="phone" type="text" size="40" class="inputbox" hint="Phone" label="Phone" description="Phone" /> 
+       <field name="email" type="text" size="40" class="inputbox" hint="Email" label="Email" description="Email" /> 
+       <field name="reason" type="textarea" size="40" class="inputbox" hint="Reason For Submission" label="Reason For Submission" description="Reason For Submission" /> 
+       
+       <field name="created" type="calendar" size="40" class="inputbox" hint="Date" label="Date" description="Date" /> 
+       <field name="created_by" type="user" class="inputbox" hint="Created By" label="Created By" description="Created By"  filter="safehtml" /> 
+       
+ </fieldset> 
+ 
+ <fieldset name="images" >
+     <field name="image1" type="media" size="40" class="inputbox" label="Image 1" description="Image 1" hint="Image"  filter="safehtml" /> 
+       <field name="image2" type="media" size="40" class="inputbox" label="Image 2" description="Image 2" hint="Image"  filter="safehtml" /> 
+       <field name="image3" type="media" size="40" class="inputbox" label="Image 3" description="Image 3" hint="Image"  filter="safehtml" /> 
+       <field name="image4" type="media" size="40" class="inputbox" label="Image 4" description="Image 4" hint="Image"  filter="safehtml" /> 
+       <field name="image5" type="media" size="40" class="inputbox" label="Image 5" description="Image 5" hint="Image"  filter="safehtml" /> 
+       <field name="image6" type="media" size="40" class="inputbox" label="Image 6" description="Image 6" hint="Image"  filter="safehtml" /> 
+       <field name="image7" type="media" size="40" class="inputbox" label="Image 7" description="Image 7" hint="Image"  filter="safehtml" /> 
+       <field name="image8" type="media" size="40" class="inputbox" label="Image 8" description="Image 8" hint="Image"  filter="safehtml" /> 
+       <field name="image9" type="media" size="40" class="inputbox" label="Image 9" description="Image 9" hint="Image"  filter="safehtml" /> 
+ </fieldset>
+ 
+ <fieldset name="company" >
+     <field name="company" type="text" size="40" class="inputbox" hint="Company" label="Company" description="Company" /> 
+     <field name="company_location" type="text" size="40" class="inputbox" hint="Company Location" label="Company Locaiton" description="Company Location" /> 
+       <field name="company_email" type="text" size="40" class="inputbox" hint="Company Email" label="Company Email" description="Company Email" /> 
+       <field name="preparer" type="text" size="40" class="inputbox" hint="Preparer" label="Preparer" description="Preparer" />        
+       <field name="preparer_email" type="text" size="40" class="inputbox" hint="Preparer Email" label="Preparer Email" description="Preparer Email" /> 
+       <field name="preparer_location" type="text" size="40" class="inputbox" hint="Preparer Location" label="Preparer Location" description="Preparer Location" /> 
+       
+       <field name="id" type="hidden" default="0" label="COM_DTAX_FORM_LBL_OFFICE_LOCATION_ID"
+            readonly="true" class="readonly"
+            description="JGLOBAL_FIELD_ID_DESC" /> 
+ </fieldset>
+
+
+
+</form>
