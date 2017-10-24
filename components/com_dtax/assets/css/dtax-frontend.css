@@ -1,14 +1,22 @@
 /*19.12.2016*/
+<<<<<<< HEAD
 
 #dtaxMain form{
     margin: 0;
 }
 
+=======
+body.site,
+.site .body .container{
+    background-color: #000;
+}
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
 #mainContent{
     background-color: #fff;
     min-height: 750px
 }
 
+<<<<<<< HEAD
 #dtaxMain #dtaxHeader{
     background-color: #005074;
     height: 70px;
@@ -58,24 +66,70 @@
     color: #fbac2b;
 }
 #dtaxMain #menu ul li a:hover{
+=======
+
+
+#cpaMain #logo{
+    background-image: url(' ../images/logo.png');
+    display: block;
+    height: 60px;
+    background-repeat: no-repeat;
+    font-size: 0;
+    padding: 1px;
+    margin: 15px 0px;
+}
+
+#cpaMain [class*="span"]{
+        margin-left: 10px;
+}
+#cpaMain #menu{
+    min-height: 160px;
+}
+#cpaMain #menu ul li{
+    list-style: none;
+}
+
+#cpaMain #userInfo{
+    padding: 10px 0;
+}
+
+#cpaMain #menu ul li.active a{
+    color: #fbac2b;
+}
+#cpaMain #menu ul li a:hover{
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
     text-decoration: none;
     color: #fbac2b;
 }
 #userInfo .key,
+<<<<<<< HEAD
 #dtaxMain #menu ul li a{
     color: #fff;
 }
 #dtaxMain #menu ul{
+=======
+#cpaMain #menu ul li a{
+    color: #fff;
+}
+#cpaMain #menu ul{
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
     margin: 0;
 }
 #userInfo .value{
     color: #91908f;
 }
 
+<<<<<<< HEAD
 #dtaxMain .jk-logout{
     color: #fbac2b
 }
 #dtaxMain #dtaxLeft p{
+=======
+#cpaMain .jk-logout{
+    color: #fbac2b
+}
+#cpaMain #cpaLeft p{
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
     margin: 0 0 5px;
 }
 
@@ -88,7 +142,11 @@
     top: 6px;
 }
 
+<<<<<<< HEAD
 #dtaxMain legend,
+=======
+#cpaMain legend,
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
 .jscustom12{
     width: 98%;
 }
@@ -109,6 +167,7 @@
     width: 66%;
 }
 
+<<<<<<< HEAD
 #mainContent .headContent{
     width: 100%;
     height: 300px;
@@ -171,6 +230,8 @@
 
 
 
+=======
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
 .row-fluid [class*="jscustom"] {
     display: block;
     min-height: 28px;
@@ -182,6 +243,7 @@
 }
 
 
+<<<<<<< HEAD
 #dtaxMain #mainContent input[type="file"]{
     width: 64% !important;
 }
@@ -217,6 +279,43 @@
 #dtaxMain #mainContent .jCustommer #jform_spouse_expiration_date,
 #dtaxMain #mainContent .jCustommer #jform_tax_birthday,
 #dtaxMain #mainContent .jCustommer #jform_userid{
+=======
+#cpaMain #mainContent input[type="file"]{
+    width: 64% !important;
+}
+#cpaMain #mainContent textarea,
+#cpaMain #mainContent input{
+    width: 95%;
+}
+
+#cpaMain #mainContent .field3 input{
+    width: 92%;
+}
+#cpaMain #mainContent .field3 select{width: 96%;}
+#cpaMain #mainContent .field2 input{
+    width: 96%;
+}
+
+#cpaMain .jsContents{
+    padding: 15px;
+}
+
+#cpaMain #mainContent #j-main-container{
+    width: 98%;
+}
+
+#cpaMain #mainContent .jCustommer #jform_dependent1_birthday,
+#cpaMain #mainContent .jCustommer #jform_dependent2_birthday,
+#cpaMain #mainContent .jCustommer #jform_dependent3_birthday,
+#cpaMain #mainContent .jCustommer #jform_dependent4_birthday,
+#cpaMain #mainContent .jCustommer #jform_dependent5_birthday,
+#cpaMain #mainContent .jCustommer #jform_tax_expiration_date,
+#cpaMain #mainContent .jCustommer #jform_tax_issue_date,
+#cpaMain #mainContent .jCustommer #jform_spouse_issue_date,
+#cpaMain #mainContent .jCustommer #jform_spouse_expiration_date,
+#cpaMain #mainContent .jCustommer #jform_tax_birthday,
+#cpaMain #mainContent .jCustommer #jform_userid{
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
     width: 73%
 }
 
@@ -229,6 +328,7 @@
     object-fit: cover;
 }
 
+<<<<<<< HEAD
 #dtaxMain #profile{
     padding: 20px 5px 5px 5px;
 }
@@ -238,6 +338,17 @@
     padding-left: 10px;
 }
 #dtaxMain #static .block{
+=======
+#cpaMain #profile{
+    padding: 20px 5px 5px 5px;
+}
+
+#cpaMain #static{
+    width: 100%;
+    padding-left: 10px;
+}
+#cpaMain #static .block{
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
     width: 30%;
     height: 100px;
     background-color: #3c3c3c;
@@ -248,32 +359,56 @@
     clear: both;
 }
 
+<<<<<<< HEAD
 #dtaxMain #static .block .bcontent .key{
+=======
+#cpaMain #static .block .bcontent .key{
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
     padding-left: 25px;
     padding-top: 25px;
 }
 
+<<<<<<< HEAD
 #dtaxMain #static .block .bcontent .value{
+=======
+#cpaMain #static .block .bcontent .value{
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
     padding-left: 25px;
     font-size: 26px;
 }
 
+<<<<<<< HEAD
 #dtaxMain #static .block .bcontent{
+=======
+#cpaMain #static .block .bcontent{
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
     width: 100%;
     height: 100%;
     color: #fff;
 }
 
+<<<<<<< HEAD
 #dtaxMain #static .block1 .bcontent{
     background: url('../images/invoice.png') no-repeat 152px 32px;
 }
 
 #dtaxMain #static .block2 .bcontent{
+=======
+#cpaMain #static .block1 .bcontent{
+    background: url('../images/invoice.png') no-repeat 152px 32px;
+}
+
+#cpaMain #static .block2 .bcontent{
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
     background: url('../images/taxpayer.png') no-repeat 141px 28px;
 
 }
 
+<<<<<<< HEAD
 #dtaxMain #static .block3 .bcontent{
+=======
+#cpaMain #static .block3 .bcontent{
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
     background: url('../images/customer.png') no-repeat 135px 31px
 }
 .chartContent{

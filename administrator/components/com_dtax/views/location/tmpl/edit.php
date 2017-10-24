@@ -18,6 +18,32 @@ $document->addStyleSheet('components/com_dtax/assets/css/dtax.css');
 
 ?>
 <script type="text/javascript">
+<<<<<<< HEAD
+=======
+    function getScript(url,success) {
+        var script = document.createElement('script');
+        script.src = url;
+        var head = document.getElementsByTagName('head')[0],
+        done = false;
+        // Attach handlers for all browsers
+        script.onload = script.onreadystatechange = function() {
+            if (!done && (!this.readyState
+                || this.readyState == 'loaded'
+                || this.readyState == 'complete')) {
+                done = true;
+                success();
+                script.onload = script.onreadystatechange = null;
+                head.removeChild(script);
+            }
+        };
+        head.appendChild(script);
+    }
+    getScript('//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',function() {
+        js = jQuery.noConflict();
+        js(document).ready(function(){
+            
+
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
             Joomla.submitbutton = function(task)
             {
                 if (task == 'location.cancel') {
@@ -34,7 +60,12 @@ $document->addStyleSheet('components/com_dtax/assets/css/dtax.css');
                     }
                 }
             }
+<<<<<<< HEAD
 
+=======
+        });
+    });
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
 </script>
 <div class="btn-toolbar">
     <div class="btn-group">
@@ -56,6 +87,7 @@ $document->addStyleSheet('components/com_dtax/assets/css/dtax.css');
                             <div class="controlsx"><?php echo $this->form->getInput('address'); ?></div>
                         </div>
                         <div class="control-group">
+<<<<<<< HEAD
                             <div class="controlsx"><?php echo $this->form->getInput('city'); ?></div>
                         </div>
                         <div class="control-group">
@@ -66,17 +98,22 @@ $document->addStyleSheet('components/com_dtax/assets/css/dtax.css');
                         </div>
                 
                         <div class="control-group">
+=======
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
                             <div class="controlsx"><?php echo $this->form->getInput('phone'); ?></div>
                         </div>
                         <div class="control-group">
                             <div class="controlsx"><?php echo $this->form->getInput('email'); ?></div>
                         </div>
+<<<<<<< HEAD
                         <div class="control-group">
                             <div class="controlsx"><?php echo $this->form->getInput('username'); ?></div>
                         </div>
                         <div class="control-group">
                             <div class="controlsx"><?php echo $this->form->getInput('password'); ?></div>
                         </div>
+=======
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
                         
                         <div class="control-group">
                             <div class="controlsx"><?php echo $this->form->getInput('created'); ?></div>
@@ -120,7 +157,11 @@ $document->addStyleSheet('components/com_dtax/assets/css/dtax.css');
     
 
     <?php echo $this->form->getInput('id'); ?>
+<<<<<<< HEAD
     <?php echo $this->form->getInput('userid'); ?>
+=======
+
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
     <input type="hidden" name="task" value="" />
     <?php echo JHtml::_('form.token'); ?>
     <div class="clr"></div>

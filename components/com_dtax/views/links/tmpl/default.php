@@ -56,4 +56,8 @@ JHtml::_('behavior.modal', 'a.modal');
         </div>
     </div>
 </div>
+<<<<<<< HEAD
 <?php echo JST::footer(); ?>
+=======
+<?php echo jSont::footer(); ?>
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9

@@ -31,6 +31,7 @@ var JST = (function($){
 
 jQuery(function($){
     $('#jform_created_by').parents('.control-group').hide();
+<<<<<<< HEAD
     $('.icon-trash').click(function(){
         var item = $(this);
         item.parents('.jItem').fadeOut();
@@ -40,4 +41,6 @@ jQuery(function($){
               console.log(data);
           });	
     })
+=======
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
 })

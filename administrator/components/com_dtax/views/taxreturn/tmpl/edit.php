@@ -77,14 +77,19 @@ JHtml::_('formbehavior.chosen', 'select');
                 </div>
                 <div class="span12">
                     <div class="control-group span4">
+<<<<<<< HEAD
                         <div class="controlsx"><?php echo $this->form->getInput('tax_issue_state'); ?></div>
                     </div>
                     <div class="control-group span4">
                         <div class="controlsx"><?php echo $this->form->getInput('tax_employment'); ?></div>
+=======
+                        <div class="controlsx"><?php echo $this->form->getInput('tax_occupation'); ?></div>
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
                     </div>
                     <div class="control-group span4">
                         <div class="controlsx"><?php echo $this->form->getInput('tax_dependents'); ?></div>
                     </div>
+<<<<<<< HEAD
                 </div>
                 
                 <div class="span12">
@@ -94,6 +99,8 @@ JHtml::_('formbehavior.chosen', 'select');
                     <div class="control-group span4">
                         <div class="controlsx"><?php echo $this->form->getInput('tax_cellprovider'); ?></div>
                     </div>
+=======
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
                     <div class="control-group span4">
                         <div class="controlsx"></div>
                     </div>
@@ -135,6 +142,7 @@ JHtml::_('formbehavior.chosen', 'select');
                 </div>
                 <div class="span12">
                     <div class="control-group span4">
+<<<<<<< HEAD
                         <div class="controlsx"><?php echo $this->form->getInput('spouse_issue_state'); ?></div>
                     </div>
                     <div class="control-group span4">
@@ -145,6 +153,17 @@ JHtml::_('formbehavior.chosen', 'select');
                     </div>
                 </div>
                 
+=======
+                        <div class="controlsx"><?php echo $this->form->getInput('spouse_occupation'); ?></div>
+                    </div>
+                    <div class="control-group span4">
+                        <div class="controlsx"></div>
+                    </div>
+                    <div class="control-group span4">
+                        <div class="controlsx"></div>
+                    </div>
+                </div>
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
                 <!--- END SPOUSE -->
                 <!-- ADDRESS -->
                 <div class="span12 full">

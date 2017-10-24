@@ -50,7 +50,11 @@ class DTaxModelTaxreturn extends JModelAdmin
 		// Initialise variables.
 		$app	= JFactory::getApplication();
                 JForm::addFormPath(JPATH_COMPONENT_ADMINISTRATOR . '/models/forms');
+<<<<<<< HEAD
                 JForm::addFieldPath(JPATH_COMPONENT_ADMINISTRATOR . '/models/fields');
+=======
+		JForm::addFieldPath(JPATH_COMPONENT_ADMINISTRATOR . '/models/fields');
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
 		// Get the form.
 		$form = $this->loadForm('com_dtax.taxreturn', 'taxreturn', array('control' => 'jform', 'load_data' => $loadData));
         

@@ -50,8 +50,12 @@ class DTaxModelLocation extends JModelAdmin
 		// Initialise variables.
 		$app	= JFactory::getApplication();
                 JForm::addFormPath(JPATH_COMPONENT_ADMINISTRATOR . '/models/forms');
+<<<<<<< HEAD
                 JForm::addFieldPath(JPATH_COMPONENT_ADMINISTRATOR . '/models/fields');
                 
+=======
+		JForm::addFieldPath(JPATH_COMPONENT_ADMINISTRATOR . '/models/fields');
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
 		// Get the form.
 		$form = $this->loadForm('com_dtax.location', 'location', array('control' => 'jform', 'load_data' => $loadData));
         
@@ -92,7 +96,10 @@ class DTaxModelLocation extends JModelAdmin
 	 */
 	public function getItem($pk = null)
 	{
+<<<<<<< HEAD
             if($office = JST::isOffice()) $pk = $office->id;
+=======
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
 		if ($item = parent::getItem($pk)) {
                     if(!$item->created_by) $item->created_by = JFactory::getUser ()->id;
 			//Do any procesing on fields here if needed
@@ -105,6 +112,7 @@ class DTaxModelLocation extends JModelAdmin
 	
         
         function save($data) {
+<<<<<<< HEAD
             if(!$data['userid']){
                 if($user = jSont::saveUser($data, $data['name'])){
                     $data['userid'] = $user->id;
@@ -112,6 +120,10 @@ class DTaxModelLocation extends JModelAdmin
                 }
                 return false;
             }else return parent::save($data);
+=======
+            //jSont::upgradeUser($data['email']);
+            return parent::save($data);
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
         }
 
 }

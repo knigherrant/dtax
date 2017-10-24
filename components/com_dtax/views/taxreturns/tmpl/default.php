@@ -24,16 +24,30 @@ $saveOrder = $listOrder == 'a.ordering';
 ?>
 <?php echo JST::header(); ?>
 <?php echo JST::toolbar('taxreturn', true); ?>
+<<<<<<< HEAD
 <?php echo JST::tabActive('taxreturns', 'Tax Return'); ?>
 <form action="<?php echo JRoute::_('index.php?option=com_dtax&view=taxreturns'); ?>" method="post" name="adminForm" id="adminForm">
     
         <div id="j-main-container">
 
+=======
+<form action="<?php echo JRoute::_('index.php?option=com_dtax&view=taxreturns'); ?>" method="post" name="adminForm" id="adminForm">
+    <div class="jsContents form-horizontal row-fluid jscustom12">  
+            <div id="j-main-container">
+               <legend><?php echo JText::_('Tax Returns');?></legend>
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
         <div id="filter-bar" class="btn-toolbar">
                 <div class="filter-search btn-group pull-left">
                         <input type="text" name="filter_search" id="filter_search" placeholder="<?php echo JText::_('JSEARCH_FILTER'); ?>" value="<?php echo $this->escape($this->state->get('filter.search')); ?>" class="hasTooltip" title="<?php echo JHtml::tooltipText('Search'); ?>" />
                 </div>
+<<<<<<< HEAD
             
+=======
+            <div class="btn-group pull-right hidden-phone">
+                        <label for="limit" class="element-invisible"><?php echo JText::_('JFIELD_PLG_SEARCH_SEARCHLIMIT_DESC');?></label>
+                        <?php echo $this->pagination->getLimitBox(); ?>
+                    </div>
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
                 <div class="btn-group pull-left">
                         <button type="submit" class="btn hasTooltip" title="<?php echo JHtml::tooltipText('JSEARCH_FILTER_SUBMIT'); ?>"><span class="icon-search"></span></button>
                         <button type="button" class="btn hasTooltip" title="<?php echo JHtml::tooltipText('JSEARCH_FILTER_CLEAR'); ?>" onclick="document.getElementById('filter_search').value='';this.form.submit();"><span class="icon-remove"></span></button>
@@ -57,14 +71,26 @@ $saveOrder = $listOrder == 'a.ordering';
 				</th>
                                 
 				<th class="left">
+<<<<<<< HEAD
 					<?php echo JHtml::_('grid.sort',  'Address', 'a.address', $listDirn, $listOrder); ?>
 				</th>
 				
+=======
+					<?php echo JHtml::_('grid.sort',  'Phone', 'a.phone', $listDirn, $listOrder); ?>
+				</th>
+				<th class="left">
+					<?php echo JHtml::_('grid.sort',  'Email', 'a.email', $listDirn, $listOrder); ?>
+				</th>
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
                                 <th class="left">
 					<?php echo JHtml::_('grid.sort',  'Company', 'c.company', $listDirn, $listOrder); ?>
 				</th>
 				<th class="left">
+<<<<<<< HEAD
 					<?php echo JHtml::_('grid.sort',  'Employee', 'c.employee', $listDirn, $listOrder); ?>
+=======
+					<?php echo JHtml::_('grid.sort',  'CPA', 'c.cpa', $listDirn, $listOrder); ?>
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
 				</th>
 
                                
@@ -107,7 +133,24 @@ $saveOrder = $listOrder == 'a.ordering';
                     <td data-field="" class="center">
                         <?php echo JHtml::_('grid.id', $i, $item->id); ?>
                     </td>
+<<<<<<< HEAD
                        
+=======
+                        <!--
+                        <td>
+                            <?php /* if($item->featured){ ?>
+                                        <a href="#" onclick="return listItemTask('cb1','taxreturns.unfeatured')" title="Toggle to change article state to 'Unfeatured'"></a>
+                                        <a href="#" onclick="return listItemTask('cb<?php echo $i; ?>','taxreturns.unfeatured')" class="btn btn-micro hasTooltip active" title="" data-original-title="Toggle featured status.">
+                                            <span class="icon-featured"></span>
+                                        </a>
+                                    <?php }else{ ?>
+                                        <a href="#" onclick="return listItemTask('cb<?php echo $i; ?>','taxreturns.featured')" class="btn btn-micro hasTooltip" title="" data-original-title="Toggle featured status.">
+                                            <span class="icon-unfeatured"></span>
+                                        </a>
+                                    <?php } */?>
+                                </td>
+                                -->
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
                     
 					<td data-field="Taxpayer">
 					<?php if (isset($item->checked_out) && $item->checked_out) : ?>
@@ -125,18 +168,33 @@ $saveOrder = $listOrder == 'a.ordering';
 
                                         
                                         
+<<<<<<< HEAD
                                         <td data-field="Address">
 						<?php echo $item->address; ?>
 					</td>
                                         
                      
+=======
+                                        <td data-field="Phone">
+						<?php echo $item->phone; ?>
+					</td>
+                                        
+                                        <td data-field="Email">
+						<?php echo $item->email; ?>
+					</td>
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
                                         
                                         <td data-field="Company">
 						<?php echo $item->company; ?>
 					</td>
                                         
+<<<<<<< HEAD
                                         <td data-field="Employee">
 						<?php echo $item->employee; ?>
+=======
+                                        <td data-field="CPA">
+						<?php echo $item->cpa; ?>
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
 					</td>
                                         
                                       
@@ -161,5 +219,11 @@ $saveOrder = $listOrder == 'a.ordering';
         <input type="hidden" name="filter_order_Dir" value="<?php echo $listDirn; ?>" />
         <?php echo JHtml::_('form.token'); ?>
     </div>
+<<<<<<< HEAD
 </form>
 <?php echo JST::footer(); ?>
+=======
+         </div>
+    </form>
+<?php echo JST::footer(); ?>
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9

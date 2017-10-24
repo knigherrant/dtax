@@ -36,6 +36,7 @@ class jSont extends DTaxHelper{
         'video' => array('3gp', 'asf', 'avi', 'flv', 'm4v', 'mkv', 'mov', 'mp4', 'mpeg', 'mpg', 'ogg', 'rm', 'swf', 'vob', 'wmv')
     );
     
+<<<<<<< HEAD
     public static function saveUser($data, $name =''){
         $user = new JUser();
         if(!$name) $name = $data['username'];
@@ -56,17 +57,24 @@ class jSont extends DTaxHelper{
     }
     
     
+=======
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
     public static function isCustomer($userid = 0){
         if(!$userid) $userid = JFactory::getUser ()->id;
         if(!$userid) return false;
         static $customer;
+<<<<<<< HEAD
         if(!isset($company[$userid])){
+=======
+        if(!isset($cpa[$userid])){
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
             $db = JFactory::getDbo();
             $customer[$userid] = $db->setQuery('SELECT *, CONCAT(firstname, " " ,midname, " " ,lastname) as customer FROM #__dtax_customers WHERE userid=' . $userid)->loadObject();
         }
         return $customer[$userid];
     }
     
+<<<<<<< HEAD
     public static function isCompany($userid = 0){
         if(!$userid) $userid = JFactory::getUser ()->id;
         if(!$userid) return false;
@@ -79,6 +87,20 @@ class jSont extends DTaxHelper{
             }
         }
         return $company[$userid];
+=======
+    public static function isCPA($userid = 0){
+        if(!$userid) $userid = JFactory::getUser ()->id;
+        if(!$userid) return false;
+        static $cpa;
+        if(!isset($cpa[$userid])){
+            $db = JFactory::getDbo();
+            $cpa[$userid] = $db->setQuery('SELECT * FROM #__dtax_company WHERE userid=' . $userid)->loadObject();
+            if($cpa[$userid]){
+                if(!$cpa[$userid]->logo) $cpa[$userid]->logo = JUri::root () . 'components/com_dtax/assets/images/no_logo.png';
+            }
+        }
+        return $cpa[$userid];
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
     }
     
    
@@ -225,7 +247,11 @@ class jSont extends DTaxHelper{
         $document->addStyleSheet(JURI::root() . 'administrator/components/com_dtax/assets/css/dtax.css');
         $document->addScript(JUri::root().'administrator/components/com_dtax/assets/js/jquery.noconflict.js');
         $document->addScript(JURI::root() . 'components/com_dtax/assets/js/dtax.js');
+<<<<<<< HEAD
         //$document->addScript(JURI::root() . 'administrator/components/com_dtax/assets/js/js.js');
+=======
+        $document->addScript(JURI::root() . 'administrator/components/com_dtax/assets/js/js.js');
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
         self::upgradePermission();
 		
     }
@@ -236,7 +262,11 @@ class jSont extends DTaxHelper{
         $document->addStyleSheet(JURI::root() . 'components/com_dtax/assets/css/dtax-frontend.css');
         $document->addScript(JUri::root().'administrator/components/com_dtax/assets/js/jquery.noconflict.js');
         $document->addScript(JURI::root() . 'components/com_dtax/assets/js/dtax.js');
+<<<<<<< HEAD
         //$document->addScript(JURI::root() . 'administrator/components/com_dtax/assets/js/js.js');
+=======
+        $document->addScript(JURI::root() . 'administrator/components/com_dtax/assets/js/js.js');
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
     }
     
     public static function upgradePermission(){
@@ -343,9 +373,14 @@ class jSont extends DTaxHelper{
         return $lists;
     }
     
+<<<<<<< HEAD
     public static  function format($date, $format = ''){
         if(!$format) return JHtml::_('date', $date, JText::_('DATE_FORMAT_LC3'), false);
         return JHtml::_('date', $date, $format, false); 
+=======
+    public static  function format($date){
+        return JHtml::_('date', $date, JText::_('DATE_FORMAT_LC3'), false);
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
     }
     
 	
@@ -383,6 +418,54 @@ class jSont extends DTaxHelper{
     }
     
     
+<<<<<<< HEAD
+=======
+    public static  function showProfileHtml($userid = 0, $edit = false){
+        if(!$userid) $userid = JFactory::getUser ()->id;
+        $item = self::getUser($userid);
+        ob_start();
+        ?>
+        <div id="userProfile" class="profile">
+            <div class="img span3 userAvatar big-avatar">
+                <?php if($edit){ ?>
+                    <img class="avatarProfile canEdit" alt="Click to change your avatar" src="<?php echo $item->avatar; ?>" />
+                <?php }else{ ?>
+                    <img class="avatarProfile" alt="" src="<?php echo $item->avatar; ?>" />
+                <?php } ?>
+            </div>
+            <div class="info span6">
+                <div class="span3">
+                    <p><?php echo $item->user->name; ?></p>
+                    <p><?php echo $item->user->username; ?></p>
+                    <p><?php echo $item->user->email; ?></p>
+                    <p><?php echo @$item->church; ?></p>
+                    <p><?php echo @$item->pastor; ?></p>
+                </div>
+                <div class="span3">
+                    <p>Account Type: <?php echo (@$item->account == '1')? 'VIP' : 'Free'; ?></p>
+                    <p><?php echo @$item->phone; ?></p>
+                    <p><?php echo @$item->location; ?></p>
+					<?php if($edit){ ?><p><a href="<?php echo JRoute::_('index.php?option=com_dtax&view=frontend&layout=edit&Itemid=' . JFactory::getApplication()->input->getInt('Itemid')); ?>">[Edit Profile]</a></p><?php } ?>
+                </div>
+            </div>
+            <?php if($edit){ ?>
+                <input style="display: none" id="cAvatar" type="file" name="avatar" />
+                <script>
+                    jQuery(function($){
+                        $('#userProfile .userAvatar').click(function(){$('#cAvatar').click()});
+                        $('#cAvatar').change(function(){
+                            jSont.uploadImage();
+                        })
+                    })
+                </script>
+            <?php } ?>
+            <div class="clearfix clear"></div>
+        </div>
+        <?php
+        return ob_get_clean();
+    }
+    
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
     
     public static  function googleMap($cfg = array()){
 	
@@ -496,7 +579,10 @@ class jSont extends DTaxHelper{
                         $page = JFactory::getApplication()->input->getString('view');
                         $selected = '';
                         if($page == $view || $page . 's' == $view) $selected = 'active';
+<<<<<<< HEAD
                         if($view == 'companies' && $page == 'company') $selected = 'active';
+=======
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
                         ?>
                         <li class="frontend <?php echo $selected; ?>">
                             <a class="<?php echo $selected; ?>" href="index.php?option=com_dtax&view=<?php echo $view; ?>" title="<?php echo $text; ?>">

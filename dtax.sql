@@ -3,7 +3,11 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
+<<<<<<< HEAD
 -- Generation Time: Apr 05, 2017 at 08:15 PM
+=======
+-- Generation Time: Mar 29, 2017 at 06:42 PM
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
 -- Server version: 10.1.8-MariaDB
 -- PHP Version: 5.6.14
 
@@ -42,7 +46,11 @@ CREATE TABLE `d_assets` (
 --
 
 INSERT INTO `d_assets` (`id`, `parent_id`, `lft`, `rgt`, `level`, `name`, `title`, `rules`) VALUES
+<<<<<<< HEAD
 (1, 0, 0, 109, 0, 'root.1', 'Root Asset', '{"core.login.site":{"6":1,"2":1},"core.login.admin":{"6":1},"core.login.offline":{"6":1},"core.admin":{"8":1},"core.manage":{"7":1},"core.create":{"6":1,"3":1},"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1},"core.edit.own":{"6":1,"3":1}}'),
+=======
+(1, 0, 0, 107, 0, 'root.1', 'Root Asset', '{"core.login.site":{"6":1,"2":1},"core.login.admin":{"6":1},"core.login.offline":{"6":1},"core.admin":{"8":1},"core.manage":{"7":1},"core.create":{"6":1,"3":1},"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1},"core.edit.own":{"6":1,"3":1}}'),
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
 (2, 1, 1, 2, 1, 'com_admin', 'com_admin', '{}'),
 (3, 1, 3, 6, 1, 'com_banners', 'com_banners', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
 (4, 1, 7, 8, 1, 'com_cache', 'com_cache', '{"core.admin":{"7":1},"core.manage":{"7":1}}'),
@@ -78,7 +86,11 @@ INSERT INTO `d_assets` (`id`, `parent_id`, `lft`, `rgt`, `level`, `name`, `title
 (36, 1, 97, 98, 1, 'com_contenthistory', 'com_contenthistory', '{}'),
 (37, 1, 99, 100, 1, 'com_ajax', 'com_ajax', '{}'),
 (38, 1, 101, 102, 1, 'com_postinstall', 'com_postinstall', '{}'),
+<<<<<<< HEAD
 (39, 18, 42, 43, 2, 'com_modules.module.1', 'Main Menu', '{"core.delete":[],"core.edit":[],"core.edit.state":[],"module.edit.frontend":[]}'),
+=======
+(39, 18, 42, 43, 2, 'com_modules.module.1', 'Main Menu', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
 (40, 18, 44, 45, 2, 'com_modules.module.2', 'Login', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
 (41, 18, 46, 47, 2, 'com_modules.module.3', 'Popular Articles', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
 (42, 18, 48, 49, 2, 'com_modules.module.4', 'Recently Added Articles', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
@@ -89,14 +101,22 @@ INSERT INTO `d_assets` (`id`, `parent_id`, `lft`, `rgt`, `level`, `name`, `title
 (47, 18, 58, 59, 2, 'com_modules.module.13', 'Admin Submenu', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
 (48, 18, 60, 61, 2, 'com_modules.module.14', 'User Status', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
 (49, 18, 62, 63, 2, 'com_modules.module.15', 'Title', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+<<<<<<< HEAD
 (50, 18, 64, 65, 2, 'com_modules.module.16', 'Login Form', '{"core.delete":[],"core.edit":[],"core.edit.state":[],"module.edit.frontend":[]}'),
+=======
+(50, 18, 64, 65, 2, 'com_modules.module.16', 'Login Form', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
 (51, 18, 66, 67, 2, 'com_modules.module.17', 'Breadcrumbs', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
 (52, 18, 68, 69, 2, 'com_modules.module.79', 'Multilanguage status', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
 (53, 18, 70, 71, 2, 'com_modules.module.86', 'Joomla Version', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
 (54, 16, 36, 37, 2, 'com_menus.menu.1', 'Main Menu', '{}'),
 (56, 1, 103, 104, 1, 'com_dtax', 'com_dtax', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":{"3":1,"2":1},"core.delete":{"2":1},"core.edit":{"4":1,"2":1},"core.edit.state":{"5":1,"2":1},"core.edit.own":{"2":1}}'),
+<<<<<<< HEAD
 (57, 1, 105, 106, 1, 'com_dtax.company.1', 'com_dtax.company.1', '{}'),
 (58, 1, 107, 108, 1, 'com_dtax.expense.1', 'com_dtax.expense.1', '{}');
+=======
+(57, 1, 105, 106, 1, 'com_dtax.company.1', 'com_dtax.company.1', '{}');
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
 
 -- --------------------------------------------------------
 
@@ -459,7 +479,11 @@ CREATE TABLE `d_dtax_company` (
 --
 
 INSERT INTO `d_dtax_company` (`id`, `asset_id`, `ordering`, `userid`, `company`, `owner`, `address`, `city`, `zip`, `phone`, `usstate`, `email`, `logo`, `server_ip`, `server_dbname`, `server_dbusername`, `server_dbpassword`, `server_droidads`, `server_iphoneads`, `notes`, `created`, `featured`, `location_id`, `state`, `server_color`, `server_droidbg`, `server_iphonebg`, `server_droidhome`, `server_iphonehome`, `fkey`, `enlist`) VALUES
+<<<<<<< HEAD
 (1, 57, 1, 70, 'SILG', 'SI-SSA', '11 Vinh Loc HCM', 'Ho Chi MInh', '70000', '01111111111', 'Ho Chi MInh', 'aa@aaa.com', 'images/dtax/1491140176_login-ss.png', '434231', '3122222', '3123333', '243424444', 'images/dtax/1491140176_login-ss.png', 'images/dtax/1491140176_login-ss.png', '4324', '2017-04-02 13:36:16', 0, 2, '33333333', '55555', '666666', '88888', '77777', '9999999', 0, NULL);
+=======
+(1, 57, 1, 70, '43423zzzyy', '34324242', '4324', '2432432', '432423423', '432', '432423', '423432', 'images/dtax/1489249459_anh-nen-canh-dong-hoa-huong-duong.jpg', '43423', '312', '312', '24342', '', 'images/dtax/1489249444_1471514129602_3899.jpg', '4324', '2017-03-29 15:45:22', 0, 2, '33333333', '', '', '', '', '', 0, NULL);
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
 
 -- --------------------------------------------------------
 
@@ -483,11 +507,16 @@ CREATE TABLE `d_dtax_config` (
 --
 
 INSERT INTO `d_dtax_config` (`id`, `categories_invoice`, `categories_expenses`, `categories_receipt`, `params`, `notify_tax_en`, `notify_tax_sn`, `categories_taxform`) VALUES
+<<<<<<< HEAD
 (1, '[{"name":"Invoice 1"},{"name":"Invoice 2"}]', '[{"name":"Expenses 1"},{"name":"Expenses 2"}]', '[{"name":"Receipt 1"},{"name":"Receipt 2"}]', '""', '<p>Hi [USER_NAME],</p>\r\n<p>Project Name [PROJECT_NAME]2</p>\r\n<p>[MESSAGES]</p>\r\n<p>Project Time [COMPLETION_TIME]</p>\r\n<p>Username: [USER_USERNAME]</p>\r\n<p>Password: [USER_PASSWORD] Thanks</p>', '<p>Hi [USER_NAME],</p>\r\n<p>Project Name [PROJECT_NAME]1</p>\r\n<p>[MESSAGES]</p>\r\n<p>Project Time [COMPLETION_TIME]</p>\r\n<p>Username: [USER_USERNAME]</p>\r\n<p>Password: [USER_PASSWORD] Thanks</p>', '[{"name":"Tax Form 1"},{"name":"Tax Form 2"}]');
+=======
+(1, '[{"name":"Invoice 1"},{"name":"Invoice 2"}]', '[{"name":"Expenses 1"},{"name":"Expenses 2"}]', '[{"name":"Receipt 1"},{"name":"Receipt 2"}]', '""', '<p>Hi [USER_NAME],</p>\r\n<p>Project Name [PROJECT_NAME]22</p>\r\n<p>[MESSAGES]</p>\r\n<p>Project Time [COMPLETION_TIME]</p>\r\n<p>Username: [USER_USERNAME]</p>\r\n<p>Password: [USER_PASSWORD] Thanks</p>', '<p>Hi [USER_NAME],</p>\r\n<p>Project Name [PROJECT_NAME]11</p>\r\n<p>[MESSAGES]</p>\r\n<p>Project Time [COMPLETION_TIME]</p>\r\n<p>Username: [USER_USERNAME]</p>\r\n<p>Password: [USER_PASSWORD] Thanks</p>', '[{"name":"Tax Form 1"},{"name":"Tax Form 2"}]');
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
 
 -- --------------------------------------------------------
 
 --
+<<<<<<< HEAD
 -- Table structure for table `d_dtax_email`
 --
 
@@ -535,16 +564,64 @@ CREATE TABLE `d_dtax_employees` (
   `operation` text NOT NULL,
   `about` text NOT NULL,
   `created` datetime NOT NULL,
+=======
+-- Table structure for table `d_dtax_customers`
+--
+
+CREATE TABLE `d_dtax_customers` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `userid` int(11) NOT NULL,
+  `cpaid` int(11) NOT NULL,
+  `company` varchar(255) NOT NULL,
+  `firstname` varchar(255) NOT NULL,
+  `midname` varchar(255) NOT NULL,
+  `lastname` varchar(255) NOT NULL,
+  `address1` varchar(255) NOT NULL,
+  `address2` varchar(255) NOT NULL,
+  `city` varchar(255) NOT NULL,
+  `state` varchar(255) NOT NULL,
+  `zip` varchar(255) NOT NULL,
+  `phone` varchar(255) NOT NULL,
+  `cell_phone` varchar(255) NOT NULL,
+  `fax` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `url` varchar(255) NOT NULL,
+  `federal_id` varchar(255) NOT NULL,
+  `first_tax` varchar(255) NOT NULL,
+  `first_fiscal` varchar(255) NOT NULL,
+  `income_tax_form` varchar(255) NOT NULL,
+  `tax_exempt_form` varchar(255) NOT NULL,
+  `logo` varchar(255) NOT NULL,
+  `serverip` varchar(255) NOT NULL,
+  `dbname` varchar(255) NOT NULL,
+  `dbuser` varchar(255) NOT NULL,
+  `dbpass` varchar(255) NOT NULL,
+  `banner` varchar(255) NOT NULL,
+  `notes` text NOT NULL,
+  `created` datetime NOT NULL,
+  `account` tinyint(2) NOT NULL,
+  `featured` tinyint(2) NOT NULL,
+  `location_id` int(11) NOT NULL,
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
   `created_by` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
+<<<<<<< HEAD
 -- Dumping data for table `d_dtax_employees`
 --
 
 INSERT INTO `d_dtax_employees` (`id`, `userid`, `company_id`, `employee`, `title`, `phone`, `email`, `image`, `operation`, `about`, `created`, `created_by`) VALUES
 (1, 912, 1, '43423zzuuzziiiiiiiiiiiiii', 'Dinh', '4234242442342', 'knigherrant@gm43ail.com', '43432', '4234324324242', '', '0000-00-00 00:00:00', 0),
 (2, 71, 1, 'tttt423423', 't42342', '424234234234234', 'ttt@tt.xom', '', '24242342424', '4324234', '2017-04-01 09:11:56', 70);
+=======
+-- Dumping data for table `d_dtax_customers`
+--
+
+INSERT INTO `d_dtax_customers` (`id`, `userid`, `cpaid`, `company`, `firstname`, `midname`, `lastname`, `address1`, `address2`, `city`, `state`, `zip`, `phone`, `cell_phone`, `fax`, `email`, `url`, `federal_id`, `first_tax`, `first_fiscal`, `income_tax_form`, `tax_exempt_form`, `logo`, `serverip`, `dbname`, `dbuser`, `dbpass`, `banner`, `notes`, `created`, `account`, `featured`, `location_id`, `created_by`) VALUES
+(1, 912, 1, '43423zzuuzziiiiiiiiiiiiii', 'Dinh', 'Van', 'Nam', '13 duong dinh dinh, tinh tinh dinh', '', 'Ho Chi MInh', '432', '432432', '4234242442342', '4242343442', '423432442422', 'knigherrant@gm43ail.com', '43432', '4234324234242', '4234324324242', '44233244242', '4242342342342342', 'images/dtax/1489327914_Captura.JPG', 'images/dtax/1489327914_1471514128408_3893.jpg', '3424242', '44242342342', '42342342342432', '423423434242', 'images/dtax/1489327914_1471514129462_3898.jpg', '4444444444444444444444444444444444444444444', '2017-03-21 17:17:02', 0, 0, 2, 911),
+(2, 0, 1, 'tttt', 't', 't', 't', '', '', '', '', '', '', '', '', 'ttt@tt.xom', '', '', '', '', '', '', '', '', '', '', '', '', '', '2017-03-21 15:14:59', 0, 0, 0, 911);
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
 
 -- --------------------------------------------------------
 
@@ -630,7 +707,12 @@ INSERT INTO `d_dtax_invoices` (`id`, `cpaid`, `title`, `company`, `category`, `s
 
 CREATE TABLE `d_dtax_links` (
   `id` int(11) UNSIGNED NOT NULL,
+<<<<<<< HEAD
   `company_id` int(255) NOT NULL,
+=======
+  `company` varchar(255) NOT NULL,
+  `cpaid` int(11) UNSIGNED NOT NULL,
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
   `title` varchar(255) NOT NULL,
   `image` varchar(255) NOT NULL,
   `link` varchar(255) NOT NULL,
@@ -643,8 +725,13 @@ CREATE TABLE `d_dtax_links` (
 -- Dumping data for table `d_dtax_links`
 --
 
+<<<<<<< HEAD
 INSERT INTO `d_dtax_links` (`id`, `company_id`, `title`, `image`, `link`, `created`, `state`, `created_by`) VALUES
 (1, 1, 'tessttt', '', 'http://phpkungfu.club/advertise', '0000-00-00 00:00:00', 1, 70);
+=======
+INSERT INTO `d_dtax_links` (`id`, `company`, `cpaid`, `title`, `image`, `link`, `created`, `state`, `created_by`) VALUES
+(1, '', 0, 'tessttt', '', 'http://phpkungfu.club/advertise', '0000-00-00 00:00:00', 1, 0);
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
 
 -- --------------------------------------------------------
 
@@ -761,10 +848,14 @@ CREATE TABLE `d_dtax_taxreturns` (
   `tax_license_id` varchar(255) NOT NULL,
   `tax_issue_date` datetime NOT NULL,
   `tax_expiration_date` datetime NOT NULL,
+<<<<<<< HEAD
   `tax_issue_state` varchar(255) NOT NULL,
   `tax_employment` varchar(255) NOT NULL,
   `tax_cellphone` varchar(255) NOT NULL,
   `tax_cellprovider` varchar(255) NOT NULL,
+=======
+  `tax_occupation` varchar(255) NOT NULL,
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
   `tax_dependents` varchar(255) NOT NULL,
   `spouse_firstname` varchar(255) NOT NULL,
   `spouse_midname` varchar(255) NOT NULL,
@@ -775,6 +866,7 @@ CREATE TABLE `d_dtax_taxreturns` (
   `spouse_license_id` varchar(255) NOT NULL,
   `spouse_issue_date` datetime NOT NULL,
   `spouse_expiration_date` datetime NOT NULL,
+<<<<<<< HEAD
   `spouse_issue_state` varchar(255) NOT NULL,
   `spouse_employment` varchar(255) NOT NULL,
   `spouse_cellphone` varchar(255) NOT NULL,
@@ -785,6 +877,16 @@ CREATE TABLE `d_dtax_taxreturns` (
   `city` varchar(255) NOT NULL,
   `state` varchar(255) NOT NULL,
   `zip` varchar(255) NOT NULL,
+=======
+  `spouse_occupation` varchar(255) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `apartment` varchar(255) NOT NULL,
+  `city` varchar(255) NOT NULL,
+  `state` varchar(255) NOT NULL,
+  `zip` varchar(255) NOT NULL,
+  `phone` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
   `dependent1_firstname` varchar(255) NOT NULL,
   `dependent1_midname` varchar(255) NOT NULL,
   `dependent1_lastname` varchar(255) NOT NULL,
@@ -829,9 +931,15 @@ CREATE TABLE `d_dtax_taxreturns` (
   `company` varchar(255) NOT NULL,
   `company_location` varchar(255) NOT NULL,
   `company_email` varchar(255) NOT NULL,
+<<<<<<< HEAD
   `employee` varchar(255) NOT NULL,
   `employee_location` varchar(255) NOT NULL,
   `employee_email` varchar(255) NOT NULL,
+=======
+  `cpa` varchar(255) NOT NULL,
+  `d_location` varchar(255) NOT NULL,
+  `d_email` varchar(255) NOT NULL,
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
   `created` datetime NOT NULL,
   `created_by` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -840,10 +948,16 @@ CREATE TABLE `d_dtax_taxreturns` (
 -- Dumping data for table `d_dtax_taxreturns`
 --
 
+<<<<<<< HEAD
 INSERT INTO `d_dtax_taxreturns` (`id`, `tax_firstname`, `tax_midname`, `tax_lastname`, `tax_birthday`, `tax_social_number`, `tax_filing_status`, `tax_license_id`, `tax_issue_date`, `tax_expiration_date`, `tax_issue_state`, `tax_employment`, `tax_cellphone`, `tax_cellprovider`, `tax_dependents`, `spouse_firstname`, `spouse_midname`, `spouse_lastname`, `spouse_birthday`, `spouse_social_number`, `spouse_filing_status`, `spouse_license_id`, `spouse_issue_date`, `spouse_expiration_date`, `spouse_issue_state`, `spouse_employment`, `spouse_cellphone`, `address`, `apartment`, `email`, `phone`, `city`, `state`, `zip`, `dependent1_firstname`, `dependent1_midname`, `dependent1_lastname`, `dependent1_birthday`, `dependent1_social_number`, `dependent1_relationship`, `dependent1_is_student`, `dependent1_is_disable`, `dependent2_firstname`, `dependent2_midname`, `dependent2_lastname`, `dependent2_birthday`, `dependent2_social_number`, `dependent2_relationship`, `dependent2_is_student`, `dependent2_is_disable`, `dependent3_firstname`, `dependent3_midname`, `dependent3_lastname`, `dependent3_birthday`, `dependent3_social_number`, `dependent3_relationship`, `dependent3_is_student`, `dependent3_is_disable`, `dependent4_firstname`, `dependent4_midname`, `dependent4_lastname`, `dependent4_birthday`, `dependent4_social_number`, `dependent4_relationship`, `dependent4_is_student`, `dependent4_is_disable`, `dependent5_firstname`, `dependent5_midname`, `dependent5_lastname`, `dependent5_birthday`, `dependent5_social_number`, `dependent5_relationship`, `dependent5_is_student`, `dependent5_is_disable`, `image`, `company`, `company_location`, `company_email`, `employee`, `employee_location`, `employee_email`, `created`, `created_by`) VALUES
 (1, '4234211', '423423111', '4234111', '2017-03-18 00:00:00', '42341111', '4324231111', '423423111', '2017-03-16 00:00:00', '2011-11-11 00:00:00', '', '', '4242111', '', '4234231111', '42422222', '4242222', '423423222', '0000-00-00 00:00:00', '423432222222', '424232222', '423422222', '2017-03-18 00:00:00', '2017-03-23 00:00:00', '4234232222', '', '', '4242333', '4242342333', '', '', '42342333', '423423333', '423423333', '424236444', '423423444', '4242444', '2017-03-17 00:00:00', '42423444', '42423444', '0', '0', '555555555', '55555555555555', '5555555555555', '2017-03-18 00:00:00', '555555555555', '055555555555555555555', '0', '0', '66666666666', '6666666666666666', '66666666666666666666', '2017-03-18 00:00:00', '6666666666666', '06666666666666666', '0', '0', '77777777777', '777777777777777777', '777777777777777777', '2017-03-24 00:00:00', '77777777777777', '07777777777777', '0', '0', '8888888888888888888888', '88888888888888888', '8888888888888', '2017-03-17 00:00:00', '8888888888888', '088888888888888', '0', '0', '', '9999', '9999', '9999', '999', '9999', '99999', '2017-03-18 15:01:02', 0),
 (2, '444', '555', '6666', '2017-03-21 00:00:00', '4234', '77', '888', '2017-03-21 00:00:00', '2017-03-22 00:00:00', '', '', '99', '', '0000', '31231', '312', '3131', '0000-00-00 00:00:00', '313', '31', '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00 00:00:00', '', '', '0', '0', '', '', '', '0000-00-00 00:00:00', '', '', '0', '0', '', '', '', '0000-00-00 00:00:00', '', '', '0', '0', '', '', '', '0000-00-00 00:00:00', '', '', '0', '0', '', '', '', '0000-00-00 00:00:00', '', '', '0', '0', '', '', '', '', '', '', '', '2017-03-21 15:21:12', 911),
 (3, '423', '423', '423', '0000-00-00 00:00:00', '423', '423', '423', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', '423', '423', '423', '432', '423', '423', '423423222432', '0000-00-00 00:00:00', '432', '', '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', '', '', '', '', '', '', '', '', '', '11', '22', '33', '2017-04-14 00:00:00', '44', '55', '0', '0', '432', '42', '', '2017-04-01 00:00:00', '432', '23', '0', '0', '', '', '', '0000-00-00 00:00:00', '', '', '0', '0', '', '', '', '0000-00-00 00:00:00', '', '', '0', '0', '432', '423', '423', '0000-00-00 00:00:00', '423', '423', '0', '0', '', '423', '423', '423', '432', '432', '42', '2017-04-01 06:52:36', 70);
+=======
+INSERT INTO `d_dtax_taxreturns` (`id`, `tax_firstname`, `tax_midname`, `tax_lastname`, `tax_birthday`, `tax_social_number`, `tax_filing_status`, `tax_license_id`, `tax_issue_date`, `tax_expiration_date`, `tax_occupation`, `tax_dependents`, `spouse_firstname`, `spouse_midname`, `spouse_lastname`, `spouse_birthday`, `spouse_social_number`, `spouse_filing_status`, `spouse_license_id`, `spouse_issue_date`, `spouse_expiration_date`, `spouse_occupation`, `address`, `apartment`, `city`, `state`, `zip`, `phone`, `email`, `dependent1_firstname`, `dependent1_midname`, `dependent1_lastname`, `dependent1_birthday`, `dependent1_social_number`, `dependent1_relationship`, `dependent1_is_student`, `dependent1_is_disable`, `dependent2_firstname`, `dependent2_midname`, `dependent2_lastname`, `dependent2_birthday`, `dependent2_social_number`, `dependent2_relationship`, `dependent2_is_student`, `dependent2_is_disable`, `dependent3_firstname`, `dependent3_midname`, `dependent3_lastname`, `dependent3_birthday`, `dependent3_social_number`, `dependent3_relationship`, `dependent3_is_student`, `dependent3_is_disable`, `dependent4_firstname`, `dependent4_midname`, `dependent4_lastname`, `dependent4_birthday`, `dependent4_social_number`, `dependent4_relationship`, `dependent4_is_student`, `dependent4_is_disable`, `dependent5_firstname`, `dependent5_midname`, `dependent5_lastname`, `dependent5_birthday`, `dependent5_social_number`, `dependent5_relationship`, `dependent5_is_student`, `dependent5_is_disable`, `image`, `company`, `company_location`, `company_email`, `cpa`, `d_location`, `d_email`, `created`, `created_by`) VALUES
+(1, '4234211', '423423111', '4234111', '2017-03-18 00:00:00', '42341111', '4324231111', '423423111', '2017-03-16 00:00:00', '2011-11-11 00:00:00', '4242111', '4234231111', '42422222', '4242222', '423423222', '0000-00-00 00:00:00', '423432222222', '424232222', '423422222', '2017-03-18 00:00:00', '2017-03-23 00:00:00', '4234232222', '4242333', '4242342333', '42342333', '423423333', '423423333', '423423333', '42423433', '424236444', '423423444', '4242444', '2017-03-17 00:00:00', '42423444', '42423444', '0', '0', '555555555', '55555555555555', '5555555555555', '2017-03-18 00:00:00', '555555555555', '055555555555555555555', '0', '0', '66666666666', '6666666666666666', '66666666666666666666', '2017-03-18 00:00:00', '6666666666666', '06666666666666666', '0', '0', '77777777777', '777777777777777777', '777777777777777777', '2017-03-24 00:00:00', '77777777777777', '07777777777777', '0', '0', '8888888888888888888888', '88888888888888888', '8888888888888', '2017-03-17 00:00:00', '8888888888888', '088888888888888', '0', '0', '', '9999', '9999', '9999', '999', '9999', '99999', '2017-03-18 15:01:02', 0),
+(2, '444', '555', '6666', '2017-03-21 00:00:00', '4234', '77', '888', '2017-03-21 00:00:00', '2017-03-22 00:00:00', '99', '0000', '31231', '312', '3131', '0000-00-00 00:00:00', '313', '31', '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00 00:00:00', '', '', '0', '0', '', '', '', '0000-00-00 00:00:00', '', '', '0', '0', '', '', '', '0000-00-00 00:00:00', '', '', '0', '0', '', '', '', '0000-00-00 00:00:00', '', '', '0', '0', '', '', '', '0000-00-00 00:00:00', '', '', '0', '0', '', '', '', '', '', '', '', '2017-03-21 15:21:12', 911);
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
 
 -- --------------------------------------------------------
 
@@ -897,7 +1011,11 @@ INSERT INTO `d_extensions` (`extension_id`, `name`, `type`, `element`, `folder`,
 (19, 'com_search', 'component', 'com_search', '', 1, 1, 1, 0, '{"name":"com_search","type":"component","creationDate":"April 2006","author":"Joomla! Project","copyright":"(C) 2005 - 2016 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"3.0.0","description":"COM_SEARCH_XML_DESCRIPTION","group":"","filename":"search"}', '{"enabled":"0","show_date":"1"}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (20, 'com_templates', 'component', 'com_templates', '', 1, 1, 1, 1, '{"name":"com_templates","type":"component","creationDate":"April 2006","author":"Joomla! Project","copyright":"(C) 2005 - 2016 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"3.0.0","description":"COM_TEMPLATES_XML_DESCRIPTION","group":""}', '{"template_positions_display":"0","upload_limit":"10","image_formats":"gif,bmp,jpg,jpeg,png","source_formats":"txt,less,ini,xml,js,php,css","font_formats":"woff,ttf,otf","compressed_formats":"zip"}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (22, 'com_content', 'component', 'com_content', '', 1, 1, 0, 1, '{"name":"com_content","type":"component","creationDate":"April 2006","author":"Joomla! Project","copyright":"(C) 2005 - 2016 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"3.0.0","description":"COM_CONTENT_XML_DESCRIPTION","group":"","filename":"content"}', '{"article_layout":"_:default","show_title":"1","link_titles":"1","show_intro":"1","show_category":"1","link_category":"1","show_parent_category":"0","link_parent_category":"0","show_author":"1","link_author":"0","show_create_date":"0","show_modify_date":"0","show_publish_date":"1","show_item_navigation":"1","show_vote":"0","show_readmore":"1","show_readmore_title":"1","readmore_limit":"100","show_icons":"1","show_print_icon":"1","show_email_icon":"1","show_hits":"1","show_noauth":"0","show_publishing_options":"1","show_article_options":"1","save_history":"1","history_limit":10,"show_urls_images_frontend":"0","show_urls_images_backend":"1","targeta":0,"targetb":0,"targetc":0,"float_intro":"left","float_fulltext":"left","category_layout":"_:blog","show_category_title":"0","show_description":"0","show_description_image":"0","maxLevel":"1","show_empty_categories":"0","show_no_articles":"1","show_subcat_desc":"1","show_cat_num_articles":"0","show_base_description":"1","maxLevelcat":"-1","show_empty_categories_cat":"0","show_subcat_desc_cat":"1","show_cat_num_articles_cat":"1","num_leading_articles":"1","num_intro_articles":"4","num_columns":"2","num_links":"4","multi_column_order":"0","show_subcategory_content":"0","show_pagination_limit":"1","filter_field":"hide","show_headings":"1","list_show_date":"0","date_format":"","list_show_hits":"1","list_show_author":"1","orderby_pri":"order","orderby_sec":"rdate","order_date":"published","show_pagination":"2","show_pagination_results":"1","show_feed_link":"1","feed_summary":"0"}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+<<<<<<< HEAD
 (23, 'com_config', 'component', 'com_config', '', 1, 1, 0, 1, '{"name":"com_config","type":"component","creationDate":"April 2006","author":"Joomla! Project","copyright":"(C) 2005 - 2016 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"3.0.0","description":"COM_CONFIG_XML_DESCRIPTION","group":""}', '{"filters":{"1":{"filter_type":"NH","filter_tags":"","filter_attributes":""},"9":{"filter_type":"BL","filter_tags":"","filter_attributes":""},"6":{"filter_type":"BL","filter_tags":"","filter_attributes":""},"7":{"filter_type":"NONE","filter_tags":"","filter_attributes":""},"2":{"filter_type":"NH","filter_tags":"","filter_attributes":""},"3":{"filter_type":"BL","filter_tags":"","filter_attributes":""},"4":{"filter_type":"BL","filter_tags":"","filter_attributes":""},"5":{"filter_type":"BL","filter_tags":"","filter_attributes":""},"8":{"filter_type":"NONE","filter_tags":"","filter_attributes":""}}}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+=======
+(23, 'com_config', 'component', 'com_config', '', 1, 1, 0, 1, '{"name":"com_config","type":"component","creationDate":"April 2006","author":"Joomla! Project","copyright":"(C) 2005 - 2016 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"3.0.0","description":"COM_CONFIG_XML_DESCRIPTION","group":""}', '{"filters":{"1":{"filter_type":"NH","filter_tags":"","filter_attributes":""},"6":{"filter_type":"BL","filter_tags":"","filter_attributes":""},"7":{"filter_type":"NONE","filter_tags":"","filter_attributes":""},"2":{"filter_type":"NH","filter_tags":"","filter_attributes":""},"3":{"filter_type":"BL","filter_tags":"","filter_attributes":""},"4":{"filter_type":"BL","filter_tags":"","filter_attributes":""},"5":{"filter_type":"BL","filter_tags":"","filter_attributes":""},"10":{"filter_type":"BL","filter_tags":"","filter_attributes":""},"12":{"filter_type":"BL","filter_tags":"","filter_attributes":""},"8":{"filter_type":"NONE","filter_tags":"","filter_attributes":""}}}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
 (24, 'com_redirect', 'component', 'com_redirect', '', 1, 1, 0, 1, '{"name":"com_redirect","type":"component","creationDate":"April 2006","author":"Joomla! Project","copyright":"(C) 2005 - 2016 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"3.0.0","description":"COM_REDIRECT_XML_DESCRIPTION","group":""}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (25, 'com_users', 'component', 'com_users', '', 1, 1, 0, 1, '{"name":"com_users","type":"component","creationDate":"April 2006","author":"Joomla! Project","copyright":"(C) 2005 - 2016 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"3.0.0","description":"COM_USERS_XML_DESCRIPTION","group":"","filename":"users"}', '{"allowUserRegistration":"0","new_usertype":"2","guest_usergroup":"9","sendpassword":"1","useractivation":"2","mail_to_admin":"1","captcha":"","frontend_userparams":"1","site_language":"0","change_login_name":"0","reset_count":"10","reset_time":"1","minimum_length":"4","minimum_integers":"0","minimum_symbols":"0","minimum_uppercase":"0","save_history":"1","history_limit":5,"mailSubjectPrefix":"","mailBodySuffix":""}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (27, 'com_finder', 'component', 'com_finder', '', 1, 1, 0, 0, '{"name":"com_finder","type":"component","creationDate":"August 2011","author":"Joomla! Project","copyright":"(C) 2005 - 2016 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"3.0.0","description":"COM_FINDER_XML_DESCRIPTION","group":"","filename":"finder"}', '{"show_description":"1","description_length":255,"allow_empty_query":"0","show_url":"1","show_advanced":"1","expand_advanced":"0","show_date_filters":"0","highlight_terms":"1","opensearch_name":"","opensearch_description":"","batch_size":"50","memory_table_limit":30000,"title_multiplier":"1.7","text_multiplier":"0.7","meta_multiplier":"1.2","path_multiplier":"2.0","misc_multiplier":"0.3","stemmer":"snowball"}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
@@ -1001,7 +1119,11 @@ INSERT INTO `d_extensions` (`extension_id`, `name`, `type`, `element`, `folder`,
 (449, 'plg_authentication_cookie', 'plugin', 'cookie', 'authentication', 0, 1, 1, 0, '{"name":"plg_authentication_cookie","type":"plugin","creationDate":"July 2013","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2016 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"3.0.0","description":"PLG_AUTH_COOKIE_XML_DESCRIPTION","group":"","filename":"cookie"}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (450, 'plg_twofactorauth_yubikey', 'plugin', 'yubikey', 'twofactorauth', 0, 0, 1, 0, '{"name":"plg_twofactorauth_yubikey","type":"plugin","creationDate":"September 2013","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2016 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"3.2.0","description":"PLG_TWOFACTORAUTH_YUBIKEY_XML_DESCRIPTION","group":"","filename":"yubikey"}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (451, 'plg_search_tags', 'plugin', 'tags', 'search', 0, 1, 1, 0, '{"name":"plg_search_tags","type":"plugin","creationDate":"March 2014","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2016 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"3.0.0","description":"PLG_SEARCH_TAGS_XML_DESCRIPTION","group":"","filename":"tags"}', '{"search_limit":"50","show_tagged_items":"1"}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+<<<<<<< HEAD
 (452, 'plg_system_updatenotification', 'plugin', 'updatenotification', 'system', 0, 1, 1, 0, '{"name":"plg_system_updatenotification","type":"plugin","creationDate":"May 2015","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2016 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"3.5.0","description":"PLG_SYSTEM_UPDATENOTIFICATION_XML_DESCRIPTION","group":"","filename":"updatenotification"}', '{"lastrun":1491312061}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+=======
+(452, 'plg_system_updatenotification', 'plugin', 'updatenotification', 'system', 0, 1, 1, 0, '{"name":"plg_system_updatenotification","type":"plugin","creationDate":"May 2015","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2016 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"3.5.0","description":"PLG_SYSTEM_UPDATENOTIFICATION_XML_DESCRIPTION","group":"","filename":"updatenotification"}', '{"lastrun":1490796795}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
 (453, 'plg_editors-xtd_module', 'plugin', 'module', 'editors-xtd', 0, 1, 1, 0, '{"name":"plg_editors-xtd_module","type":"plugin","creationDate":"October 2015","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2016 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"3.5.0","description":"PLG_MODULE_XML_DESCRIPTION","group":"","filename":"module"}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (454, 'plg_system_stats', 'plugin', 'stats', 'system', 0, 1, 1, 0, '{"name":"plg_system_stats","type":"plugin","creationDate":"November 2013","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2016 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"3.5.0","description":"PLG_SYSTEM_STATS_XML_DESCRIPTION","group":"","filename":"stats"}', '{"mode":3,"lastrun":1490796816,"unique_id":"16cb9a97db9087b5335d9275d7c974e1039f1d71","interval":12}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (455, 'plg_installer_packageinstaller', 'plugin', 'packageinstaller', 'installer', 0, 1, 1, 1, '{"name":"plg_installer_packageinstaller","type":"plugin","creationDate":"May 2016","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2016 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"3.6.0","description":"PLG_INSTALLER_PACKAGEINSTALLER_PLUGIN_XML_DESCRIPTION","group":"","filename":"packageinstaller"}', '', '', '', 0, '0000-00-00 00:00:00', 1, 0),
@@ -1559,7 +1681,11 @@ CREATE TABLE `d_menu` (
 --
 
 INSERT INTO `d_menu` (`id`, `menutype`, `title`, `alias`, `note`, `path`, `link`, `type`, `published`, `parent_id`, `level`, `component_id`, `checked_out`, `checked_out_time`, `browserNav`, `access`, `img`, `template_style_id`, `params`, `lft`, `rgt`, `home`, `language`, `client_id`) VALUES
+<<<<<<< HEAD
 (1, '', 'Menu_Item_Root', 'root', '', '', '', '', 1, 0, 0, 0, 0, '0000-00-00 00:00:00', 0, 0, '', 0, '', 0, 57, 0, '*', 0),
+=======
+(1, '', 'Menu_Item_Root', 'root', '', '', '', '', 1, 0, 0, 0, 0, '0000-00-00 00:00:00', 0, 0, '', 0, '', 0, 55, 0, '*', 0),
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
 (2, 'menu', 'com_banners', 'Banners', '', 'Banners', 'index.php?option=com_banners', 'component', 0, 1, 1, 4, 0, '0000-00-00 00:00:00', 0, 0, 'class:banners', 0, '', 1, 10, 0, '*', 1),
 (3, 'menu', 'com_banners', 'Banners', '', 'Banners/Banners', 'index.php?option=com_banners', 'component', 0, 2, 2, 4, 0, '0000-00-00 00:00:00', 0, 0, 'class:banners', 0, '', 2, 3, 0, '*', 1),
 (4, 'menu', 'com_banners_categories', 'Categories', '', 'Banners/Categories', 'index.php?option=com_categories&extension=com_banners', 'component', 0, 2, 2, 6, 0, '0000-00-00 00:00:00', 0, 0, 'class:banners-cat', 0, '', 4, 5, 0, '*', 1),
@@ -1586,8 +1712,12 @@ INSERT INTO `d_menu` (`id`, `menutype`, `title`, `alias`, `note`, `path`, `link`
 (116, 'main', 'COM_DTAX_TITLE_TAXRETURNS', 'com-dtax-title-taxreturns', '', 'com-dtax/com-dtax-title-taxreturns', 'index.php?option=com_dtax&view=taxreturns', 'component', 0, 113, 2, 10001, 0, '0000-00-00 00:00:00', 0, 1, 'class:component', 0, '{}', 46, 47, 0, '', 1),
 (117, 'main', 'COM_DTAX_TITLE_EMAIL', 'com-dtax-title-email', '', 'com-dtax/com-dtax-title-email', 'index.php?option=com_dtax&view=emails', 'component', 0, 113, 2, 10001, 0, '0000-00-00 00:00:00', 0, 1, 'class:component', 0, '{}', 48, 49, 0, '', 1),
 (118, 'main', 'COM_DTAX_TITLE_MENUS', 'com-dtax-title-menus', '', 'com-dtax/com-dtax-title-menus', 'index.php?option=com_dtax&view=menus', 'component', 0, 113, 2, 10001, 0, '0000-00-00 00:00:00', 0, 1, 'class:component', 0, '{}', 50, 51, 0, '', 1),
+<<<<<<< HEAD
 (119, 'main', 'COM_DTAX_TITLE_CONFIG', 'com-dtax-title-config', '', 'com-dtax/com-dtax-title-config', 'index.php?option=com_dtax&view=configs', 'component', 0, 113, 2, 10001, 0, '0000-00-00 00:00:00', 0, 1, 'class:component', 0, '{}', 52, 53, 0, '', 1),
 (120, 'mainmenu', 'Dtax', 'dtax', '', 'dtax', 'index.php?option=com_dtax&view=homepage', 'component', 1, 1, 1, 10001, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"menu_show":1,"page_title":"","show_page_heading":"","page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 55, 56, 0, '*', 0);
+=======
+(119, 'main', 'COM_DTAX_TITLE_CONFIG', 'com-dtax-title-config', '', 'com-dtax/com-dtax-title-config', 'index.php?option=com_dtax&view=configs', 'component', 0, 113, 2, 10001, 0, '0000-00-00 00:00:00', 0, 1, 'class:component', 0, '{}', 52, 53, 0, '', 1);
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
 
 -- --------------------------------------------------------
 
@@ -1672,7 +1802,11 @@ CREATE TABLE `d_modules` (
 --
 
 INSERT INTO `d_modules` (`id`, `asset_id`, `title`, `note`, `content`, `ordering`, `position`, `checked_out`, `checked_out_time`, `publish_up`, `publish_down`, `published`, `module`, `access`, `showtitle`, `params`, `client_id`, `language`) VALUES
+<<<<<<< HEAD
 (1, 39, 'Main Menu', '', '', 1, 'position-7', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_menu', 1, 1, '{"menutype":"mainmenu","base":"","startLevel":"1","endLevel":"0","showAllChildren":"0","tag_id":"","class_sfx":"","window_open":"","layout":"_:default","moduleclass_sfx":"_menu","cache":"1","cache_time":"900","cachemode":"itemid","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
+=======
+(1, 39, 'Main Menu', '', '', 1, 'position-7', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_menu', 1, 1, '{"menutype":"mainmenu","startLevel":"0","endLevel":"0","showAllChildren":"0","tag_id":"","class_sfx":"","window_open":"","layout":"","moduleclass_sfx":"_menu","cache":"1","cache_time":"900","cachemode":"itemid"}', 0, '*'),
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
 (2, 40, 'Login', '', '', 1, 'login', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_login', 1, 1, '', 1, '*'),
 (3, 41, 'Popular Articles', '', '', 3, 'cpanel', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_popular', 3, 1, '{"count":"5","catid":"","user_id":"0","layout":"_:default","moduleclass_sfx":"","cache":"0"}', 1, '*'),
 (4, 42, 'Recently Added Articles', '', '', 4, 'cpanel', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_latest', 3, 1, '{"count":"5","ordering":"c_dsc","catid":"","user_id":"0","layout":"_:default","moduleclass_sfx":"","cache":"0"}', 1, '*'),
@@ -1683,8 +1817,13 @@ INSERT INTO `d_modules` (`id`, `asset_id`, `title`, `note`, `content`, `ordering
 (13, 47, 'Admin Submenu', '', '', 1, 'submenu', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_submenu', 3, 1, '', 1, '*'),
 (14, 48, 'User Status', '', '', 2, 'status', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_status', 3, 1, '', 1, '*'),
 (15, 49, 'Title', '', '', 1, 'title', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_title', 3, 1, '', 1, '*'),
+<<<<<<< HEAD
 (16, 50, 'Login Form', '', '', 1, 'position-7', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_login', 1, 1, '{"pretext":"","posttext":"","login":"","logout":"","greeting":"1","name":"0","usesecure":"0","usetext":"0","layout":"_:default","moduleclass_sfx":"","cache":"0","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
 (17, 51, 'Breadcrumbs', '', '', 1, 'position-2', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 'mod_breadcrumbs', 1, 1, '{"moduleclass_sfx":"","showHome":"1","homeText":"","showComponent":"1","separator":"","cache":"0","cache_time":"0","cachemode":"itemid"}', 0, '*'),
+=======
+(16, 50, 'Login Form', '', '', 7, 'position-7', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_login', 1, 1, '{"greeting":"1","name":"0"}', 0, '*'),
+(17, 51, 'Breadcrumbs', '', '', 1, 'position-2', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_breadcrumbs', 1, 1, '{"moduleclass_sfx":"","showHome":"1","homeText":"","showComponent":"1","separator":"","cache":"0","cache_time":"0","cachemode":"itemid"}', 0, '*'),
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
 (79, 52, 'Multilanguage status', '', '', 1, 'status', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 'mod_multilangstatus', 3, 1, '{"layout":"_:default","moduleclass_sfx":"","cache":"0"}', 1, '*'),
 (86, 53, 'Joomla Version', '', '', 1, 'footer', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_version', 3, 1, '{"format":"short","product":"1","layout":"_:default","moduleclass_sfx":"","cache":"0"}', 1, '*');
 
@@ -1704,7 +1843,11 @@ CREATE TABLE `d_modules_menu` (
 --
 
 INSERT INTO `d_modules_menu` (`moduleid`, `menuid`) VALUES
+<<<<<<< HEAD
 (1, 101),
+=======
+(1, 0),
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
 (2, 0),
 (3, 0),
 (4, 0),
@@ -1717,7 +1860,11 @@ INSERT INTO `d_modules_menu` (`moduleid`, `menuid`) VALUES
 (13, 0),
 (14, 0),
 (15, 0),
+<<<<<<< HEAD
 (16, 101),
+=======
+(16, 0),
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
 (17, 0),
 (79, 0),
 (86, 0);
@@ -1865,8 +2012,12 @@ CREATE TABLE `d_session` (
 --
 
 INSERT INTO `d_session` (`session_id`, `client_id`, `guest`, `time`, `data`, `userid`, `username`) VALUES
+<<<<<<< HEAD
 ('u6hag1c13lu3624ohaqa75k342', 0, 0, '1491323050', 'joomla|s:1012:"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjE6e3M6OToiX19kZWZhdWx0IjtPOjg6InN0ZENsYXNzIjo0OntzOjc6InNlc3Npb24iO086ODoic3RkQ2xhc3MiOjM6e3M6NzoiY291bnRlciI7aTozNTtzOjU6InRpbWVyIjtPOjg6InN0ZENsYXNzIjozOntzOjU6InN0YXJ0IjtpOjE0OTEzMTIwNTk7czo0OiJsYXN0IjtpOjE0OTEzMjIwMzg7czozOiJub3ciO2k6MTQ5MTMyMzA1MDt9czo1OiJ0b2tlbiI7czozMjoicU9WRGRLUXFlUmI4Z2syZnBYVDlGTG5VUmFGa3U5a04iO31zOjg6InJlZ2lzdHJ5IjtPOjI0OiJKb29tbGFcUmVnaXN0cnlcUmVnaXN0cnkiOjM6e3M6NzoiACoAZGF0YSI7Tzo4OiJzdGRDbGFzcyI6MTp7czo1OiJ1c2VycyI7Tzo4OiJzdGRDbGFzcyI6MTp7czo1OiJsb2dpbiI7Tzo4OiJzdGRDbGFzcyI6MTp7czo0OiJmb3JtIjtPOjg6InN0ZENsYXNzIjoyOntzOjQ6ImRhdGEiO2E6MDp7fXM6NjoicmV0dXJuIjtzOjM2OiJodHRwOi8vbG9jYWxob3N0L2R0YXgvaW5kZXgucGhwL2R0YXgiO319fX1zOjE0OiIAKgBpbml0aWFsaXplZCI7YjoxO3M6OToic2VwYXJhdG9yIjtzOjE6Ii4iO31zOjQ6InVzZXIiO086NToiSlVzZXIiOjE6e3M6MjoiaWQiO3M6MjoiNzAiO31zOjExOiJhcHBsaWNhdGlvbiI7Tzo4OiJzdGRDbGFzcyI6MTp7czo1OiJxdWV1ZSI7Tjt9fX1zOjE0OiIAKgBpbml0aWFsaXplZCI7YjowO3M6OToic2VwYXJhdG9yIjtzOjE6Ii4iO30=";', 70, 'admin'),
 ('vfv2lmkp3h512d9fk8f4l4rit4', 1, 0, '1491325679', 'joomla|s:1024:"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjE6e3M6OToiX19kZWZhdWx0IjtPOjg6InN0ZENsYXNzIjozOntzOjc6InNlc3Npb24iO086ODoic3RkQ2xhc3MiOjM6e3M6NzoiY291bnRlciI7aToxODtzOjU6InRpbWVyIjtPOjg6InN0ZENsYXNzIjozOntzOjU6InN0YXJ0IjtpOjE0OTEzMTIwNjA7czo0OiJsYXN0IjtpOjE0OTEzMjIwNzg7czozOiJub3ciO2k6MTQ5MTMyNTY3OTt9czo1OiJ0b2tlbiI7czozMjoiNmR5TVg4QjRWYlRNRWJOaDVFbWtKNXJzU2phTXhRYkoiO31zOjg6InJlZ2lzdHJ5IjtPOjI0OiJKb29tbGFcUmVnaXN0cnlcUmVnaXN0cnkiOjM6e3M6NzoiACoAZGF0YSI7Tzo4OiJzdGRDbGFzcyI6MTp7czo4OiJjb21fZHRheCI7Tzo4OiJzdGRDbGFzcyI6MTp7czo0OiJlZGl0IjtPOjg6InN0ZENsYXNzIjozOntzOjc6ImNvbXBhbnkiO086ODoic3RkQ2xhc3MiOjE6e3M6NDoiZGF0YSI7Tjt9czo5OiJ0YXhyZXR1cm4iO086ODoic3RkQ2xhc3MiOjE6e3M6NDoiZGF0YSI7Tjt9czo4OiJlbXBsb3llZSI7Tzo4OiJzdGRDbGFzcyI6Mjp7czoyOiJpZCI7YToxOntpOjA7aToyO31zOjQ6ImRhdGEiO047fX19fXM6MTQ6IgAqAGluaXRpYWxpemVkIjtiOjE7czo5OiJzZXBhcmF0b3IiO3M6MToiLiI7fXM6NDoidXNlciI7Tzo1OiJKVXNlciI6MTp7czoyOiJpZCI7czoyOiI3MCI7fX19czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjk6InNlcGFyYXRvciI7czoxOiIuIjt9";', 70, 'admin');
+=======
+('psj4vsvaieem0ir08vps2j6ol2', 1, 0, '1490804598', 'joomla|s:720:"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjE6e3M6OToiX19kZWZhdWx0IjtPOjg6InN0ZENsYXNzIjozOntzOjc6InNlc3Npb24iO086ODoic3RkQ2xhc3MiOjM6e3M6NzoiY291bnRlciI7aTo0O3M6NToidG9rZW4iO3M6MzI6IlluY3l3VUZTNW5zSTRKTjBVM3dDYWJzVFQ1NzJsOXJNIjtzOjU6InRpbWVyIjtPOjg6InN0ZENsYXNzIjozOntzOjU6InN0YXJ0IjtpOjE0OTA4MDQ1MTg7czo0OiJsYXN0IjtpOjE0OTA4MDQ1MTg7czozOiJub3ciO2k6MTQ5MDgwNDU5ODt9fXM6ODoicmVnaXN0cnkiO086MjQ6Ikpvb21sYVxSZWdpc3RyeVxSZWdpc3RyeSI6Mzp7czo3OiIAKgBkYXRhIjtPOjg6InN0ZENsYXNzIjowOnt9czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MTtzOjk6InNlcGFyYXRvciI7czoxOiIuIjt9czo0OiJ1c2VyIjtPOjU6IkpVc2VyIjoxOntzOjI6ImlkIjtzOjI6IjcwIjt9fX1zOjE0OiIAKgBpbml0aWFsaXplZCI7YjowO3M6OToic2VwYXJhdG9yIjtzOjE6Ii4iO30=";', 70, 'admin');
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
 
 -- --------------------------------------------------------
 
@@ -2035,6 +2186,88 @@ CREATE TABLE `d_updates` (
   `extra_query` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Available Updates';
 
+<<<<<<< HEAD
+=======
+--
+-- Dumping data for table `d_updates`
+--
+
+INSERT INTO `d_updates` (`update_id`, `update_site_id`, `extension_id`, `name`, `description`, `element`, `type`, `folder`, `client_id`, `version`, `data`, `detailsurl`, `infourl`, `extra_query`) VALUES
+(1, 3, 0, 'Armenian', '', 'pkg_hy-AM', 'package', '', 0, '3.4.4.1', '', 'https://update.joomla.org/language/details3/hy-AM_details.xml', '', ''),
+(2, 3, 0, 'Malay', '', 'pkg_ms-MY', 'package', '', 0, '3.4.1.2', '', 'https://update.joomla.org/language/details3/ms-MY_details.xml', '', ''),
+(3, 3, 0, 'Romanian', '', 'pkg_ro-RO', 'package', '', 0, '3.6.0.1', '', 'https://update.joomla.org/language/details3/ro-RO_details.xml', '', ''),
+(4, 3, 0, 'Flemish', '', 'pkg_nl-BE', 'package', '', 0, '3.6.5.1', '', 'https://update.joomla.org/language/details3/nl-BE_details.xml', '', ''),
+(5, 3, 0, 'Chinese Traditional', '', 'pkg_zh-TW', 'package', '', 0, '3.6.3.1', '', 'https://update.joomla.org/language/details3/zh-TW_details.xml', '', ''),
+(6, 3, 0, 'French', '', 'pkg_fr-FR', 'package', '', 0, '3.6.5.1', '', 'https://update.joomla.org/language/details3/fr-FR_details.xml', '', ''),
+(7, 3, 0, 'Galician', '', 'pkg_gl-ES', 'package', '', 0, '3.3.1.2', '', 'https://update.joomla.org/language/details3/gl-ES_details.xml', '', ''),
+(8, 3, 0, 'Georgian', '', 'pkg_ka-GE', 'package', '', 0, '3.6.5.1', '', 'https://update.joomla.org/language/details3/ka-GE_details.xml', '', ''),
+(9, 3, 0, 'Greek', '', 'pkg_el-GR', 'package', '', 0, '3.6.3.2', '', 'https://update.joomla.org/language/details3/el-GR_details.xml', '', ''),
+(10, 3, 0, 'Japanese', '', 'pkg_ja-JP', 'package', '', 0, '3.6.5.1', '', 'https://update.joomla.org/language/details3/ja-JP_details.xml', '', ''),
+(11, 3, 0, 'Hebrew', '', 'pkg_he-IL', 'package', '', 0, '3.1.1.1', '', 'https://update.joomla.org/language/details3/he-IL_details.xml', '', ''),
+(12, 3, 0, 'Hungarian', '', 'pkg_hu-HU', 'package', '', 0, '3.6.5.1', '', 'https://update.joomla.org/language/details3/hu-HU_details.xml', '', ''),
+(13, 3, 0, 'Afrikaans', '', 'pkg_af-ZA', 'package', '', 0, '3.6.3.1', '', 'https://update.joomla.org/language/details3/af-ZA_details.xml', '', ''),
+(14, 3, 0, 'Arabic Unitag', '', 'pkg_ar-AA', 'package', '', 0, '3.6.5.2', '', 'https://update.joomla.org/language/details3/ar-AA_details.xml', '', ''),
+(15, 3, 0, 'Belarusian', '', 'pkg_be-BY', 'package', '', 0, '3.2.1.1', '', 'https://update.joomla.org/language/details3/be-BY_details.xml', '', ''),
+(16, 3, 0, 'Bulgarian', '', 'pkg_bg-BG', 'package', '', 0, '3.6.5.1', '', 'https://update.joomla.org/language/details3/bg-BG_details.xml', '', ''),
+(17, 3, 0, 'Catalan', '', 'pkg_ca-ES', 'package', '', 0, '3.6.5.2', '', 'https://update.joomla.org/language/details3/ca-ES_details.xml', '', ''),
+(18, 3, 0, 'Chinese Simplified', '', 'pkg_zh-CN', 'package', '', 0, '3.4.1.1', '', 'https://update.joomla.org/language/details3/zh-CN_details.xml', '', ''),
+(19, 3, 0, 'Croatian', '', 'pkg_hr-HR', 'package', '', 0, '3.6.5.1', '', 'https://update.joomla.org/language/details3/hr-HR_details.xml', '', ''),
+(20, 3, 0, 'Czech', '', 'pkg_cs-CZ', 'package', '', 0, '3.6.5.1', '', 'https://update.joomla.org/language/details3/cs-CZ_details.xml', '', ''),
+(21, 3, 0, 'Danish', '', 'pkg_da-DK', 'package', '', 0, '3.6.5.1', '', 'https://update.joomla.org/language/details3/da-DK_details.xml', '', ''),
+(22, 3, 0, 'Dutch', '', 'pkg_nl-NL', 'package', '', 0, '3.6.5.1', '', 'https://update.joomla.org/language/details3/nl-NL_details.xml', '', ''),
+(23, 3, 0, 'Estonian', '', 'pkg_et-EE', 'package', '', 0, '3.6.0.1', '', 'https://update.joomla.org/language/details3/et-EE_details.xml', '', ''),
+(24, 3, 0, 'Italian', '', 'pkg_it-IT', 'package', '', 0, '3.6.5.1', '', 'https://update.joomla.org/language/details3/it-IT_details.xml', '', ''),
+(25, 3, 0, 'Khmer', '', 'pkg_km-KH', 'package', '', 0, '3.4.5.1', '', 'https://update.joomla.org/language/details3/km-KH_details.xml', '', ''),
+(26, 3, 0, 'Korean', '', 'pkg_ko-KR', 'package', '', 0, '3.6.5.1', '', 'https://update.joomla.org/language/details3/ko-KR_details.xml', '', ''),
+(27, 3, 0, 'Latvian', '', 'pkg_lv-LV', 'package', '', 0, '3.6.2.2', '', 'https://update.joomla.org/language/details3/lv-LV_details.xml', '', ''),
+(28, 3, 0, 'Macedonian', '', 'pkg_mk-MK', 'package', '', 0, '3.6.5.1', '', 'https://update.joomla.org/language/details3/mk-MK_details.xml', '', ''),
+(29, 3, 0, 'Norwegian Bokmal', '', 'pkg_nb-NO', 'package', '', 0, '3.5.1.1', '', 'https://update.joomla.org/language/details3/nb-NO_details.xml', '', ''),
+(30, 3, 0, 'Norwegian Nynorsk', '', 'pkg_nn-NO', 'package', '', 0, '3.4.2.1', '', 'https://update.joomla.org/language/details3/nn-NO_details.xml', '', ''),
+(31, 3, 0, 'Persian', '', 'pkg_fa-IR', 'package', '', 0, '3.6.5.3', '', 'https://update.joomla.org/language/details3/fa-IR_details.xml', '', ''),
+(32, 3, 0, 'Polish', '', 'pkg_pl-PL', 'package', '', 0, '3.6.5.1', '', 'https://update.joomla.org/language/details3/pl-PL_details.xml', '', ''),
+(33, 3, 0, 'Portuguese', '', 'pkg_pt-PT', 'package', '', 0, '3.6.4.3', '', 'https://update.joomla.org/language/details3/pt-PT_details.xml', '', ''),
+(34, 3, 0, 'Russian', '', 'pkg_ru-RU', 'package', '', 0, '3.6.2.2', '', 'https://update.joomla.org/language/details3/ru-RU_details.xml', '', ''),
+(35, 3, 0, 'English AU', '', 'pkg_en-AU', 'package', '', 0, '3.6.5.1', '', 'https://update.joomla.org/language/details3/en-AU_details.xml', '', ''),
+(36, 3, 0, 'Slovak', '', 'pkg_sk-SK', 'package', '', 0, '3.6.5.1', '', 'https://update.joomla.org/language/details3/sk-SK_details.xml', '', ''),
+(37, 3, 0, 'English US', '', 'pkg_en-US', 'package', '', 0, '3.6.5.1', '', 'https://update.joomla.org/language/details3/en-US_details.xml', '', ''),
+(38, 3, 0, 'Swedish', '', 'pkg_sv-SE', 'package', '', 0, '3.6.3.1', '', 'https://update.joomla.org/language/details3/sv-SE_details.xml', '', ''),
+(39, 3, 0, 'Syriac', '', 'pkg_sy-IQ', 'package', '', 0, '3.4.5.1', '', 'https://update.joomla.org/language/details3/sy-IQ_details.xml', '', ''),
+(40, 3, 0, 'Tamil', '', 'pkg_ta-IN', 'package', '', 0, '3.6.5.1', '', 'https://update.joomla.org/language/details3/ta-IN_details.xml', '', ''),
+(41, 3, 0, 'Thai', '', 'pkg_th-TH', 'package', '', 0, '3.6.5.1', '', 'https://update.joomla.org/language/details3/th-TH_details.xml', '', ''),
+(42, 3, 0, 'Turkish', '', 'pkg_tr-TR', 'package', '', 0, '3.6.2.1', '', 'https://update.joomla.org/language/details3/tr-TR_details.xml', '', ''),
+(43, 3, 0, 'Ukrainian', '', 'pkg_uk-UA', 'package', '', 0, '3.6.3.1', '', 'https://update.joomla.org/language/details3/uk-UA_details.xml', '', ''),
+(44, 3, 0, 'Uyghur', '', 'pkg_ug-CN', 'package', '', 0, '3.3.0.1', '', 'https://update.joomla.org/language/details3/ug-CN_details.xml', '', ''),
+(45, 3, 0, 'Albanian', '', 'pkg_sq-AL', 'package', '', 0, '3.1.1.1', '', 'https://update.joomla.org/language/details3/sq-AL_details.xml', '', ''),
+(46, 3, 0, 'Basque', '', 'pkg_eu-ES', 'package', '', 0, '3.6.5.1', '', 'https://update.joomla.org/language/details3/eu-ES_details.xml', '', ''),
+(47, 3, 0, 'Hindi', '', 'pkg_hi-IN', 'package', '', 0, '3.3.6.2', '', 'https://update.joomla.org/language/details3/hi-IN_details.xml', '', ''),
+(48, 3, 0, 'German DE', '', 'pkg_de-DE', 'package', '', 0, '3.6.5.1', '', 'https://update.joomla.org/language/details3/de-DE_details.xml', '', ''),
+(49, 3, 0, 'Portuguese Brazil', '', 'pkg_pt-BR', 'package', '', 0, '3.6.5.1', '', 'https://update.joomla.org/language/details3/pt-BR_details.xml', '', ''),
+(50, 3, 0, 'Serbian Latin', '', 'pkg_sr-YU', 'package', '', 0, '3.6.5.1', '', 'https://update.joomla.org/language/details3/sr-YU_details.xml', '', ''),
+(51, 3, 0, 'Spanish', '', 'pkg_es-ES', 'package', '', 0, '3.6.3.1', '', 'https://update.joomla.org/language/details3/es-ES_details.xml', '', ''),
+(52, 3, 0, 'Bosnian', '', 'pkg_bs-BA', 'package', '', 0, '3.6.5.1', '', 'https://update.joomla.org/language/details3/bs-BA_details.xml', '', ''),
+(53, 3, 0, 'Serbian Cyrillic', '', 'pkg_sr-RS', 'package', '', 0, '3.6.5.1', '', 'https://update.joomla.org/language/details3/sr-RS_details.xml', '', ''),
+(54, 3, 0, 'Vietnamese', '', 'pkg_vi-VN', 'package', '', 0, '3.2.1.1', '', 'https://update.joomla.org/language/details3/vi-VN_details.xml', '', ''),
+(55, 3, 0, 'Bahasa Indonesia', '', 'pkg_id-ID', 'package', '', 0, '3.6.2.1', '', 'https://update.joomla.org/language/details3/id-ID_details.xml', '', ''),
+(56, 3, 0, 'Finnish', '', 'pkg_fi-FI', 'package', '', 0, '3.6.2.1', '', 'https://update.joomla.org/language/details3/fi-FI_details.xml', '', ''),
+(57, 3, 0, 'Swahili', '', 'pkg_sw-KE', 'package', '', 0, '3.6.5.1', '', 'https://update.joomla.org/language/details3/sw-KE_details.xml', '', ''),
+(58, 3, 0, 'Montenegrin', '', 'pkg_srp-ME', 'package', '', 0, '3.3.1.1', '', 'https://update.joomla.org/language/details3/srp-ME_details.xml', '', ''),
+(59, 3, 0, 'English CA', '', 'pkg_en-CA', 'package', '', 0, '3.6.5.1', '', 'https://update.joomla.org/language/details3/en-CA_details.xml', '', ''),
+(60, 3, 0, 'French CA', '', 'pkg_fr-CA', 'package', '', 0, '3.6.5.1', '', 'https://update.joomla.org/language/details3/fr-CA_details.xml', '', ''),
+(61, 3, 0, 'Welsh', '', 'pkg_cy-GB', 'package', '', 0, '3.3.0.2', '', 'https://update.joomla.org/language/details3/cy-GB_details.xml', '', ''),
+(62, 3, 0, 'Sinhala', '', 'pkg_si-LK', 'package', '', 0, '3.3.1.1', '', 'https://update.joomla.org/language/details3/si-LK_details.xml', '', ''),
+(63, 3, 0, 'Dari Persian', '', 'pkg_prs-AF', 'package', '', 0, '3.4.4.2', '', 'https://update.joomla.org/language/details3/prs-AF_details.xml', '', ''),
+(64, 3, 0, 'Turkmen', '', 'pkg_tk-TM', 'package', '', 0, '3.5.0.2', '', 'https://update.joomla.org/language/details3/tk-TM_details.xml', '', ''),
+(65, 3, 0, 'Irish', '', 'pkg_ga-IE', 'package', '', 0, '3.6.4.1', '', 'https://update.joomla.org/language/details3/ga-IE_details.xml', '', ''),
+(66, 3, 0, 'Dzongkha', '', 'pkg_dz-BT', 'package', '', 0, '3.6.2.1', '', 'https://update.joomla.org/language/details3/dz-BT_details.xml', '', ''),
+(67, 3, 0, 'Slovenian', '', 'pkg_sl-SI', 'package', '', 0, '3.6.5.1', '', 'https://update.joomla.org/language/details3/sl-SI_details.xml', '', ''),
+(68, 3, 0, 'Spanish CO', '', 'pkg_es-CO', 'package', '', 0, '3.6.5.1', '', 'https://update.joomla.org/language/details3/es-CO_details.xml', '', ''),
+(69, 3, 0, 'German CH', '', 'pkg_de-CH', 'package', '', 0, '3.6.5.1', '', 'https://update.joomla.org/language/details3/de-CH_details.xml', '', ''),
+(70, 3, 0, 'German AT', '', 'pkg_de-AT', 'package', '', 0, '3.6.5.1', '', 'https://update.joomla.org/language/details3/de-AT_details.xml', '', ''),
+(71, 3, 0, 'German LI', '', 'pkg_de-LI', 'package', '', 0, '3.6.5.1', '', 'https://update.joomla.org/language/details3/de-LI_details.xml', '', ''),
+(72, 3, 0, 'German LU', '', 'pkg_de-LU', 'package', '', 0, '3.6.5.1', '', 'https://update.joomla.org/language/details3/de-LU_details.xml', '', ''),
+(73, 3, 0, 'English NZ', '', 'pkg_en-NZ', 'package', '', 0, '3.6.5.1', '', 'https://update.joomla.org/language/details3/en-NZ_details.xml', '', '');
+
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
 -- --------------------------------------------------------
 
 --
@@ -2056,10 +2289,17 @@ CREATE TABLE `d_update_sites` (
 --
 
 INSERT INTO `d_update_sites` (`update_site_id`, `name`, `type`, `location`, `enabled`, `last_check_timestamp`, `extra_query`) VALUES
+<<<<<<< HEAD
 (1, 'Joomla! Core', 'collection', 'https://update.joomla.org/core/list.xml', 1, 1491312062, ''),
 (2, 'Joomla! Extension Directory', 'collection', 'https://update.joomla.org/jed/list.xml', 1, 1491312063, ''),
 (3, 'Accredited Joomla! Translations', 'collection', 'https://update.joomla.org/language/translationlist_3.xml', 1, 0, ''),
 (4, 'Joomla! Update Component Update Site', 'extension', 'https://update.joomla.org/core/extensions/com_joomlaupdate.xml', 1, 0, '');
+=======
+(1, 'Joomla! Core', 'collection', 'https://update.joomla.org/core/list.xml', 1, 1490796816, ''),
+(2, 'Joomla! Extension Directory', 'collection', 'https://update.joomla.org/jed/list.xml', 1, 1490796819, ''),
+(3, 'Accredited Joomla! Translations', 'collection', 'https://update.joomla.org/language/translationlist_3.xml', 1, 1490796817, ''),
+(4, 'Joomla! Update Component Update Site', 'extension', 'https://update.joomla.org/core/extensions/com_joomlaupdate.xml', 1, 1490796819, '');
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
 
 -- --------------------------------------------------------
 
@@ -2141,8 +2381,12 @@ CREATE TABLE `d_users` (
 --
 
 INSERT INTO `d_users` (`id`, `name`, `username`, `email`, `password`, `block`, `sendEmail`, `registerDate`, `lastvisitDate`, `activation`, `params`, `lastResetTime`, `resetCount`, `otpKey`, `otep`, `requireReset`) VALUES
+<<<<<<< HEAD
 (70, 'Super User', 'admin', 'dev@phpkungfu.club', '$2y$10$a.2eq2OeeZ7pYAGhksE4j.ZDp6HCBkXBKbZZ6x1SQ16TbVPZNNGAW', 0, 1, '2017-03-29 14:13:09', '2017-04-04 15:45:56', '0', '', '0000-00-00 00:00:00', 0, '', '', 0),
 (71, 'tttt423423', '432432432', 'ttt@tt.xom', '$2y$10$iNQ.SRGensfvwfn29prTD.QW3CT1uXDd1QF.yMRCBtZeIIYVDd7Gy', 0, 0, '2017-04-01 08:52:25', '0000-00-00 00:00:00', '', '{}', '0000-00-00 00:00:00', 0, '', '', 0);
+=======
+(70, 'Super User', 'admin', 'dev@phpkungfu.club', '$2y$10$a.2eq2OeeZ7pYAGhksE4j.ZDp6HCBkXBKbZZ6x1SQ16TbVPZNNGAW', 0, 1, '2017-03-29 14:13:09', '2017-03-29 16:21:58', '0', '', '0000-00-00 00:00:00', 0, '', '', 0);
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
 
 -- --------------------------------------------------------
 
@@ -2213,8 +2457,12 @@ CREATE TABLE `d_user_usergroup_map` (
 --
 
 INSERT INTO `d_user_usergroup_map` (`user_id`, `group_id`) VALUES
+<<<<<<< HEAD
 (70, 8),
 (71, 2);
+=======
+(70, 8);
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
 
 -- --------------------------------------------------------
 
@@ -2387,6 +2635,7 @@ ALTER TABLE `d_dtax_config`
   ADD PRIMARY KEY (`id`);
 
 --
+<<<<<<< HEAD
 -- Indexes for table `d_dtax_email`
 --
 ALTER TABLE `d_dtax_email`
@@ -2396,6 +2645,11 @@ ALTER TABLE `d_dtax_email`
 -- Indexes for table `d_dtax_employees`
 --
 ALTER TABLE `d_dtax_employees`
+=======
+-- Indexes for table `d_dtax_customers`
+--
+ALTER TABLE `d_dtax_customers`
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
   ADD PRIMARY KEY (`id`);
 
 --
@@ -2897,7 +3151,11 @@ ALTER TABLE `d_viewlevels`
 -- AUTO_INCREMENT for table `d_assets`
 --
 ALTER TABLE `d_assets`
+<<<<<<< HEAD
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Primary Key', AUTO_INCREMENT=59;
+=======
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Primary Key', AUTO_INCREMENT=58;
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
 --
 -- AUTO_INCREMENT for table `d_banners`
 --
@@ -2927,7 +3185,11 @@ ALTER TABLE `d_content`
 -- AUTO_INCREMENT for table `d_content_types`
 --
 ALTER TABLE `d_content_types`
+<<<<<<< HEAD
   MODIFY `type_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+=======
+  MODIFY `type_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10000;
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
 --
 -- AUTO_INCREMENT for table `d_dtax_company`
 --
@@ -2939,6 +3201,7 @@ ALTER TABLE `d_dtax_company`
 ALTER TABLE `d_dtax_config`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
+<<<<<<< HEAD
 -- AUTO_INCREMENT for table `d_dtax_email`
 --
 ALTER TABLE `d_dtax_email`
@@ -2947,6 +3210,11 @@ ALTER TABLE `d_dtax_email`
 -- AUTO_INCREMENT for table `d_dtax_employees`
 --
 ALTER TABLE `d_dtax_employees`
+=======
+-- AUTO_INCREMENT for table `d_dtax_customers`
+--
+ALTER TABLE `d_dtax_customers`
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `d_dtax_expenses`
@@ -2982,7 +3250,11 @@ ALTER TABLE `d_dtax_receipts`
 -- AUTO_INCREMENT for table `d_dtax_taxreturns`
 --
 ALTER TABLE `d_dtax_taxreturns`
+<<<<<<< HEAD
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+=======
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
 --
 -- AUTO_INCREMENT for table `d_extensions`
 --
@@ -3022,7 +3294,11 @@ ALTER TABLE `d_languages`
 -- AUTO_INCREMENT for table `d_menu`
 --
 ALTER TABLE `d_menu`
+<<<<<<< HEAD
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
+=======
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=120;
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
 --
 -- AUTO_INCREMENT for table `d_menu_types`
 --
@@ -3082,7 +3358,11 @@ ALTER TABLE `d_ucm_history`
 -- AUTO_INCREMENT for table `d_updates`
 --
 ALTER TABLE `d_updates`
+<<<<<<< HEAD
   MODIFY `update_id` int(11) NOT NULL AUTO_INCREMENT;
+=======
+  MODIFY `update_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
 --
 -- AUTO_INCREMENT for table `d_update_sites`
 --
@@ -3097,7 +3377,11 @@ ALTER TABLE `d_usergroups`
 -- AUTO_INCREMENT for table `d_users`
 --
 ALTER TABLE `d_users`
+<<<<<<< HEAD
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
+=======
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
 --
 -- AUTO_INCREMENT for table `d_user_keys`
 --

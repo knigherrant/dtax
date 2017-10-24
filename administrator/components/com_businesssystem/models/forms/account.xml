@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset name="basic" >
+
+        <field name="id" type="hidden" default="0" label="COM_BUSINESSSYSTEM_FORM_LBL_OFFICE_LOCATION_ID"
+            readonly="true" class="readonly"
+            description="JGLOBAL_FIELD_ID_DESC" /> 
+
+       <field name="userid" type="user" hint="Select User" label="Select User" description="Select User"  filter="safehtml" /> 
+       
+       <field name="firstname" type="text"  size="40" class="inputbox" hint="First Name" label="First Name" description="First Name"   filter="safehtml" /> 
+       <field name="midname" type="text"  size="40" class="inputbox" hint="Middle Name" label="Middle Name" description="Middle Name"  filter="safehtml" /> 
+       <field name="lastname" type="text"  size="40" class="inputbox" hint="Last Name" label="Last Name" description="Last Name"   default=""  filter="safehtml" /> 
+       <field name="address" type="text" size="40" class="inputbox" hint="Address" label="Address" description="Address"  filter="safehtml" /> 
+       
+       <field name="city" type="text" size="40" class="inputbox" hint="City" label="City" description="City"   filter="safehtml" /> 
+       <field name="state" type="text" size="40" class="inputbox" hint="State" label="State" description="State"   filter="safehtml" /> 
+       <field name="zip" type="text" size="40" class="inputbox" hint="Zip Code" label="Zip Code" description="Zip Code"  filter="safehtml" /> 
+       <field name="phone" type="text" size="40" class="inputbox" hint="Phone" label="Phone" description="Phone"   default=""  filter="safehtml" /> 
+       
+       <field name="email" type="text"  size="40" class="inputbox" hint="Email" label="Email" description="Email"   filter="safehtml" /> 
+       <field name="password" type="text"  size="40" class="inputbox" hint="Password" label="Password" description="Password"   filter="safehtml" /> 
+    </fieldset> 
+    
+   
+</form>

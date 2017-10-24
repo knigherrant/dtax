@@ -63,14 +63,26 @@ $saveOrder = $listOrder == 'a.ordering';
 				</th>
                                 
 				<th class="left">
+<<<<<<< HEAD
 					<?php echo JHtml::_('grid.sort',  'Address', 'a.address', $listDirn, $listOrder); ?>
 				</th>
 				
+=======
+					<?php echo JHtml::_('grid.sort',  'Phone', 'a.phone', $listDirn, $listOrder); ?>
+				</th>
+				<th class="left">
+					<?php echo JHtml::_('grid.sort',  'Email', 'a.email', $listDirn, $listOrder); ?>
+				</th>
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
                                 <th class="left">
 					<?php echo JHtml::_('grid.sort',  'Company', 'c.company', $listDirn, $listOrder); ?>
 				</th>
 				<th class="left">
+<<<<<<< HEAD
 					<?php echo JHtml::_('grid.sort',  'Employee', 'c.employee', $listDirn, $listOrder); ?>
+=======
+					<?php echo JHtml::_('grid.sort',  'CPA', 'c.cpa', $listDirn, $listOrder); ?>
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
 				</th>
 
                                
@@ -144,18 +156,33 @@ $saveOrder = $listOrder == 'a.ordering';
 
                                         
                                         
+<<<<<<< HEAD
                                         <td data-field="Address">
 						<?php echo $item->address; ?>
 					</td>
                                         
                      
+=======
+                                        <td data-field="Phone">
+						<?php echo $item->phone; ?>
+					</td>
+                                        
+                                        <td data-field="Email">
+						<?php echo $item->email; ?>
+					</td>
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
                                         
                                         <td data-field="Company">
 						<?php echo $item->company; ?>
 					</td>
                                         
+<<<<<<< HEAD
                                         <td data-field="Employee">
 						<?php echo $item->employee; ?>
+=======
+                                        <td data-field="CPA">
+						<?php echo $item->cpa; ?>
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
 					</td>
                                         
                                       

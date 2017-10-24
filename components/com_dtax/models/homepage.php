@@ -100,8 +100,25 @@ class DTaxModelHomepage extends JModelList {
                         'list.select', 'DISTINCT a.*'
                 )
         );
+<<<<<<< HEAD
         $query->from('`#__dtax_taxreturns` AS a');
 
+=======
+        $query->from('`#__dtax_expenses` AS a');
+        $query->select('CONCAT(c.firstname, " " ,c.midname, " " ,c.lastname) as cpa ' );
+        $query->join( 'LEFT', '`#__dtax_cpas` AS c ON c.id=a.cpaid');
+        // Filter by search in title
+        $search = $this->getState('filter.search');
+        if (!empty($search)) {
+            if (stripos($search, 'id:') === 0) {
+                $query->where('a.id = ' . (int) substr($search, 3));
+            } else {
+                $search = $db->Quote('%' . $db->escape($search, true) . '%');
+                $query->where('LOWER(a.company) LIKE ' . $search . ' OR LOWER(cpa) LIKE ' . $search);
+            }
+        }
+        
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
         // Add the list ordering clause.
         $orderCol = $this->state->get('list.ordering');
         $orderDirn = $this->state->get('list.direction');
@@ -113,10 +130,16 @@ class DTaxModelHomepage extends JModelList {
     }
 
     public function getItems() {
+<<<<<<< HEAD
         $this->setState('list.limit', 5);
         $items = parent::getItems();
         foreach ($items as $item){
             $item->name = $item->tax_firstname . ' ' .$item->tax_midname . ' ' . $item->tax_lastname;
+=======
+        $items = parent::getItems();
+        foreach ($items as $item){
+            //$item->name = $item->firstname . ' ' .$item->midname . ' ' . $item->lastname;
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
         }
         return $items;
     }

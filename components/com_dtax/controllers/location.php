@@ -23,5 +23,18 @@ class DTaxControllerLocation extends JControllerForm
         parent::__construct();
     }
     
+<<<<<<< HEAD
+=======
+    function save($key = null, $urlVar = null) {
+        parent::save($key, $urlVar);
+        ?>
+        <div style="text-align: center"><h3>Location Added Success</h3></div>
+        <script>
+            //window.parent.location.reload()
+        </script>
+        <?php
+        die;
+    }
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
 
 }

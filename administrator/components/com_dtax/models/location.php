@@ -102,6 +102,7 @@ class DTaxModelLocation extends JModelAdmin
 	
         
         function save($data) {
+<<<<<<< HEAD
             if(!$data['userid']){
                 if($user = jSont::saveUser($data, $data['name'])){
                     $data['userid'] = $user->id;
@@ -109,6 +110,10 @@ class DTaxModelLocation extends JModelAdmin
                 }
                 return false;
             }else return parent::save($data);
+=======
+            //jSont::upgradeUser($data['email']);
+            return parent::save($data);
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
         }
 
 }

@@ -1,0 +1,240 @@
+/*19.12.2016*/
+body.site,
+.site .body .container{
+    background-color: #000;
+}
+#mainContent{
+    background-color: #fff;
+    min-height: 750px
+}
+
+
+
+#cpaMain #logo{
+    background-image: url(' ../images/logo.png');
+    display: block;
+    height: 60px;
+    background-repeat: no-repeat;
+    font-size: 0;
+    padding: 1px;
+    margin: 15px 0px;
+}
+
+#cpaMain [class*="span"]{
+        margin-left: 10px;
+}
+#cpaMain #menu{
+    min-height: 160px;
+}
+#cpaMain #menu ul li{
+    list-style: none;
+}
+
+#cpaMain #userInfo{
+    padding: 10px 0;
+}
+
+#cpaMain #menu ul li.active a{
+    color: #fbac2b;
+}
+#cpaMain #menu ul li a:hover{
+    text-decoration: none;
+    color: #fbac2b;
+}
+#userInfo .key,
+#cpaMain #menu ul li a{
+    color: #fff;
+}
+#cpaMain #menu ul{
+    margin: 0;
+}
+#userInfo .value{
+    color: #91908f;
+}
+
+#cpaMain .jk-logout{
+    color: #fbac2b
+}
+#cpaMain #cpaLeft p{
+    margin: 0 0 5px;
+}
+
+#mainContent{
+    position: relative;
+}
+#mainContent #btn-toolbar{
+    position: absolute;
+    right: 10px;
+    top: 6px;
+}
+
+#cpaMain legend,
+.jscustom12{
+    width: 98%;
+}
+
+.jscustom6{
+    width: 50%;
+}
+
+.jscustom3{
+    width: 25%;
+}
+
+.jscustom4{
+    width: 33%;
+}
+
+.jscustom8{
+    width: 66%;
+}
+
+.row-fluid [class*="jscustom"] {
+    display: block;
+    min-height: 28px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    float: left;
+   
+}
+
+#cpaMain #mainContent input[type="file"]{
+    width: 64% !important;
+}
+#cpaMain #mainContent textarea,
+#cpaMain #mainContent input{
+    width: 95%;
+}
+
+#cpaMain #mainContent .field3 input{
+    width: 92%;
+}
+#cpaMain #mainContent .field3 select{width: 96%;}
+#cpaMain #mainContent .field2 input{
+    width: 96%;
+}
+
+#cpaMain .jsContents{
+    padding: 15px;
+}
+
+#cpaMain #mainContent #j-main-container{
+    width: 98%;
+}
+
+#cpaMain #mainContent .jCustommer #jform_dependent1_birthday,
+#cpaMain #mainContent .jCustommer #jform_dependent2_birthday,
+#cpaMain #mainContent .jCustommer #jform_dependent3_birthday,
+#cpaMain #mainContent .jCustommer #jform_dependent4_birthday,
+#cpaMain #mainContent .jCustommer #jform_dependent5_birthday,
+#cpaMain #mainContent .jCustommer #jform_tax_expiration_date,
+#cpaMain #mainContent .jCustommer #jform_tax_issue_date,
+#cpaMain #mainContent .jCustommer #jform_spouse_issue_date,
+#cpaMain #mainContent .jCustommer #jform_spouse_expiration_date,
+#cpaMain #mainContent .jCustommer #jform_tax_birthday,
+#cpaMain #mainContent .jCustommer #jform_userid{
+    width: 73%
+}
+
+
+.profile-logo img {
+    border-radius: 100%;
+    width: 120px;
+    border: 2px solid #FFF;
+    height: 120px;
+    object-fit: cover;
+}
+
+#cpaMain #profile{
+    padding: 20px 5px 5px 5px;
+}
+
+#cpaMain #static{
+    width: 100%;
+    padding-left: 10px;
+}
+#cpaMain #static .block{
+    width: 30%;
+    height: 100px;
+    background-color: #3c3c3c;
+    float: left;
+    margin: 25px 4px 0px 11px;
+}
+.clearfix{
+    clear: both;
+}
+
+#cpaMain #static .block .bcontent .key{
+    padding-left: 25px;
+    padding-top: 25px;
+}
+
+#cpaMain #static .block .bcontent .value{
+    padding-left: 25px;
+    font-size: 26px;
+}
+
+#cpaMain #static .block .bcontent{
+    width: 100%;
+    height: 100%;
+    color: #fff;
+}
+
+#cpaMain #static .block1 .bcontent{
+    background: url('../images/invoice.png') no-repeat 152px 32px;
+}
+
+#cpaMain #static .block2 .bcontent{
+    background: url('../images/taxpayer.png') no-repeat 141px 28px;
+
+}
+
+#cpaMain #static .block3 .bcontent{
+    background: url('../images/customer.png') no-repeat 135px 31px
+}
+.chartContent{
+    padding: 10px 20px;
+    -height: 400px;
+}
+
+#cpaMain .chartContent .heading{
+    background-color: #fbac2b;
+    height: 40px;
+    padding: 15px 35px;
+}
+#cpaMain .chartContent .heading h4{
+    font-size: 20px;
+    color: #fff;
+}
+#cpaMain .chartContent .chartx{
+    background-color: #3c3c3c;
+    height: 350px;
+}
+
+#cpaMain .message{
+    background-color: #3c3c3c;
+    min-height: 200px;
+    margin: 10px 20px;
+}
+#cpaMain .message .inbox h4{
+    color: #fff;
+    font-size: 18px;
+}
+#cpaMain .message .inbox .inbox-head{
+    background-color: #fbac2b;
+    height: 40px;
+    padding: 1px 20px;
+}
+#cpaMain .message .inbox{
+    float: left;
+    padding-top: 10px;
+    width: 30%;
+}
+    
+#cpaMain .message .sendmsg{
+    float: left;
+    padding-left: 13px;
+    padding-top: 10px;
+    width: 67%;
+}

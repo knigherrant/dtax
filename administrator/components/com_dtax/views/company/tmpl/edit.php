@@ -41,9 +41,18 @@ JHtml::_('behavior.modal', 'a.modal');
         
             <div class="clearfix fltlft span9">
                 <legend><?php echo JText::_('Company');?></legend>
+<<<<<<< HEAD
                 <div class="span12">
                     <div class="control-group full">
                         <div class="controlsx "><?php echo $this->form->getInput('company'); ?></div>
+=======
+                <div class="span12 jsontfirst">
+                    <div class="control-group span6">
+                        <div class="controlsx"><?php echo $this->form->getInput('userid'); ?></div>
+                    </div>
+                    <div class="control-group span6">
+                        <div class="controlsx"><?php echo $this->form->getInput('company'); ?></div>
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
                     </div>
                 </div>
                 <div class="span12">
@@ -159,9 +168,12 @@ JHtml::_('behavior.modal', 'a.modal');
         </div>
         
     </div>
+<<<<<<< HEAD
     <div style="display: none;">
         <?php echo $this->form->getInput('userid'); ?>
     </div>
+=======
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
     <?php echo $this->form->getInput('id'); ?>
     <input type="hidden" name="task" value="" />
     <?php echo JHtml::_('form.token'); ?>

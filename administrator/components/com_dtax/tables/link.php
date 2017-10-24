@@ -43,7 +43,11 @@ class DTaxTablelink extends JTable
             
                
                 if(!$array['created_by']) $array['created_by'] = JFactory::getUser ()->id;
+<<<<<<< HEAD
                 if(!$array['created'] || $array['created'] = '0000-00-00 00:00:00') $array['created'] = JFactory::getDate ()->toSql ();
+=======
+
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
 		if ($array['id'] == 0)
 		{
 			$array['created_by'] = JFactory::getUser()->id;

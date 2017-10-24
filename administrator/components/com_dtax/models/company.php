@@ -93,7 +93,10 @@ class DTaxModelCompany extends JModelAdmin
 		if ($item = parent::getItem($pk)) {
                         $item->user = JFactory::getUser($item->userid);
                         $item->location = jSont::getLocation($item->location_id);
+<<<<<<< HEAD
                         $item->username = $item->user->username;
+=======
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
 		}
 
 		return $item;
@@ -117,6 +120,10 @@ class DTaxModelCompany extends JModelAdmin
 	
         
         function save($data) {
+<<<<<<< HEAD
+=======
+            
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
             if(isset($_FILES['jform']['name'])){
                 foreach ($_FILES['jform']['name'] as $f=>$file){
                     if($file){
@@ -131,6 +138,7 @@ class DTaxModelCompany extends JModelAdmin
                     }
                 }
             }
+<<<<<<< HEAD
             
             if(!$data['userid']){
                 if($user = jSont::saveUser($data, $data['company'])){
@@ -139,6 +147,9 @@ class DTaxModelCompany extends JModelAdmin
                 }
                 return false;
             }else return parent::save($data);
+=======
+            return parent::save($data);
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
         }
 
 }

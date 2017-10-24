@@ -16,22 +16,37 @@ jimport('joomla.application.component.view');
  */
 class DTaxViewLocations extends JViewLegacy {
 
+<<<<<<< HEAD
         protected $state;
     protected $item;
     protected $form;
+=======
+    protected $items;
+    protected $pagination;
+    protected $state;
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
 
     /**
      * Display the view
      */
     public function display($tpl = null) {
         $this->state = $this->get('State');
+<<<<<<< HEAD
         $this->item = $this->get('Item');
         $this->form = $this->get('Form');
+=======
+        $this->items = $this->get('Items');
+        $this->pagination = $this->get('Pagination');
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
 
         // Check for errors.
         if (count($errors = $this->get('Errors'))) {
             throw new Exception(implode("\n", $errors));
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
         parent::display($tpl);
     }
 

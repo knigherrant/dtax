@@ -37,6 +37,7 @@ class DTaxController extends JControllerLegacy
 
 		return $this;
 	}
+<<<<<<< HEAD
         
         public function removeItem(){
             $input = JFactory::getApplication()->input;
@@ -48,4 +49,6 @@ class DTaxController extends JControllerLegacy
             }
             die('fail');
         }
+=======
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
 }

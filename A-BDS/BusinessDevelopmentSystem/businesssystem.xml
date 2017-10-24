@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="2.5" method="upgrade">
+    <name>com_businesssystem</name>
+    <creationDate>May 2017</creationDate>
+    <copyright>Copyright (C) 2017 METIK Marketing, LLC. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <author>Freddy Flores</author>
+    <authorEmail>fflores@metikmarketing.com</authorEmail>
+    <authorUrl>https://www.metikmarketing.com</authorUrl>
+    <version>1.0.0</version>
+    <description>View and control the Business Development System Manager</description>
+
+    <install> <!-- Runs on install -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <uninstall> <!-- Runs on uninstall -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+    <files folder="site">
+		<filename>router.php</filename>
+		<filename>controller.php</filename>
+		<filename>index.html</filename>
+		<filename>businesssystem.php</filename>
+		<folder>controllers</folder>
+		<folder>assets</folder>
+		<folder>helpers</folder>
+		<folder>models</folder>
+		<folder>views</folder>
+    </files>
+  
+    <administration>
+        <menu>COM_BUSINESSSYSTEM</menu>
+        <submenu>
+            <menu link="option=com_businesssystem&amp;view=cpas" view="cpas"  alt="BusinessSystem/cpas">COM_BUSINESSSYSTEM_TITLE_BDSS</menu>
+            <menu link="option=com_businesssystem&amp;view=customers" view="customers"  alt="BusinessSystem/customers">COM_BUSINESSSYSTEM_TITLE_CUSTOMERS</menu>
+            <menu link="option=com_businesssystem&amp;view=invoices" view="invoices"  alt="BusinessSystem/invoices">COM_BUSINESSSYSTEM_TITLE_INVOICES</menu>
+            <menu link="option=com_businesssystem&amp;view=expenses" view="expenses"  alt="BusinessSystem/expenses">COM_BUSINESSSYSTEM_TITLE_EXPENSES</menu>
+            <menu link="option=com_businesssystem&amp;view=receipts" view="receipts" alt="BusinessSystem/receipts">COM_BUSINESSSYSTEM_TITLE_RECEIPTS</menu>
+            <menu link="option=com_businesssystem&amp;view=mileages" view="mileages" alt="BusinessSystem/mileages">COM_BUSINESSSYSTEM_TITLE_MILEAGES</menu>
+            <menu link="option=com_businesssystem&amp;view=taxreturns" view="taxreturns" alt="BusinessSystem/taxreturns">COM_BUSINESSSYSTEM_TITLE_TAXRETURNS</menu>
+            <menu link="option=com_businesssystem&amp;view=links" view="links" alt="BusinessSystem/links">COM_BUSINESSSYSTEM_TITLE_LINKS</menu>
+            <menu link="option=com_businesssystem&amp;view=configs" view="configs" alt="BusinessSystem/configs">COM_BUSINESSSYSTEM_TITLE_CONFIG</menu>
+            <menu link="option=com_businesssystem&amp;view=reports" view="reports" alt="BusinessSystem/reports">COM_BUSINESSSYSTEM_TITLE_REPORTS</menu>
+        </submenu>
+        <files folder="administrator">
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
+            <filename>controller.php</filename>
+            <filename>index.html</filename>
+            <filename>businesssystem.php</filename>
+            <folder>controllers</folder>
+            <folder>assets</folder>
+            <folder>helpers</folder>
+            <folder>models</folder>
+            <folder>sql</folder>
+            <folder>tables</folder>
+            <folder>views</folder>
+        </files>
+        <languages folder="languages/administrator">
+			<language tag="en-GB">en-GB/en-GB.com_businesssystem.ini</language>
+			<language tag="en-GB">en-GB/en-GB.com_businesssystem.sys.ini</language>
+        </languages>
+    </administration>
+</extension>
+<!-- Component built by the Joomla Component Creator -->
+<!-- http://www.component-creator.com/ -->

@@ -113,11 +113,22 @@ class DTaxModelTaxreturns extends JModelList {
 				$query->where('LOWER(a.tax_midname) LIKE ' . $search 
                                         . ' OR LOWER(a.tax_firstname) LIKE ' . $search
                                         . ' OR LOWER(a.tax_lastname) LIKE ' . $search
+<<<<<<< HEAD
+=======
+                                        . ' OR LOWER(a.company) LIKE ' . $search
+                                        . ' OR LOWER(a.cpa) LIKE ' . $search
+                                         . ' OR LOWER(a.phone) LIKE ' . $search
+                                         . ' OR LOWER(a.email) LIKE ' . $search
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
                                         );
             }
         }
      
+<<<<<<< HEAD
 
+=======
+        $query->where('created_by = ' . JFactory::getUser()->id);
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
         // Add the list ordering clause.
         $orderCol = $this->state->get('list.ordering');
         $orderDirn = $this->state->get('list.direction');

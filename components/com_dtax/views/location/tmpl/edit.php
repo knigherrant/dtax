@@ -12,6 +12,7 @@ defined('_JEXEC') or die;
 JHtml::_('behavior.tooltip');
 JHtml::_('behavior.formvalidation');
 JHtml::_('behavior.keepalive');
+<<<<<<< HEAD
 JHTML::_('script', 'system/multiselect.js', false, true);
 // Import CSS
 $document = JFactory::getDocument();
@@ -22,6 +23,37 @@ $document->addStyleSheet('components/com_dtax/assets/css/dtax.css');
 <?php JST::tabsMenuOfice(); ?>
 
 <script type="text/javascript">
+=======
+// Import CSS
+$document = JFactory::getDocument();
+$document->addStyleSheet('components/com_dtax/assets/css/dtax.css');
+
+?>
+<script type="text/javascript">
+    function getScript(url,success) {
+        var script = document.createElement('script');
+        script.src = url;
+        var head = document.getElementsByTagName('head')[0],
+        done = false;
+        // Attach handlers for all browsers
+        script.onload = script.onreadystatechange = function() {
+            if (!done && (!this.readyState
+                || this.readyState == 'loaded'
+                || this.readyState == 'complete')) {
+                done = true;
+                success();
+                script.onload = script.onreadystatechange = null;
+                head.removeChild(script);
+            }
+        };
+        head.appendChild(script);
+    }
+    getScript('//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',function() {
+        js = jQuery.noConflict();
+        js(document).ready(function(){
+            
+
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
             Joomla.submitbutton = function(task)
             {
                 if (task == 'location.cancel') {
@@ -38,6 +70,7 @@ $document->addStyleSheet('components/com_dtax/assets/css/dtax.css');
                     }
                 }
             }
+<<<<<<< HEAD
 
 </script>
 
@@ -45,6 +78,22 @@ $document->addStyleSheet('components/com_dtax/assets/css/dtax.css');
     <div class="form-horizontal row-fluid">
             <div class="clearfix fltlft">
                 <legend><?php echo JText::_('Office');?></legend>
+=======
+        });
+    });
+</script>
+<div class="btn-toolbar">
+    <div class="btn-group">
+            <button type="button" class="btn btn-primary" onclick="Joomla.submitbutton('location.save')">
+                    <span class="icon-ok"></span><?php echo JText::_('JSAVE') ?>
+            </button>
+    </div>
+</div>
+<form action="<?php echo JRoute::_('index.php?option=com_dtax&layout=edit&id=' . (int) $this->item->id); ?>" method="post" enctype="multipart/form-data" name="adminForm" id="location-form" class="form-validate">
+    <div class="form-horizontal row-fluid">
+            <div class="clearfix fltlft span12">
+                <legend><?php echo JText::_('Location Calendar');?></legend>
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
                
 
                         <div class="control-group">
@@ -54,6 +103,7 @@ $document->addStyleSheet('components/com_dtax/assets/css/dtax.css');
                             <div class="controlsx"><?php echo $this->form->getInput('address'); ?></div>
                         </div>
                         <div class="control-group">
+<<<<<<< HEAD
                             <div class="controlsx"><?php echo $this->form->getInput('city'); ?></div>
                         </div>
                         <div class="control-group">
@@ -64,17 +114,22 @@ $document->addStyleSheet('components/com_dtax/assets/css/dtax.css');
                         </div>
                 
                         <div class="control-group">
+=======
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
                             <div class="controlsx"><?php echo $this->form->getInput('phone'); ?></div>
                         </div>
                         <div class="control-group">
                             <div class="controlsx"><?php echo $this->form->getInput('email'); ?></div>
                         </div>
+<<<<<<< HEAD
                         <div class="control-group">
                             <div class="controlsx"><?php echo $this->form->getInput('username'); ?></div>
                         </div>
                         <div class="control-group">
                             <div class="controlsx"><?php echo $this->form->getInput('password'); ?></div>
                         </div>
+=======
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
                         
                         <div class="control-group">
                             <div class="controlsx"><?php echo $this->form->getInput('created'); ?></div>
@@ -118,9 +173,17 @@ $document->addStyleSheet('components/com_dtax/assets/css/dtax.css');
     
 
     <?php echo $this->form->getInput('id'); ?>
+<<<<<<< HEAD
     <?php echo $this->form->getInput('userid'); ?>
     <input type="hidden" name="task" value="" />
     <?php echo JHtml::_('form.token'); ?>
     <div class="clr"></div>
 </form>
 <?php echo JST::footer(); ?>
+=======
+
+    <input type="hidden" name="task" value="" />
+    <?php echo JHtml::_('form.token'); ?>
+    <div class="clr"></div>
+</form>
+>>>>>>> 6da42b430d55062734b64ec082d4c7d1c81592e9
