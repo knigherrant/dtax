@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 24, 2017 at 11:16 AM
+-- Generation Time: Oct 25, 2017 at 10:45 AM
 -- Server version: 10.1.8-MariaDB
 -- PHP Version: 5.6.14
 
@@ -226,7 +226,7 @@ CREATE TABLE `d_businesssystem_accounts` (
 --
 
 INSERT INTO `d_businesssystem_accounts` (`id`, `userid`, `firstname`, `midname`, `lastname`, `address`, `city`, `state`, `zip`, `phone`, `email`, `first_tax`, `first_fiscal`, `income_tax_form`, `tax_exempt_form`, `logo`, `serverip`, `dbname`) VALUES
-(5, 82, '43242', 'rưe', 'rưerw', '432', '432', 'rewrw', '', 'ádas', 'a@gmail.com', '', '', '', '', '', '', '');
+(5, 82, '43242', 'rưe', 'rưerw', '432', '432', 'rewrw', '', 'ádas', 'xxa@gmail.com', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -281,21 +281,17 @@ CREATE TABLE `d_businesssystem_company` (
 
 CREATE TABLE `d_businesssystem_config` (
   `id` int(11) UNSIGNED NOT NULL,
-  `categories_invoice` text NOT NULL,
-  `categories_expenses` text NOT NULL,
-  `categories_receipt` text NOT NULL,
+  `products` text NOT NULL,
   `params` text NOT NULL,
-  `notify_tax_en` text NOT NULL,
-  `notify_tax_sn` text NOT NULL,
-  `categories_taxform` text NOT NULL
+  `orderstatus` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `d_businesssystem_config`
 --
 
-INSERT INTO `d_businesssystem_config` (`id`, `categories_invoice`, `categories_expenses`, `categories_receipt`, `params`, `notify_tax_en`, `notify_tax_sn`, `categories_taxform`) VALUES
-(1, '[{"name":"Invoice 1"},{"name":"Invoice 2"}]', '[{"name":"Expenses 1"},{"name":"Expenses 2"}]', '[{"name":"Receipt 1"},{"name":"Receipt 2"}]', '""', '<p>Hi [USER_NAME],</p>\r\n<p>Project Name [PROJECT_NAME]22</p>\r\n<p>[MESSAGES]</p>\r\n<p>Project Time [COMPLETION_TIME]</p>\r\n<p>Username: [USER_USERNAME]</p>\r\n<p>Password: [USER_PASSWORD] Thanks</p>', '<p>Hi [USER_NAME],</p>\r\n<p>Project Name [PROJECT_NAME]11</p>\r\n<p>[MESSAGES]</p>\r\n<p>Project Time [COMPLETION_TIME]</p>\r\n<p>Username: [USER_USERNAME]</p>\r\n<p>Password: [USER_PASSWORD] Thanks</p>', '[{"name":"Tax Form 1"},{"name":"Tax Form 2"}]');
+INSERT INTO `d_businesssystem_config` (`id`, `products`, `params`, `orderstatus`) VALUES
+(1, '[{"name":"Product 1"},{"name":"Product 2"}]', '""', '[{"name":"Pedding"},{"name":"Complete"},{"name":"Reject .."}]');
 
 -- --------------------------------------------------------
 
@@ -334,34 +330,6 @@ CREATE TABLE `d_businesssystem_cpas` (
   `state` varchar(255) NOT NULL,
   `longitude` varchar(255) NOT NULL,
   `latitude` varchar(255) NOT NULL,
-  `created_by` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `d_businesssystem_expenses`
---
-
-CREATE TABLE `d_businesssystem_expenses` (
-  `id` int(11) UNSIGNED NOT NULL,
-  `cpaid` int(10) UNSIGNED NOT NULL DEFAULT '0',
-  `company` varchar(255) NOT NULL,
-  `merchant` varchar(255) NOT NULL,
-  `created` datetime NOT NULL,
-  `comments` text NOT NULL,
-  `category` varchar(255) NOT NULL,
-  `image` varchar(255) NOT NULL,
-  `billable` tinyint(1) NOT NULL,
-  `reimbursable` tinyint(1) NOT NULL,
-  `total` varchar(225) NOT NULL,
-  `start_point` varchar(225) NOT NULL,
-  `destination` varchar(225) NOT NULL,
-  `mileage_id` varchar(225) NOT NULL,
-  `rate` varchar(225) NOT NULL,
-  `odometer_start` varchar(225) NOT NULL,
-  `odometer_end` varchar(225) NOT NULL,
-  `total_mileage` varchar(225) NOT NULL,
   `created_by` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -473,6 +441,34 @@ CREATE TABLE `d_businesssystem_mileages` (
   `odometer_end` varchar(255) NOT NULL,
   `total_mileage` varchar(255) NOT NULL,
   `created` datetime NOT NULL,
+  `created_by` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `d_businesssystem_orders`
+--
+
+CREATE TABLE `d_businesssystem_orders` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `cpaid` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `company` varchar(255) NOT NULL,
+  `merchant` varchar(255) NOT NULL,
+  `created` datetime NOT NULL,
+  `comments` text NOT NULL,
+  `category` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `billable` tinyint(1) NOT NULL,
+  `reimbursable` tinyint(1) NOT NULL,
+  `total` varchar(225) NOT NULL,
+  `start_point` varchar(225) NOT NULL,
+  `destination` varchar(225) NOT NULL,
+  `mileage_id` varchar(225) NOT NULL,
+  `rate` varchar(225) NOT NULL,
+  `odometer_start` varchar(225) NOT NULL,
+  `odometer_end` varchar(225) NOT NULL,
+  `total_mileage` varchar(225) NOT NULL,
   `created_by` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -1293,7 +1289,7 @@ INSERT INTO `d_extensions` (`extension_id`, `name`, `type`, `element`, `folder`,
 (449, 'plg_authentication_cookie', 'plugin', 'cookie', 'authentication', 0, 1, 1, 0, '{"name":"plg_authentication_cookie","type":"plugin","creationDate":"July 2013","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2016 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"3.0.0","description":"PLG_AUTH_COOKIE_XML_DESCRIPTION","group":"","filename":"cookie"}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (450, 'plg_twofactorauth_yubikey', 'plugin', 'yubikey', 'twofactorauth', 0, 0, 1, 0, '{"name":"plg_twofactorauth_yubikey","type":"plugin","creationDate":"September 2013","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2016 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"3.2.0","description":"PLG_TWOFACTORAUTH_YUBIKEY_XML_DESCRIPTION","group":"","filename":"yubikey"}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (451, 'plg_search_tags', 'plugin', 'tags', 'search', 0, 1, 1, 0, '{"name":"plg_search_tags","type":"plugin","creationDate":"March 2014","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2016 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"3.0.0","description":"PLG_SEARCH_TAGS_XML_DESCRIPTION","group":"","filename":"tags"}', '{"search_limit":"50","show_tagged_items":"1"}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
-(452, 'plg_system_updatenotification', 'plugin', 'updatenotification', 'system', 0, 1, 1, 0, '{"name":"plg_system_updatenotification","type":"plugin","creationDate":"May 2015","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2016 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"3.5.0","description":"PLG_SYSTEM_UPDATENOTIFICATION_XML_DESCRIPTION","group":"","filename":"updatenotification"}', '{"lastrun":1508829551}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(452, 'plg_system_updatenotification', 'plugin', 'updatenotification', 'system', 0, 1, 1, 0, '{"name":"plg_system_updatenotification","type":"plugin","creationDate":"May 2015","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2016 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"3.5.0","description":"PLG_SYSTEM_UPDATENOTIFICATION_XML_DESCRIPTION","group":"","filename":"updatenotification"}', '{"lastrun":1508901827}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (453, 'plg_editors-xtd_module', 'plugin', 'module', 'editors-xtd', 0, 1, 1, 0, '{"name":"plg_editors-xtd_module","type":"plugin","creationDate":"October 2015","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2016 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"3.5.0","description":"PLG_MODULE_XML_DESCRIPTION","group":"","filename":"module"}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (454, 'plg_system_stats', 'plugin', 'stats', 'system', 0, 1, 1, 0, '{"name":"plg_system_stats","type":"plugin","creationDate":"November 2013","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2016 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"3.5.0","description":"PLG_SYSTEM_STATS_XML_DESCRIPTION","group":"","filename":"stats"}', '{"mode":3,"lastrun":1490796816,"unique_id":"16cb9a97db9087b5335d9275d7c974e1039f1d71","interval":12}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (455, 'plg_installer_packageinstaller', 'plugin', 'packageinstaller', 'installer', 0, 1, 1, 1, '{"name":"plg_installer_packageinstaller","type":"plugin","creationDate":"May 2016","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2016 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"3.6.0","description":"PLG_INSTALLER_PACKAGEINSTALLER_PLUGIN_XML_DESCRIPTION","group":"","filename":"packageinstaller"}', '', '', '', 0, '0000-00-00 00:00:00', 1, 0),
@@ -2169,8 +2165,7 @@ CREATE TABLE `d_session` (
 --
 
 INSERT INTO `d_session` (`session_id`, `client_id`, `guest`, `time`, `data`, `userid`, `username`) VALUES
-('gu8apts11584mv43tl34eovps4', 1, 0, '1508835444', 'joomla|s:1124:"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjE6e3M6OToiX19kZWZhdWx0IjtPOjg6InN0ZENsYXNzIjo0OntzOjc6InNlc3Npb24iO086ODoic3RkQ2xhc3MiOjM6e3M6NzoiY291bnRlciI7aTozNztzOjU6InRpbWVyIjtPOjg6InN0ZENsYXNzIjozOntzOjU6InN0YXJ0IjtpOjE1MDg4Mjk1Nzg7czo0OiJsYXN0IjtpOjE1MDg4MzU0NDM7czozOiJub3ciO2k6MTUwODgzNTQ0Mzt9czo1OiJ0b2tlbiI7czozMjoiMVNsSDhZY1RaTW01YU92UUZLcFpaczAweGpROHVVUnAiO31zOjg6InJlZ2lzdHJ5IjtPOjI0OiJKb29tbGFcUmVnaXN0cnlcUmVnaXN0cnkiOjM6e3M6NzoiACoAZGF0YSI7Tzo4OiJzdGRDbGFzcyI6Mjp7czoxMzoiY29tX2luc3RhbGxlciI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo3OiJtZXNzYWdlIjtzOjA6IiI7czoxNzoiZXh0ZW5zaW9uX21lc3NhZ2UiO3M6MDoiIjtzOjEyOiJyZWRpcmVjdF91cmwiO047fXM6MTg6ImNvbV9idXNpbmVzc3N5c3RlbSI7Tzo4OiJzdGRDbGFzcyI6MTp7czo0OiJlZGl0IjtPOjg6InN0ZENsYXNzIjoxOntzOjc6ImFjY291bnQiO086ODoic3RkQ2xhc3MiOjI6e3M6NDoiZGF0YSI7TjtzOjI6ImlkIjthOjA6e319fX19czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MTtzOjk6InNlcGFyYXRvciI7czoxOiIuIjt9czo0OiJ1c2VyIjtPOjU6IkpVc2VyIjoxOntzOjI6ImlkIjtzOjI6IjcwIjt9czoxMToiYXBwbGljYXRpb24iO086ODoic3RkQ2xhc3MiOjE6e3M6NToicXVldWUiO047fX19czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjk6InNlcGFyYXRvciI7czoxOiIuIjt9";', 70, 'admin'),
-('urm2o46q2o9f7aofdn0gs4n4b5', 0, 1, '1508833171', 'joomla|s:836:"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjE6e3M6OToiX19kZWZhdWx0IjtPOjg6InN0ZENsYXNzIjozOntzOjc6InNlc3Npb24iO086ODoic3RkQ2xhc3MiOjM6e3M6NzoiY291bnRlciI7aToyO3M6NToidGltZXIiO086ODoic3RkQ2xhc3MiOjM6e3M6NToic3RhcnQiO2k6MTUwODgyOTU1MTtzOjQ6Imxhc3QiO2k6MTUwODgyOTU1MTtzOjM6Im5vdyI7aToxNTA4ODMzMTcxO31zOjU6InRva2VuIjtzOjMyOiJuakxsN0tXR2lWODU3YkJYUWVEakhlMjRPdENEM29IQiI7fXM6ODoicmVnaXN0cnkiO086MjQ6Ikpvb21sYVxSZWdpc3RyeVxSZWdpc3RyeSI6Mzp7czo3OiIAKgBkYXRhIjtPOjg6InN0ZENsYXNzIjoxOntzOjEzOiJjb21faW5zdGFsbGVyIjtPOjg6InN0ZENsYXNzIjoyOntzOjc6Im1lc3NhZ2UiO3M6MDoiIjtzOjE3OiJleHRlbnNpb25fbWVzc2FnZSI7czowOiIiO319czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MTtzOjk6InNlcGFyYXRvciI7czoxOiIuIjt9czo0OiJ1c2VyIjtPOjU6IkpVc2VyIjoxOntzOjI6ImlkIjtpOjA7fX19czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjk6InNlcGFyYXRvciI7czoxOiIuIjt9";', 0, '');
+('fd536n47l6u39hvj1efdmgmsf6', 1, 0, '1508920426', 'joomla|s:1032:"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjE6e3M6OToiX19kZWZhdWx0IjtPOjg6InN0ZENsYXNzIjo0OntzOjc6InNlc3Npb24iO086ODoic3RkQ2xhc3MiOjM6e3M6NzoiY291bnRlciI7aTo0ODtzOjU6InRva2VuIjtzOjMyOiJXMVMzbVZwUVlZMW1RUldVRnVMMXl1SUpZSVdscHNuYyI7czo1OiJ0aW1lciI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo1OiJzdGFydCI7aToxNTA4OTE3MTM1O3M6NDoibGFzdCI7aToxNTA4OTIwNDI2O3M6Mzoibm93IjtpOjE1MDg5MjA0MjY7fX1zOjg6InJlZ2lzdHJ5IjtPOjI0OiJKb29tbGFcUmVnaXN0cnlcUmVnaXN0cnkiOjM6e3M6NzoiACoAZGF0YSI7Tzo4OiJzdGRDbGFzcyI6MTp7czoxODoiY29tX2J1c2luZXNzc3lzdGVtIjtPOjg6InN0ZENsYXNzIjoxOntzOjQ6ImVkaXQiO086ODoic3RkQ2xhc3MiOjI6e3M6NzoiYWNjb3VudCI7Tzo4OiJzdGRDbGFzcyI6Mjp7czoyOiJpZCI7YTowOnt9czo0OiJkYXRhIjtOO31zOjU6Im9yZGVyIjtPOjg6InN0ZENsYXNzIjoxOntzOjQ6ImRhdGEiO047fX19fXM6MTQ6IgAqAGluaXRpYWxpemVkIjtiOjE7czo5OiJzZXBhcmF0b3IiO3M6MToiLiI7fXM6NDoidXNlciI7Tzo1OiJKVXNlciI6MTp7czoyOiJpZCI7czoyOiI3MCI7fXM6MTE6ImFwcGxpY2F0aW9uIjtPOjg6InN0ZENsYXNzIjoxOntzOjU6InF1ZXVlIjtOO319fXM6MTQ6IgAqAGluaXRpYWxpemVkIjtiOjA7czo5OiJzZXBhcmF0b3IiO3M6MToiLiI7fQ==";', 70, 'admin');
 
 -- --------------------------------------------------------
 
@@ -2367,8 +2362,8 @@ CREATE TABLE `d_update_sites` (
 --
 
 INSERT INTO `d_update_sites` (`update_site_id`, `name`, `type`, `location`, `enabled`, `last_check_timestamp`, `extra_query`) VALUES
-(1, 'Joomla! Core', 'collection', 'https://update.joomla.org/core/list.xml', 1, 1508829599, ''),
-(2, 'Joomla! Extension Directory', 'collection', 'https://update.joomla.org/jed/list.xml', 1, 1508829599, ''),
+(1, 'Joomla! Core', 'collection', 'https://update.joomla.org/core/list.xml', 1, 1508901827, ''),
+(2, 'Joomla! Extension Directory', 'collection', 'https://update.joomla.org/jed/list.xml', 1, 1508901827, ''),
 (3, 'Accredited Joomla! Translations', 'collection', 'https://update.joomla.org/language/translationlist_3.xml', 1, 0, ''),
 (4, 'Joomla! Update Component Update Site', 'extension', 'https://update.joomla.org/core/extensions/com_joomlaupdate.xml', 1, 0, '');
 
@@ -2452,14 +2447,14 @@ CREATE TABLE `d_users` (
 --
 
 INSERT INTO `d_users` (`id`, `name`, `username`, `email`, `password`, `block`, `sendEmail`, `registerDate`, `lastvisitDate`, `activation`, `params`, `lastResetTime`, `resetCount`, `otpKey`, `otep`, `requireReset`) VALUES
-(70, 'Super User', 'admin', 'dev@phpkungfu.club', '$2y$10$a.2eq2OeeZ7pYAGhksE4j.ZDp6HCBkXBKbZZ6x1SQ16TbVPZNNGAW', 0, 1, '2017-03-29 14:13:09', '2017-10-24 07:19:56', '0', '', '0000-00-00 00:00:00', 0, '', '', 0),
+(70, 'Super User', 'admin', 'dev@phpkungfu.club', '$2y$10$a.2eq2OeeZ7pYAGhksE4j.ZDp6HCBkXBKbZZ6x1SQ16TbVPZNNGAW', 0, 1, '2017-03-29 14:13:09', '2017-10-25 07:38:55', '0', '', '0000-00-00 00:00:00', 0, '', '', 0),
 (76, 'Dokataxe Office', 'jdev', 'jdev@gmail.com', '$2y$10$sWdWev8tKoN9lnHjGBmdJ.2sOQdznad.FnJBm2NJUVkkVQtDKyXLu', 0, 0, '2017-04-08 17:09:23', '2017-04-09 17:25:30', '', '{}', '0000-00-00 00:00:00', 0, '', '', 0),
 (77, 'Montana Office', 'dev', 'dev@gmail.com', '$2y$10$0eCLCCQfNv4QCnVk8jHbUevXPBhbQOdbleSfjha5T9ounh9mwrInm', 0, 0, '2017-04-08 17:10:59', '0000-00-00 00:00:00', '', '{}', '0000-00-00 00:00:00', 0, '', '', 0),
 (78, 'e1', 'e1', 'e1@gmail.com', '$2y$10$vnGV2HadbBaU0J3bQNV48eG7CfoezpGHTp7k0IRNLLXj4oafW3UMO', 0, 0, '2017-04-08 17:15:49', '0000-00-00 00:00:00', '', '{}', '0000-00-00 00:00:00', 0, '', '', 0),
 (79, 'e2', 'e2', 'e2@gmail.com', '$2y$10$KnxavtuFHDxK1gwa9Fx27ONO1dPsvii8w0/AZOxiWQaKX0CghYvmW', 0, 0, '2017-04-08 17:18:38', '0000-00-00 00:00:00', '', '{}', '0000-00-00 00:00:00', 0, '', '', 0),
 (80, 'tessttt 111', 'jjjjjj', 'jjjjjj@gmail.com', '$2y$10$0R53Yq.na1zjJ0sisQoB1.romewrqWLICFATORkrQxcrjMsHSJUJ2', 0, 0, '2017-04-09 17:20:33', '2017-04-09 17:24:27', '', '{}', '0000-00-00 00:00:00', 0, '', '', 0),
 (81, 'test', 'test', 'test@gmail.com', '$2y$10$lXqc..vYY6lU2.ReAksREukp.UTwNhg0ZWYjJjwIlWzt4d6KZ85QK', 0, 0, '2017-04-10 05:38:54', '0000-00-00 00:00:00', '', '{}', '0000-00-00 00:00:00', 0, '', '', 0),
-(82, '43242 rưe rưerw', 'a@gmail.com', 'a@gmail.com', '$2y$10$ejjtHOgg/BFEDoZ2xY9QQ./MjNbfgwQTknZi2joIhOz8p3AVPT.32', 0, 0, '2017-10-24 08:49:28', '0000-00-00 00:00:00', '', '{}', '0000-00-00 00:00:00', 0, '', '', 0);
+(82, '43242 rưe rưerw', 'a@gmail.com', 'xxa@gmail.com', '$2y$10$ejjtHOgg/BFEDoZ2xY9QQ./MjNbfgwQTknZi2joIhOz8p3AVPT.32', 0, 0, '2017-10-24 08:49:28', '0000-00-00 00:00:00', '', '{}', '0000-00-00 00:00:00', 0, '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -2653,12 +2648,6 @@ ALTER TABLE `d_businesssystem_cpas`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `d_businesssystem_expenses`
---
-ALTER TABLE `d_businesssystem_expenses`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `d_businesssystem_invoices`
 --
 ALTER TABLE `d_businesssystem_invoices`
@@ -2680,6 +2669,12 @@ ALTER TABLE `d_businesssystem_locations`
 -- Indexes for table `d_businesssystem_mileages`
 --
 ALTER TABLE `d_businesssystem_mileages`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `d_businesssystem_orders`
+--
+ALTER TABLE `d_businesssystem_orders`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -3300,11 +3295,6 @@ ALTER TABLE `d_businesssystem_config`
 ALTER TABLE `d_businesssystem_cpas`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT for table `d_businesssystem_expenses`
---
-ALTER TABLE `d_businesssystem_expenses`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
---
 -- AUTO_INCREMENT for table `d_businesssystem_invoices`
 --
 ALTER TABLE `d_businesssystem_invoices`
@@ -3324,6 +3314,11 @@ ALTER TABLE `d_businesssystem_locations`
 --
 ALTER TABLE `d_businesssystem_mileages`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `d_businesssystem_orders`
+--
+ALTER TABLE `d_businesssystem_orders`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `d_businesssystem_receipts`
 --
