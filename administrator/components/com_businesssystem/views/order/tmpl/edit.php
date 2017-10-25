@@ -14,18 +14,17 @@ JHtml::_('behavior.formvalidation');
 JHtml::_('behavior.keepalive');
 JHtml::_('formbehavior.chosen', 'select', null, array('disable_search_threshold' => 0 ));
 ?>
-<?php echo jSont::menuSiderbar(); ?>
 <script type="text/javascript">
             Joomla.submitbutton = function(task)
             {
-                if (task == 'expense.cancel') {
-                    Joomla.submitform(task, document.getElementById('expense-form'));
+                if (task == 'order.cancel') {
+                    Joomla.submitform(task, document.getElementById('order-form'));
                 }
                 else{
                     
-                    if (task != 'expense.cancel' && document.formvalidator.isValid(document.id('expense-form'))) {
+                    if (task != 'order.cancel' && document.formvalidator.isValid(document.id('order-form'))) {
                         
-                        Joomla.submitform(task, document.getElementById('expense-form'));
+                        Joomla.submitform(task, document.getElementById('order-form'));
                     }
                     else {
                         alert('<?php echo $this->escape(JText::_('JGLOBAL_VALIDATION_FORM_FAILED')); ?>');
@@ -35,11 +34,11 @@ JHtml::_('formbehavior.chosen', 'select', null, array('disable_search_threshold'
 
 </script>
 
-<form action="<?php echo JRoute::_('index.php?option=com_businesssystem&layout=edit&id=' . (int) $this->item->id); ?>" method="post" enctype="multipart/form-data" name="adminForm" id="expense-form" class="form-validate">
+<form action="<?php echo JRoute::_('index.php?option=com_businesssystem&layout=edit&id=' . (int) $this->item->id); ?>" method="post" enctype="multipart/form-data" name="adminForm" id="order-form" class="form-validate">
     <div class="jsont form-horizontal row-fluid">
         <div class="clearfix fltlft">
                 <div class="clearfix fltlft span6 full">
-                    <legend><?php echo JText::_('Expense');?></legend>
+                    <legend><?php echo JText::_('Order');?></legend>
                     <?php foreach ($this->form->getFieldset('basic') as $field) : ?>
                            <div class="control-group">
                                     <div class="control-label">

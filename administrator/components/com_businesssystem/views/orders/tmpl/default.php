@@ -22,8 +22,7 @@ $listDirn = $this->state->get('list.direction');
 $canOrder = $user->authorise('core.edit.state', 'com_businesssystem');
 $saveOrder = $listOrder == 'a.ordering';
 ?>
-<?php echo jSont::menuSiderbar(); ?>
-<form action="<?php echo JRoute::_('index.php?option=com_businesssystem&view=expenses'); ?>" method="post" name="adminForm" id="adminForm">
+<form action="<?php echo JRoute::_('index.php?option=com_businesssystem&view=orders'); ?>" method="post" name="adminForm" id="adminForm">
     <?php if (!empty( $this->sidebar)) : ?>
 	<div id="j-sidebar-container" class="span2">
 		<?php echo $this->sidebar; ?>
@@ -116,10 +115,10 @@ $saveOrder = $listOrder == 'a.ordering';
                     
 					<td data-field="Company">
 					<?php if (isset($item->checked_out) && $item->checked_out) : ?>
-						<?php echo JHtml::_('jgrid.checkedout', $i, $item->editor, $item->checked_out_time, 'expenses.', $canCheckin); ?>
+						<?php echo JHtml::_('jgrid.checkedout', $i, $item->editor, $item->checked_out_time, 'orders.', $canCheckin); ?>
 					<?php endif; ?>
 					<?php if ($canEdit): ?>
-						<a href="<?php echo JRoute::_('index.php?option=com_businesssystem&task=expense.edit&id=' . (int) $item->id); ?>">
+						<a href="<?php echo JRoute::_('index.php?option=com_businesssystem&task=order.edit&id=' . (int) $item->id); ?>">
 
 							<?php echo $this->escape($item->company); ?>
 						</a>

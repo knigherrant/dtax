@@ -10,9 +10,9 @@
 defined('_JEXEC') or die;
 
 /**
- * expense Table class
+ * order Table class
  */
-class BusinessSystemTableExpense extends JTable
+class BusinessSystemTableOrder extends JTable
 {
 
 	/**
@@ -22,7 +22,7 @@ class BusinessSystemTableExpense extends JTable
 	 */
 	public function __construct(&$db)
 	{
-		parent::__construct('#__businesssystem_expenses', 'id', $db);
+		parent::__construct('#__businesssystem_orders', 'id', $db);
 	}
 
 	/**
@@ -60,10 +60,10 @@ class BusinessSystemTableExpense extends JTable
 			$registry->loadArray($array['metadata']);
 			$array['metadata'] = (string) $registry;
 		}
-		if (!JFactory::getUser()->authorise('core.admin', 'com_businesssystem.expense.' . $array['id']))
+		if (!JFactory::getUser()->authorise('core.admin', 'com_businesssystem.order.' . $array['id']))
 		{
-			$actions         = JFactory::getACL()->getActions('com_businesssystem', 'expense');
-			$default_actions = JFactory::getACL()->getAssetRules('com_businesssystem.expense.' . $array['id'])->getData();
+			$actions         = JFactory::getACL()->getActions('com_businesssystem', 'order');
+			$default_actions = JFactory::getACL()->getAssetRules('com_businesssystem.order.' . $array['id'])->getData();
 			$array_jaccess   = array();
 			foreach ($actions as $action)
 			{
@@ -208,7 +208,7 @@ class BusinessSystemTableExpense extends JTable
 	{
 		$k = $this->_tbl_key;
 
-		return 'com_businesssystem.expense.' . (int) $this->$k;
+		return 'com_businesssystem.order.' . (int) $this->$k;
 	}
 
 	

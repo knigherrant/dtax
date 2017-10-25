@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  * 
- * <div id="TaxformCategory">
-    <legend>Create Taxform Study Category</legend>
+ * <div id="ProductsCategory">
+    <legend>Create Products Study Category</legend>
     <div class="jContent">
-        <div id="TaxformCategories"></div>
+        <div id="ProductsCategories"></div>
         <textarea style="display:none" id="bbCategories" name="categories_taxform"><?php echo $this->item->categories_taxform; ?></textarea>
     </div>
     <input type="button" name="button" id="" class="button addCategory button-hero" value="Add">
@@ -15,34 +15,39 @@
  */
 jQuery(function($){
         var 
-            taxformCategories = 'taxformCategories',
-            invoiceCategories = 'invoiceCategories',
-            expensesCategories = 'expensesCategories',
-            receiptCategories = 'receiptCategories',
-            listTaxform = $('.'+taxformCategories).val(),
+            formProducts = 'formProducts',
+            cOrderStatuss = 'cOrderStatuss',
+            //expensesCategories = 'expensesCategories',
+            //receiptCategories = 'receiptCategories',
+            listProducts = $('.'+formProducts).val(),
             taxformJson = {},
-            listInvoice = $('.'+invoiceCategories).val(),
-            invoiceJson = {},
-            listExpenses = $('.'+expensesCategories).val(),
-            expensesJson = {},
-            listReceipt = $('.'+receiptCategories).val(),
-            receiptJson = {}
+            listInvoice = $('.'+cOrderStatuss).val(),
+            invoiceJson = {}
+            //listExpenses = $('.'+expensesCategories).val(),
+            //expensesJson = {},
+            //listReceipt = $('.'+receiptCategories).val(),
+            //receiptJson = {}
         ;
-        if(listTaxform.length > 3) taxformJson = JSON.parse(listTaxform);
+        if(listProducts.length > 3) taxformJson = JSON.parse(listProducts);
         if(listInvoice.length > 3) invoiceJson = JSON.parse(listInvoice);
-        if(listExpenses.length > 3) expensesJson = JSON.parse(listExpenses);
-        if(listReceipt.length > 3) receiptJson = JSON.parse(listReceipt);
+        //if(listExpenses.length > 3) expensesJson = JSON.parse(listExpenses);
+        //if(listReceipt.length > 3) receiptJson = JSON.parse(listReceipt);
 
         if(taxformJson){
             $.each(taxformJson, function(key, item){
-                jvConfigs.addItem(key, item, taxformCategories);
+                jvConfigs.addItem(key, item, formProducts);
             })
         }
+        $('input.addItem').click(function(){
+            jvConfigs.addItem(1,{},$(this).data('id'));
+        });
+       
         if(invoiceJson){
             $.each(invoiceJson, function(key, item){
-                jvConfigs.addItem(key, item, invoiceCategories);
+                jvConfigs.addItem(key, item, cOrderStatuss);
             })
         }
+         /*
         if(expensesJson){
             $.each(expensesJson, function(key, item){
                 jvConfigs.addItem(key, item, expensesCategories);
@@ -53,9 +58,8 @@ jQuery(function($){
                 jvConfigs.addItem(key, item, receiptCategories);
             })
         }
-        $('input.addItem').click(function(){
-            jvConfigs.addItem(1,{},$(this).data('id'));
-        });
+        
+        */
     })
 
 var jvConfigs = (function($){

@@ -14,7 +14,7 @@ jimport('joomla.application.component.view');
 /**
  * View to edit
  */
-class BusinessSystemViewExpense extends JViewLegacy {
+class BusinessSystemViewOrder extends JViewLegacy {
 
     protected $state;
     protected $item;
@@ -33,6 +33,10 @@ class BusinessSystemViewExpense extends JViewLegacy {
             throw new Exception(implode("\n", $errors));
         }
 
+        $input = JFactory::getApplication()->input;
+        $view = $input->getCmd('view', '');
+        BusinessSystemHelper::addSubmenu($view);
+        $this->sidebar = JHtmlSidebar::render();
         $this->addToolbar();
         parent::display($tpl);
     }
@@ -52,19 +56,19 @@ class BusinessSystemViewExpense extends JViewLegacy {
         }
         $canDo = BusinessSystemHelper::getActions();
 
-        JToolBarHelper::title(JText::_('Expense'), 'file');
+        JToolBarHelper::title(JText::_('Order'), 'file');
 		if($this->getLayout() =='view') return;
         // If not checked out, can save the item.
         if (!$checkedOut && ($canDo->get('core.edit') || ($canDo->get('core.create')))) {
 
-            JToolBarHelper::apply('expense.apply', 'JTOOLBAR_APPLY');
-            JToolBarHelper::save('expense.save', 'JTOOLBAR_SAVE');
+            JToolBarHelper::apply('order.apply', 'JTOOLBAR_APPLY');
+            JToolBarHelper::save('order.save', 'JTOOLBAR_SAVE');
         }
        
         if (empty($this->item->id)) {
-            JToolBarHelper::cancel('expense.cancel', 'JTOOLBAR_CANCEL');
+            JToolBarHelper::cancel('order.cancel', 'JTOOLBAR_CANCEL');
         } else {
-            JToolBarHelper::cancel('expense.cancel', 'JTOOLBAR_CLOSE');
+            JToolBarHelper::cancel('order.cancel', 'JTOOLBAR_CLOSE');
         }
     }
 

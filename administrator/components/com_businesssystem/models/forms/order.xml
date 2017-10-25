@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset name="basic" >
+
+        
+
+       <field name="account_id" type="account" size="40" class="inputbox" label="Account" description="Account" hint="Account"  filter="safehtml" /> 
+       <field name="product" type="product" size="40" class="inputbox" hint="Product" label="Product" description="Product" /> 
+       <field name="order_status" type="orderstatus" size="40" class="inputbox" hint="Order Status" label="Order Status" description="Order Status" /> 
+       <field name="purchase_date" type="text" size="40" class="inputbox" hint="Purchase Date" label="Purchase Date" description="Purchase Date" /> 
+       <field name="order_number" type="text" size="40" class="inputbox" hint="Order Mumber" label="Order Mumber" description="Order Mumber" /> 
+       
+       
+        
+ </fieldset> 
+
+
+</form>

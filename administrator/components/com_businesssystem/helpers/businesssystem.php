@@ -82,74 +82,6 @@ class jSont extends BusinessSystemHelper{
     
     
     
-    public static function isCompany($userid = 0){
-        if(!$userid) $userid = JFactory::getUser ()->id;
-        if(!$userid) return false;
-        static $company;
-        if(!isset($cpa[$userid])){
-            $db = JFactory::getDbo();
-            $company[$userid] = $db->setQuery('SELECT *, CONCAT(firstname, " " ,midname, " " ,lastname) as customer FROM #__businesssystem_company WHERE userid=' . $userid)->loadObject();
-        }
-        return $company[$userid];
-    }
-    
-    public static function isCTM($userid = 0){
-        if(!$userid) $userid = JFactory::getUser ()->id;
-        if(!$userid) return false;
-        if($customer = self::isCustomer($userid)) return $customer;
-        if($company = self::isCompany($userid)) return $company;
-        return false;
-    }
-    
-    public static function isCustomer($userid = 0){
-        if(!$userid) $userid = JFactory::getUser ()->id;
-        if(!$userid) return false;
-        static $customer;
-        if(!isset($cpa[$userid])){
-            $db = JFactory::getDbo();
-            $customer[$userid] = $db->setQuery('SELECT *, CONCAT(firstname, " " ,midname, " " ,lastname) as customer FROM #__businesssystem_customers WHERE userid=' . $userid)->loadObject();
-        }
-        return $customer[$userid];
-    }
-    
-    public static function isBDS($userid = 0){
-        if(!$userid) $userid = JFactory::getUser ()->id;
-        if(!$userid) return false;
-        if($mainCpa = self::isMainBDS($userid)) return $mainCpa;
-        if($childCpa = self::isChildBDS($userid)) return $childCpa;
-        return false;
-    }
-    
-	
-    public static function isMainBDS($userid = 0){
-        if(!$userid) $userid = JFactory::getUser ()->id;
-        if(!$userid) return false;
-        static $cpa;
-        if(!isset($cpa[$userid])){
-            $db = JFactory::getDbo();
-            $cpa[$userid] = $db->setQuery('SELECT *, CONCAT(firstname, " " ,midname, " " ,lastname) as cpa FROM #__businesssystem_cpas WHERE userid=' . $userid)->loadObject();
-            if($cpa[$userid]){
-                if(!$cpa[$userid]->logo) $cpa[$userid]->logo = JUri::root () . 'components/com_businesssystem/assets/images/no_logo.png';
-            }
-        }
-        return $cpa[$userid];
-    }
-	
-    public static function isChildBDS($userid = 0){
-        if(!$userid) $userid = JFactory::getUser ()->id;
-        if(!$userid) return false;
-        static $cpa;
-        if(!isset($cpa[$userid])){
-            $db = JFactory::getDbo();
-            $cpa[$userid] = $db->setQuery('SELECT *, CONCAT(firstname, " " ,midname, " " ,lastname) as cpa FROM #__businesssystem_locations WHERE userid=' . $userid)->loadObject();
-            if($cpa[$userid]){
-                if(!$cpa[$userid]->logo) $cpa[$userid]->logo = JUri::root () . 'components/com_businesssystem/assets/images/no_logo.png';
-            }
-        }
-        return $cpa[$userid];
-    }
-	
-   
     
     public static function getFileType($file){
         $pathinfo = pathinfo($file);
@@ -322,48 +254,11 @@ class jSont extends BusinessSystemHelper{
         return JModelLegacy::getInstance(ucwords($model), 'BusinessSystemModel', array('ignore_request' => true));
     }
    
-    public static function getLocation($id = 0){
-        if(!$id) return false;
-        $db = JFactory::getDbo();
-        $location = $db->setQuery('SELECT * FROM #__businesssystem_locations WHERE id=' . (int) $id)->loadObject();
-        return $location;
-    }
-    
-    public static function getOptionMainCpa(){
-        $db = JFactory::getDbo();
-        $lists = $db->setQuery('SELECT CONCAT(firstname," ",midname," ",lastname) as name, id   FROM #__businesssystem_cpas ')->loadObjectList();
-        $options[] = JHTML::_('select.option','', '- Select Main BDS -');
-        foreach ($lists as $l){
-            $options[] = JHTML::_('select.option',$l->id, $l->name);
-        }
-	return $options;
-    }
-    
-     public static function getOptionChildCpa(){
-        $db = JFactory::getDbo();
-        $lists = $db->setQuery('SELECT CONCAT(firstname," ",midname," ",lastname) as name, id   FROM #__businesssystem_locations ')->loadObjectList();
-        $options[] = JHTML::_('select.option','', '- Select BDS -');
-        foreach ($lists as $l){
-            $options[] = JHTML::_('select.option',$l->id, $l->name);
-        }
-	return $options;
-    }
-    
     
     public static function getOptionCustomer(){
         $db = JFactory::getDbo();
         $lists = $db->setQuery('SELECT CONCAT(firstname," ",midname," ",lastname) as name, id   FROM #__businesssystem_customers ')->loadObjectList();
         $options[] = JHTML::_('select.option','', '- Select Customer -');
-        foreach ($lists as $l){
-            $options[] = JHTML::_('select.option',$l->id, $l->name);
-        }
-	return $options;
-    }
-    
-    public static function getOptionMileage(){
-        $db = JFactory::getDbo();
-        $lists = $db->setQuery('SELECT company as name, id   FROM #__businesssystem_mileages ')->loadObjectList();
-        $options[] = JHTML::_('select.option','', '- Select Mileage -');
         foreach ($lists as $l){
             $options[] = JHTML::_('select.option',$l->id, $l->name);
         }
@@ -410,27 +305,7 @@ class jSont extends BusinessSystemHelper{
 	
         
         
-	public static function playAudio($audio){
-		if(file_exists(JPATH_SITE . '/' . $audio)){
-			?>
-			<audio controls>
-			  <source src="<?php echo JURI::root() . $audio ;?>" type="audio/mpeg">
-			Your browser does not support the audio element.
-			</audio>
-			<p><a target="_blank" href="<?php echo JURI::root() . $audio ;?>">Link</a></p>
-			<?php
-			
-		}else echo JText::_('File not found');
-	}
 	
-    public static  function getComments($item_id = 0, $type = ''){
-        if(!$item_id || !$type) return array();
-        $db = JFactory::getDbo();
-        $lists = $db->setQuery('select a.*,u.name from #__businesssystem_comments as a '
-                . 'left join #__users as u ON u.id=a.userid '
-                . 'where type="' . $type . '" AND item_id=' . (int) $item_id)->loadObjectList();
-        return $lists;
-    }
     
     public static  function format($date){
         return JHtml::_('date', $date, JText::_('DATE_FORMAT_LC3'), false);
@@ -453,150 +328,6 @@ class jSont extends BusinessSystemHelper{
 	return $options;
     }
     
-    
-     public static  function getMonths(){
-        $options[] = JHTML::_('select.option','', '- Month -');
-        for ($i=1; $i < 13; $i++){
-            $options[] = JHTML::_('select.option',$i, $i);
-        }
-	return $options;
-    }
-    
-    public static  function getDays(){
-        $options[] = JHTML::_('select.option','', '- Day -');
-        for ($i=1; $i < 32; $i++){
-            $options[] = JHTML::_('select.option',$i, $i);
-        }
-	return $options;
-    }
-    
-    
-    public static  function showProfileHtml($userid = 0, $edit = false){
-        if(!$userid) $userid = JFactory::getUser ()->id;
-        $item = self::getUser($userid);
-        ob_start();
-        ?>
-        <div id="userProfile" class="profile">
-            <div class="img span3 userAvatar big-avatar">
-                <?php if($edit){ ?>
-                    <img class="avatarProfile canEdit" alt="Click to change your avatar" src="<?php echo $item->avatar; ?>" />
-                <?php }else{ ?>
-                    <img class="avatarProfile" alt="" src="<?php echo $item->avatar; ?>" />
-                <?php } ?>
-            </div>
-            <div class="info span6">
-                <div class="span3">
-                    <p><?php echo $item->user->name; ?></p>
-                    <p><?php echo $item->user->username; ?></p>
-                    <p><?php echo $item->user->email; ?></p>
-                    <p><?php echo @$item->church; ?></p>
-                    <p><?php echo @$item->pastor; ?></p>
-                </div>
-                <div class="span3">
-                    <p>Account Type: <?php echo (@$item->account == '1')? 'VIP' : 'Free'; ?></p>
-                    <p><?php echo @$item->phone; ?></p>
-                    <p><?php echo @$item->location; ?></p>
-					<?php if($edit){ ?><p><a href="<?php echo JRoute::_('index.php?option=com_businesssystem&view=frontend&layout=edit&Itemid=' . JFactory::getApplication()->input->getInt('Itemid')); ?>">[Edit Profile]</a></p><?php } ?>
-                </div>
-            </div>
-            <?php if($edit){ ?>
-                <input style="display: none" id="cAvatar" type="file" name="avatar" />
-                <script>
-                    jQuery(function($){
-                        $('#userProfile .userAvatar').click(function(){$('#cAvatar').click()});
-                        $('#cAvatar').change(function(){
-                            jSont.uploadImage();
-                        })
-                    })
-                </script>
-            <?php } ?>
-            <div class="clearfix clear"></div>
-        </div>
-        <?php
-        return ob_get_clean();
-    }
-    
-    
-    public static  function googleMap($cfg = array()){
-	
-		$html  = '';
-		$config = (object) array(
-                    'apikey' => 'AIzaSyD7KJAbPjbKDmQxCVsiTlVOmQihmbOoFdY',
-                    'long' => ($cfg['lng'])? $cfg['lng'] : '',
-                    'lat' => ($cfg['lat'])? $cfg['lat'] : '',
-                    'address' => ($cfg['address'])? $cfg['address'] : '',
-                    'infotext' => $cfg['address'],
-                    'zoom' => 17,
-                    'marker' => '',
-                    'icon' => ''
-                );
-                if(!$cfg['id'] || !$config->address){
-                    $config->address = '';
-                    $config->lat = '48.87146';
-                    $config->long = '2.35500';      
-                }
-                $width = isset($cfg['width'])?$cfg['width']:'600px';
-                $height = isset($cfg['height'])?$cfg['height']:'300px';
-		$mapid = 'jsmap';
-		if(!$config->apikey) return $html;
-		$doc = JFactory::getDocument();
-		$doc->addScript('http://maps.googleapis.com/maps/api/js?key='.$config->apikey.'&sensor=false');
-		$doc->addScript(JURI::root().'administrator/components/com_businesssystem/assets/js/jsmap.js');
-                if($config->address != '' && !$config->lat){
-                    $script = '
-                                var geocoder = new google.maps.Geocoder();
-                                geocoder.geocode( { "address": "'.$config->address.'"}, function(results, status) {
-                                    if (status == "OK") {
-                                        jQuery("#jLat").val(results[0].geometry.location.lat());
-                                        jQuery("#jLong").val(results[0].geometry.location.lng());
-                                    } else {
-
-                                    }
-                                });
-                                
-                                jQuery(function($){
-                                var timex = setInterval(function(){
-                                    if(jQuery("#jLat").val() && jQuery("#jLong").val()){
-                                        jSont.initialize({
-                                            jsmapid		:"'.$mapid.'",
-                                            lat			:jQuery("#jLat").val(),
-                                            lng			:jQuery("#jLong").val(),
-                                            address		:"'.$config->address.'",
-                                            zoom		:'.$config->zoom.',
-                                            iconmarker	:"'.$config->icon.'",
-                                            infotext	:"'.$config->infotext.'",
-                                            draggable	:"true",
-                                            addevent        : "true"
-                                        });
-                                        clearInterval(timex);
-                                    }
-                                }, 100);
-
-                                    
-                                });
-                            ';
-                }else{
-                    $script = '
-			jQuery(function($){
-                            jSont.initialize({
-                                jsmapid		:"'.$mapid.'",
-                                lat			:"'.$config->lat.'",
-                                lng			:"'.$config->long.'",
-                                address		:"'.$config->address.'",
-                                zoom		:'.$config->zoom.',
-                                iconmarker	:"'.$config->icon.'",
-                                infotext	:"'.$config->infotext.'",
-                                draggable	:"true",
-                                addevent        : "true"
-                            });
-                        });
-			';
-                }
-		$doc->addScriptDeclaration($script);
-		$html = '<div style="width:'.$width.'; height: '.$height.';" id="'.$mapid.'"></div>';
-		return $html;
-	}
-	
     public static function getConfig(){
         static $cfg;
         if(isset($cfg)) return $cfg;
@@ -607,22 +338,6 @@ class jSont extends BusinessSystemHelper{
     }
     
     
-  
-    public static function menuSiderbar(){
-        
-    }
-   
-    
-   public static function accountType($type = null){
-        $account = array(
-            0 => JText::_('Free'),
-            1 => JText::_('VIP'),
-        );
-        if(isset($account[$type])) return $account[$type];
-        return $account;
-    }
-    
-   
     
    public static function repairDb(){
         $db = JFactory::getDbo();
@@ -652,13 +367,13 @@ class BusinessSystemHelper {
      * Configure the Linkbar.
      */
     public static function addSubmenu($vName = '') {
-            JHtmlSidebar::addEntry(  JText::_('Accounts'),  'index.php?option=com_cpamanager&view=accounts', $vName == 'accounts'  );
-            JHtmlSidebar::addEntry(  JText::_('Orders'),  'index.php?option=com_cpamanager&view=orders',  $vName == 'orders'  );
-            JHtmlSidebar::addEntry(  JText::_('Documents'),  'index.php?option=com_cpamanager&view=documents',  $vName == 'documents'  );
-            JHtmlSidebar::addEntry(  JText::_('Companies'),  'index.php?option=com_cpamanager&view=companies',  $vName == 'companies'  );
-            JHtmlSidebar::addEntry(  JText::_('Categories'),  'index.php?option=com_cpamanager&view=categories',  $vName == 'categories'  );
-            JHtmlSidebar::addEntry(  JText::_('Email Templates'),  'index.php?option=com_cpamanager&view=templates',  $vName == 'templates'  );
-            //JHtmlSidebar::addEntry(  JText::_('Configs'),  'index.php?option=com_cpamanager&view=configs',  $vName == 'configs'  );
+            JHtmlSidebar::addEntry(  JText::_('Accounts'),  'index.php?option=com_businesssystem&view=accounts', $vName == 'accounts'  );
+            JHtmlSidebar::addEntry(  JText::_('Orders'),  'index.php?option=com_businesssystem&view=orders',  $vName == 'orders'  );
+            JHtmlSidebar::addEntry(  JText::_('Documents'),  'index.php?option=com_businesssystem&view=documents',  $vName == 'documents'  );
+            JHtmlSidebar::addEntry(  JText::_('Companies'),  'index.php?option=com_businesssystem&view=companies',  $vName == 'companies'  );
+            JHtmlSidebar::addEntry(  JText::_('Categories'),  'index.php?option=com_businesssystem&view=categories',  $vName == 'categories'  );
+            JHtmlSidebar::addEntry(  JText::_('Email Templates'),  'index.php?option=com_businesssystem&view=templates',  $vName == 'templates'  );
+            JHtmlSidebar::addEntry(  JText::_('Configs'),  'index.php?option=com_businesssystem&view=configs',  $vName == 'configs'  );
     }
 
 

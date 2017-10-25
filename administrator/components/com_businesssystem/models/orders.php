@@ -13,7 +13,7 @@ jimport('joomla.application.component.modellist');
 /**
  * Methods supporting a list of BusinessSystem records.
  */
-class BusinessSystemModelExpenses extends JModelList {
+class BusinessSystemModelOrders extends JModelList {
 
     /**
      * Constructor.
@@ -100,7 +100,7 @@ class BusinessSystemModelExpenses extends JModelList {
                         'list.select', 'DISTINCT a.*'
                 )
         );
-        $query->from('`#__businesssystem_expenses` AS a');
+        $query->from('`#__businesssystem_orders` AS a');
         $query->select('CONCAT(c.firstname, " " ,c.midname, " " ,c.lastname) as cpa ' );
         $query->join( 'LEFT', '`#__businesssystem_cpas` AS c ON c.id=a.cpaid');
         // Filter by search in title

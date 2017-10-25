@@ -13,13 +13,13 @@ defined('_JEXEC') or die;
 jimport('joomla.application.component.controllerform');
 
 /**
- * Expense controller class.
+ * Order controller class.
  */
-class BusinessSystemControllerExpense extends JControllerForm
+class BusinessSystemControllerOrder extends JControllerForm
 {
 
     function __construct() {
-        $this->view_list = 'expenses';
+        $this->view_list = 'orders';
         parent::__construct();
     }
 

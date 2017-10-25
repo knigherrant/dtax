@@ -13,9 +13,9 @@ defined('_JEXEC') or die;
 jimport('joomla.application.component.controlleradmin');
 
 /**
- * BDSs list controller class.
+ * Orders list controller class.
  */
-class BusinessSystemControllerBDSs extends JControllerAdmin
+class BusinessSystemControllerOrders extends JControllerAdmin
 {
     
     public function __construct($config = array()) {
@@ -25,7 +25,7 @@ class BusinessSystemControllerBDSs extends JControllerAdmin
 	}
 	 public function featured()
 	{
-		// Check for request forgeries
+		// Check for order forgeries
 		JSession::checkToken() or jexit(JText::_('JINVALID_TOKEN'));
                 $this->input = JFactory::getApplication()->input;
 		$user   = JFactory::getUser();
@@ -40,7 +40,7 @@ class BusinessSystemControllerBDSs extends JControllerAdmin
 		else
 		{
 			$db = JFactory::getDbo();
-                        if(!$db->setQuery("UPDATE #__businesssystem_cpas SET `featured` ='$value' WHERE id IN (" . implode(',', $ids) . ")")->execute()){
+                        if(!$db->setQuery("UPDATE #__businesssystem_orders SET `featured` ='$value' WHERE id IN (" . implode(',', $ids) . ")")->execute()){
                             JError::raiseWarning(500, $model->getError());
                         }
 			if ($value == 1)
@@ -52,12 +52,12 @@ class BusinessSystemControllerBDSs extends JControllerAdmin
 				$message = JText::_(count($ids) . ' Item Unfeatured');
 			}
 		}
-                $this->setRedirect(JRoute::_('index.php?option=com_businesssystem&view=cpas', false), $message);
+                $this->setRedirect(JRoute::_('index.php?option=com_businesssystem&view=orders', false), $message);
 		
 	}
         public function main()
 	{
-		// Check for request forgeries
+		// Check for order forgeries
 		JSession::checkToken() or jexit(JText::_('JINVALID_TOKEN'));
                 $this->input = JFactory::getApplication()->input;
 		$user   = JFactory::getUser();
@@ -72,7 +72,7 @@ class BusinessSystemControllerBDSs extends JControllerAdmin
 		else
 		{
 			$db = JFactory::getDbo();
-                        if(!$db->setQuery("UPDATE #__businesssystem_cpas SET `main` ='$value' WHERE id IN (" . implode(',', $ids) . ")")->execute()){
+                        if(!$db->setQuery("UPDATE #__businesssystem_orders SET `main` ='$value' WHERE id IN (" . implode(',', $ids) . ")")->execute()){
                             JError::raiseWarning(500, $model->getError());
                         }
 			if ($value == 1)
@@ -84,7 +84,7 @@ class BusinessSystemControllerBDSs extends JControllerAdmin
 				$message = JText::_(count($ids) . ' Item UnMain');
 			}
 		}
-                $this->setRedirect(JRoute::_('index.php?option=com_businesssystem&view=cpas', false), $message);
+                $this->setRedirect(JRoute::_('index.php?option=com_businesssystem&view=orders', false), $message);
 		
 	}
     
@@ -92,9 +92,9 @@ class BusinessSystemControllerBDSs extends JControllerAdmin
 	 * Proxy for getModel.
 	 * @since	1.6
 	 */
-	public function getModel($name = 'cpa', $prefix = 'BusinessSystemModel', $config = array())
+	public function getModel($name = 'order', $prefix = 'BusinessSystemModel', $config = array())
 	{
-		$model = parent::getModel($name, $prefix, array('ignore_request' => true));
+		$model = parent::getModel($name, $prefix, array('ignore_order' => true));
 		return $model;
 	}
     

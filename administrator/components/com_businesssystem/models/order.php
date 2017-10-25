@@ -14,7 +14,7 @@ jimport('joomla.application.component.modeladmin');
 /**
  * BusinessSystem model.
  */
-class BusinessSystemModelExpense extends JModelAdmin
+class BusinessSystemModelOrder extends JModelAdmin
 {
 	/**
 	 * @var		string	The prefix to use with controller messages.
@@ -32,7 +32,7 @@ class BusinessSystemModelExpense extends JModelAdmin
 	 * @return	JTable	A database object
 	 * @since	1.6
 	 */
-	public function getTable($type = 'Expense', $prefix = 'BusinessSystemTable', $config = array())
+	public function getTable($type = 'Order', $prefix = 'BusinessSystemTable', $config = array())
 	{
 		return JTable::getInstance($type, $prefix, $config);
 	}
@@ -51,7 +51,7 @@ class BusinessSystemModelExpense extends JModelAdmin
 		$app	= JFactory::getApplication();
 
 		// Get the form.
-		$form = $this->loadForm('com_businesssystem.expense', 'expense', array('control' => 'jform', 'load_data' => $loadData));
+		$form = $this->loadForm('com_businesssystem.order', 'order', array('control' => 'jform', 'load_data' => $loadData));
         
         
 		if (empty($form)) {
@@ -70,7 +70,7 @@ class BusinessSystemModelExpense extends JModelAdmin
 	protected function loadFormData()
 	{
 		// Check the session for previously entered form data.
-		$data = JFactory::getApplication()->getUserState('com_businesssystem.edit.expense.data', array());
+		$data = JFactory::getApplication()->getUserState('com_businesssystem.edit.order.data', array());
 
 		if (empty($data)) {
 			$data = $this->getItem();

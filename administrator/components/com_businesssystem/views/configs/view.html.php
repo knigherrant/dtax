@@ -29,7 +29,10 @@ class BusinessSystemViewConfigs extends JViewLegacy
 			throw new Exception(implode("\n", $errors));
 		}
                 $this->form = $this->get('Form');
-                //BusinessSystemHelper::addSubmenu('configs');
+                $input = JFactory::getApplication()->input;
+                $view = $input->getCmd('view', '');
+                BusinessSystemHelper::addSubmenu($view);
+                $this->sidebar = JHtmlSidebar::render();
 
 		$this->addToolbar();
         
