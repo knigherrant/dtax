@@ -32,7 +32,10 @@ class BusinessSystemViewCompany extends JViewLegacy {
         if (count($errors = $this->get('Errors'))) {
             throw new Exception(implode("\n", $errors));
         }
-
+        $input = JFactory::getApplication()->input;
+        $view = $input->getCmd('view', '');
+        BusinessSystemHelper::addSubmenu($view);
+        $this->sidebar = JHtmlSidebar::render();
         $this->addToolbar();
         parent::display($tpl);
     }

@@ -14,7 +14,7 @@ jimport('joomla.form.formfield');
 /**
  * Supports an HTML select list of categories
  */
-class JFormFieldCpa extends JFormField
+class JFormFieldAccount extends JFormField
 {
 	/**
 	 * The form field type.
@@ -22,7 +22,7 @@ class JFormFieldCpa extends JFormField
 	 * @var		string
 	 * @since	1.6
 	 */
-	protected $type = 'cpa';
+	protected $type = 'account';
 
 	/**
 	 * Method to get the field input markup.
@@ -33,6 +33,6 @@ class JFormFieldCpa extends JFormField
 	protected function getInput()
 	{
 		// Initialize variables.
-		return JHTML::_('select.genericlist', jSont::getOptionChildCpa(), $this->name, 'class="inputbox" ', 'value', 'text', $this->value);
+		return JHTML::_('select.genericlist', jSont::getOptionAccount(), $this->name, 'class="inputbox" ', 'value', 'text', $this->value);
 	}
 }

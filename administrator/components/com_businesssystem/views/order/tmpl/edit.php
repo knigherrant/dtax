@@ -35,6 +35,15 @@ JHtml::_('formbehavior.chosen', 'select', null, array('disable_search_threshold'
 </script>
 
 <form action="<?php echo JRoute::_('index.php?option=com_businesssystem&layout=edit&id=' . (int) $this->item->id); ?>" method="post" enctype="multipart/form-data" name="adminForm" id="order-form" class="form-validate">
+     <?php if (!empty( $this->sidebar)) : ?>
+	<div id="j-sidebar-container" class="span2">
+		<?php echo $this->sidebar; ?>
+	</div>
+	<div id="j-main-container" class="span10">
+    <?php else : ?>
+        <div id="j-main-container">
+    <?php endif;?>
+    
     <div class="jsont form-horizontal row-fluid">
         <div class="clearfix fltlft">
                 <div class="clearfix fltlft span6 full">
@@ -70,4 +79,5 @@ JHtml::_('formbehavior.chosen', 'select', null, array('disable_search_threshold'
     <input type="hidden" name="task" value="" />
     <?php echo JHtml::_('form.token'); ?>
     <div class="clr"></div>
+    </div>
 </form>

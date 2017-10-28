@@ -103,12 +103,7 @@ class BusinessSystemModelCompanies extends JModelList {
                 )
         );
         $query->from('`#__businesssystem_company` AS a');
-        $query->select('CONCAT(c.firstname, " " ,c.midname, " " ,c.lastname) as maincpa ' );
-        $query->select('CONCAT(l.firstname, " " ,l.midname, " " ,l.lastname) as cpa ' );
-        $query->select('CONCAT(cc.firstname, " " ,cc.midname, " " ,cc.lastname) as customer ' );
-        $query->join( 'LEFT', '`#__businesssystem_cpas` AS c ON c.id=a.maincpa');
-        $query->join( 'LEFT', '`#__businesssystem_locations` AS l ON l.id=a.cpaid');
-        $query->join( 'LEFT', '`#__businesssystem_customers` AS cc ON cc.id=a.customer_id');
+        
         // Filter by search in title
         $search = $this->getState('filter.search');
         if (!empty($search)) {
@@ -116,8 +111,7 @@ class BusinessSystemModelCompanies extends JModelList {
                 $query->where('a.id = ' . (int) substr($search, 3));
             } else {
                 $search = $db->Quote('%' . $db->escape($search, true) . '%');
-				$query->where('LOWER(u.name) LIKE ' . $search 
-                                        . ' OR LOWER(a.firstname) LIKE ' . $search
+				$query->where(  ' LOWER(a.firstname) LIKE ' . $search
                                         . ' OR LOWER(a.lastname) LIKE ' . $search
                                         . ' OR LOWER(a.midname) LIKE ' . $search
                                         . ' OR LOWER(a.company) LIKE ' . $search

@@ -2,16 +2,58 @@
 <form>
     <fieldset name="basic" >
 
-        
+        <field name="id" type="hidden" default="0" label="COM_BUSINESSSYSTEM_FORM_LBL_OFFICE_LOCATION_ID"
+            readonly="true" class="readonly"
+            description="JGLOBAL_FIELD_ID_DESC" /> 
 
        <field name="account_id" type="account" size="40" class="inputbox" label="Account" description="Account" hint="Account"  filter="safehtml" /> 
        <field name="product" type="product" size="40" class="inputbox" hint="Product" label="Product" description="Product" /> 
        <field name="order_status" type="orderstatus" size="40" class="inputbox" hint="Order Status" label="Order Status" description="Order Status" /> 
        <field name="purchase_date" type="text" size="40" class="inputbox" hint="Purchase Date" label="Purchase Date" description="Purchase Date" /> 
        <field name="order_number" type="text" size="40" class="inputbox" hint="Order Mumber" label="Order Mumber" description="Order Mumber" /> 
+       <field name="total" type="text" size="40" class="inputbox" hint="Total" label="Total" description="Total" /> 
+       
+       <field name="requirements" type="text" size="40" class="inputbox" hint="Requirements" label="Requirements" description="Requirements" /> 
+       <field name="alerts" type="text" size="40" class="inputbox" hint="Alerts" label="Alerts" description="Alerts" /> 
+       
+       <field name="doc_title" type="text" size="40" class="inputbox" hint="Document Title" label="Document Title" description="Document Title" /> 
+       <field name="doc_file" type="jkfile" size="40" class="inputbox" hint="Document File" label="Document File" description="Document File" /> 
        
        
-        
+       
+       <field name="status_business" type="text" size="40" class="inputbox" hint="Status Forming Business" label="Status Forming Business" description="Status Forming Business" /> 
+       <field name="type_business" type="text" size="40" class="inputbox" hint="Type Of Business" label="Type Of Business" description="Type Of Business" /> 
+       
+       <field name="isnew_business" type="radio"
+                class="btn-group btn-group-yesno"
+                label="Is it a new business"
+                description="Is it a new business"
+                default="No"
+        >
+                <option value="Yes">JYES</option>
+                <option value="No">JNO</option>
+        </field>
+       
+      <field name="business_desc" type="text" size="40" class="inputbox" hint="Business Description" label="Business Description" description="Business Description" /> 
+      <field name="main_owner" type="text" size="40" class="inputbox" hint="Main Owner" label="Main Owner" description="Main Owner" /> 
+      <field name="number_employee" type="text" size="40" class="inputbox" hint="Number Of Employees" label="Number Of Employees" description="Number Of Employees" /> 
+      <field name="fiscal_year" type="text" size="40" class="inputbox" hint="Fiscal Year" label="Fiscal Year" description="Fiscal Year" /> 
+       
+      <field name="business_address" type="text" size="40" class="inputbox" hint="Business Address" label="Business Address" description="Business Address" /> 
+      <field name="city" type="text" size="40" class="inputbox" hint="City" label="City" description="City"   filter="safehtml" /> 
+       <field name="state" type="text" size="40" class="inputbox" hint="State" label="State" description="State"   filter="safehtml" /> 
+       <field name="zip" type="text" size="40" class="inputbox" hint="Zip Code" label="Zip Code" description="Zip Code"  filter="safehtml" /> 
+       
+       <field name="business_name1" type="text" size="40" class="inputbox" hint="Business Name 1" label="Business Name 1" description="Business Name 1"   filter="safehtml" /> 
+       <field name="business_name2" type="text" size="40" class="inputbox" hint="Business Name 2" label="Business Name 2" description="Business Name 2"   filter="safehtml" /> 
+       
+       <field name="partner_1" type="text" size="40" class="inputbox" hint="Partner 1" label="Partner 1" description="Partner 1"   filter="safehtml" /> 
+       <field name="title_1" type="text" size="40" class="inputbox" hint="Title" label="Title" description="Title"   filter="safehtml" /> 
+       <field name="partner_2" type="text" size="40" class="inputbox" hint="Partner 2" label="Partner 2" description="Partner 2"   filter="safehtml" /> 
+       <field name="title_2" type="text" size="40" class="inputbox" hint="Title" label="Title" description="Title"   filter="safehtml" /> 
+       <field name="partner_3" type="text" size="40" class="inputbox" hint="Partner 3" label="Partner 3" description="Partner 3"   filter="safehtml" /> 
+       <field name="title_3" type="text" size="40" class="inputbox" hint="Title" label="Title" description="Title"   filter="safehtml" /> 
+       
  </fieldset> 
 
 

@@ -37,7 +37,8 @@ class BusinessSystemViewCompanies extends JViewLegacy {
 
         $input = JFactory::getApplication()->input;
         $view = $input->getCmd('view', '');
-        //BusinessSystemHelper::addSubmenu($view);
+        BusinessSystemHelper::addSubmenu($view);
+        $this->sidebar = JHtmlSidebar::render();
 
         parent::display($tpl);
     }

@@ -35,7 +35,7 @@ class BusinessSystemViewOrder extends JViewLegacy {
 
         $input = JFactory::getApplication()->input;
         $view = $input->getCmd('view', '');
-        BusinessSystemHelper::addSubmenu($view);
+        BusinessSystemHelper::addSubmenu('orders');
         $this->sidebar = JHtmlSidebar::render();
         $this->addToolbar();
         parent::display($tpl);

@@ -265,6 +265,18 @@ class jSont extends BusinessSystemHelper{
 	return $options;
     }
     
+    public static function getOptionAccount(){
+        $db = JFactory::getDbo();
+        $lists = $db->setQuery('SELECT CONCAT(firstname," ",midname," ",lastname) as name, id   FROM #__businesssystem_accounts ')->loadObjectList();
+        $options[] = JHTML::_('select.option','', '- Select Account -');
+        foreach ($lists as $l){
+            $options[] = JHTML::_('select.option',$l->id, $l->name);
+        }
+	return $options;
+    }
+    
+    
+    
     public static function getDirPath($type){
         if($type == 'files'){
             return 'images/cpamanage/files';
@@ -312,22 +324,27 @@ class jSont extends BusinessSystemHelper{
     }
     
 	
-    public static  function getCategory($type = 'category_expenses'){
-        $category = jSont::getConfig()->$type;
-        $lists = json_decode($category);
-        return $lists;
-                
-    }
-    
-    public static  function getOptionCategory($type = 'category_expenses'){
-        $lists = self::getCategory($type);
-        $options[] = JHTML::_('select.option','', '- Select Category -');
-        foreach ($lists as $l){
+    public static  function getProducts(){
+        $products = json_decode(jSont::getConfig()->products);
+        $options[] = JHTML::_('select.option','', '- Select Product -');
+        foreach ($products as $l){
             $options[] = JHTML::_('select.option',$l->name, $l->name);
         }
 	return $options;
+                
     }
     
+    public static  function getOrderStatus(){
+        $orderstatus = json_decode(jSont::getConfig()->orderstatus);
+        $options[] = JHTML::_('select.option','', '- Select Order Status -');
+        foreach ($orderstatus as $l){
+            $options[] = JHTML::_('select.option',$l->name, $l->name);
+        }
+	return $options;
+                
+    }
+    
+   
     public static function getConfig(){
         static $cfg;
         if(isset($cfg)) return $cfg;

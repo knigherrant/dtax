@@ -14,7 +14,7 @@ jimport('joomla.form.formfield');
 /**
  * Supports an HTML select list of categories
  */
-class JFormFieldCategoryevent extends JFormField
+class JFormFieldProduct extends JFormField
 {
 	/**
 	 * The form field type.
@@ -22,7 +22,7 @@ class JFormFieldCategoryevent extends JFormField
 	 * @var		string
 	 * @since	1.6
 	 */
-	protected $type = 'categoryevent';
+	protected $type = 'product';
 
 	/**
 	 * Method to get the field input markup.
@@ -33,6 +33,6 @@ class JFormFieldCategoryevent extends JFormField
 	protected function getInput()
 	{
 		// Initialize variables.
-		return JHTML::_('select.genericlist', jSont::getOptionCategory('categories_event'), $this->name, 'class="inputbox" ', 'value', 'text', $this->value);
+		return JHTML::_('select.genericlist', jSont::getProducts(), $this->name, 'class="inputbox" ', 'value', 'text', $this->value);
 	}
 }

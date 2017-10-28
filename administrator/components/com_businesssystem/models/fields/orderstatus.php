@@ -14,7 +14,7 @@ jimport('joomla.form.formfield');
 /**
  * Supports an HTML select list of categories
  */
-class JFormFieldCategoryexpenses extends JFormField
+class JFormFieldOrderstatus extends JFormField
 {
 	/**
 	 * The form field type.
@@ -22,7 +22,7 @@ class JFormFieldCategoryexpenses extends JFormField
 	 * @var		string
 	 * @since	1.6
 	 */
-	protected $type = 'categoryexpenses';
+	protected $type = 'orderstatus';
 
 	/**
 	 * Method to get the field input markup.
@@ -33,6 +33,6 @@ class JFormFieldCategoryexpenses extends JFormField
 	protected function getInput()
 	{
 		// Initialize variables.
-		return JHTML::_('select.genericlist', jSont::getOptionCategory('categories_expenses'), $this->name, 'class="inputbox" ', 'value', 'text', $this->value);
+		return JHTML::_('select.genericlist', jSont::getOrderStatus(), $this->name, 'class="inputbox" ', 'value', 'text', $this->value);
 	}
 }

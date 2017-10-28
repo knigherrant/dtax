@@ -22,7 +22,6 @@ $listDirn = $this->state->get('list.direction');
 $canOrder = $user->authorise('core.edit.state', 'com_businesssystem');
 $saveOrder = $listOrder == 'a.ordering';
 ?>
-<?php echo jSont::menuSiderbar(); ?>
 <form action="<?php echo JRoute::_('index.php?option=com_businesssystem&view=companies'); ?>" method="post" name="adminForm" id="adminForm">
     <?php if (!empty( $this->sidebar)) : ?>
 	<div id="j-sidebar-container" class="span2">
