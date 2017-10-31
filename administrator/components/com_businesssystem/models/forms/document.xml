@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset name="basic">
+
+              <field name="id" type="hidden" default="0" label="COM_METIK_FORM_LBL_STATISTICS_ID"
+            readonly="true" class="readonly"
+            description="JGLOBAL_FIELD_ID_DESC" /> 
+       <field name="title" type="text"  label="Title"  description="Title"   required="true"  /> 
+       <field name="owner" type="owner" label="Owner"  description="Owner"   /> 
+       
+       <field name="category" type="categoryx" label="Category"  description="Category"   /> 
+       <field name="file_from" type="list" hint="File From" label="File From" description="File From" size="1" default="0">
+            <option value="1">Url File</option>
+            <option value="0">Local File</option>
+        </field>
+       <field name="doc_file" type="media" size="40" class="inputbox" hint="Document File" label="Document File" description="Document File" /> 
+       <field name="link_file" type="text" size="40" class="inputbox" hint="File URL" label="Document File" description="File URL" /> 
+       
+       
+       
+        <field name="state" type="list" label="JSTATUS" description="JFIELD_PUBLISHED_DESC" size="1" default="1">
+            <option value="1">JPUBLISHED</option>
+            <option value="0">JUNPUBLISHED</option>
+        </field>
+        <field name="created" type="calendar" default="" 
+            label="Date Created"
+            description="Date Created"  /> 
+        
+	</fieldset>
+
+</form>

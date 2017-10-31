@@ -101,8 +101,12 @@ class BusinessSystemModelOrders extends JModelList {
                 )
         );
         $query->from('`#__businesssystem_orders` AS a');
-        $query->select('CONCAT(c.firstname, " " ,c.midname, " " ,c.lastname) as cpa ' );
-        $query->join( 'LEFT', '`#__businesssystem_cpas` AS c ON c.id=a.cpaid');
+       $query->select('CONCAT(ac.firstname," ",ac.midname," ",ac.lastname) as name');
+        $query->join('LEFT', '`#__businesssystem_accounts` AS ac ON ac.id = a.account_id');
+        
+        $query->select('c.title as order_status');
+        $query->join('LEFT', '`#__businesssystem_categories` AS c ON c.id = a.order_status');
+        
         // Filter by search in title
         $search = $this->getState('filter.search');
         if (!empty($search)) {
@@ -110,7 +114,7 @@ class BusinessSystemModelOrders extends JModelList {
                 $query->where('a.id = ' . (int) substr($search, 3));
             } else {
                 $search = $db->Quote('%' . $db->escape($search, true) . '%');
-                $query->where('LOWER(a.company) LIKE ' . $search . ' OR LOWER(cpa) LIKE ' . $search);
+                $query->where('LOWER(a.product) LIKE ' . $search . ' OR LOWER(a.product) LIKE ' . $search);
             }
         }
         

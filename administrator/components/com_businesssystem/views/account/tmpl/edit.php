@@ -15,7 +15,6 @@ JHtml::_('behavior.keepalive');
 JHtml::_('behavior.modal', 'a.modal');
 JHtml::_('formbehavior.chosen', 'select');							
 ?>
-<?php echo jSont::menuSiderbar(); ?>
 <script type="text/javascript">
             Joomla.submitbutton = function(task)
             {

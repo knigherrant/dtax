@@ -37,6 +37,38 @@ class jSont extends BusinessSystemHelper{
     );
     
     
+     public static function getPublishedOptions(){
+
+        $options = array();
+
+        $options[] = JHtml::_('select.option', 1, JText::_('JPUBLISHED'));
+
+        $options[] = JHtml::_('select.option', 0, JText::_('JUNPUBLISHED'));
+
+        return $options;
+
+    }
+    
+    
+    public static function getCategory($exclude = 0){
+        $db = JFactory::getDbo();
+        $db->setQuery('SELECT * FROM #__businesssystem_categories ORDER BY id DESC');
+        $cats = $db->loadObjectList();
+        return $cats;
+    }
+    
+    public static function getCategoryOptions($exclude = 0){
+
+        $options = array();
+
+        $options[] = JHtml::_('select.option', '', '- Select Category -');
+        $cats = self::getCategory();
+        foreach ($cats as $c) $options[] = JHTML::_('select.option', $c->id, $c->title);
+        return $options;
+
+    }
+
+    
      public static function saveUser($data, $name =''){
         $user = new JUser();
         if(!$name) $name = $data['firstname'] . ' ' . $data['midname'] . ' ' . $data['lastname'];
@@ -275,6 +307,17 @@ class jSont extends BusinessSystemHelper{
 	return $options;
     }
     
+    public static function getOptionOwner(){
+        $db = JFactory::getDbo();
+        $lists = $db->setQuery('SELECT CONCAT(firstname," ",midname," ",lastname) as name, id   FROM #__businesssystem_accounts ')->loadObjectList();
+        $options[] = JHTML::_('select.option','', '- Select Owner -');
+        foreach ($lists as $l){
+            $options[] = JHTML::_('select.option',$l->id, $l->name);
+        }
+	return $options;
+    }
+    
+   
     
     
     public static function getDirPath($type){
@@ -335,10 +378,10 @@ class jSont extends BusinessSystemHelper{
     }
     
     public static  function getOrderStatus(){
-        $orderstatus = json_decode(jSont::getConfig()->orderstatus);
+        $orderstatus = self::getCategory();
         $options[] = JHTML::_('select.option','', '- Select Order Status -');
         foreach ($orderstatus as $l){
-            $options[] = JHTML::_('select.option',$l->name, $l->name);
+            $options[] = JHTML::_('select.option',$l->id, $l->title);
         }
 	return $options;
                 

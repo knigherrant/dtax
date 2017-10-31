@@ -103,7 +103,10 @@ class BusinessSystemModelCompanies extends JModelList {
                 )
         );
         $query->from('`#__businesssystem_company` AS a');
-        
+        $query->select('CONCAT(ac.firstname," ",ac.midname," ",ac.lastname) as name');
+        $query->join('LEFT', '`#__businesssystem_accounts` AS ac ON ac.id = a.account_id');
+        $query->select('c.title');
+        $query->join('LEFT', '`#__businesssystem_categories` AS c ON c.id = a.order_status');
         // Filter by search in title
         $search = $this->getState('filter.search');
         if (!empty($search)) {
@@ -133,7 +136,7 @@ class BusinessSystemModelCompanies extends JModelList {
     public function getItems() {
         $items = parent::getItems();
         foreach ($items as $item){
-            $item->name = $item->firstname . ' ' .$item->midname . ' ' . $item->lastname;
+            
         }
         return $items;
     }

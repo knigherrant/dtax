@@ -91,7 +91,7 @@ class BusinessSystemModelCompany extends JModelAdmin
 	public function getItem($pk = null)
 	{
 		if ($item = parent::getItem($pk)) {
-                        $item->user = JFactory::getUser($item->userid);
+                        //$item->user = JFactory::getUser($item->userid);
 		}
 		return $item;
 	}

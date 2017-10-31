@@ -54,24 +54,24 @@ $saveOrder = $listOrder == 'a.ordering';
                 </th>
              
 				<th class="left">
-					<?php echo JHtml::_('grid.sort',  'Company', 'a.company', $listDirn, $listOrder); ?>
+					<?php echo JHtml::_('grid.sort',  'Profile', 'ac.firstname', $listDirn, $listOrder); ?>
 				</th>
 
 				<th class="left">
-					<?php echo JHtml::_('grid.sort',  'Merchant', 'a.merchant', $listDirn, $listOrder); ?>
+					<?php echo JHtml::_('grid.sort',  'Product', 'a.product', $listDirn, $listOrder); ?>
 				</th>
 
 				<th class="left">
-					<?php echo JHtml::_('grid.sort',  'BDS', 'cpa', $listDirn, $listOrder); ?>
+					<?php echo JHtml::_('grid.sort',  'Order Number', 'a.order_number', $listDirn, $listOrder); ?>
 				</th>
 				
 
 				<th class="left">
-					<?php echo JHtml::_('grid.sort',  'Image', 'a.image', $listDirn, $listOrder); ?>
+					<?php echo JHtml::_('grid.sort',  'Status', 'a.order_status', $listDirn, $listOrder); ?>
 				</th>
                                 
                                 <th class="left">
-					<?php echo JHtml::_('grid.sort',  'Date', 'a.created', $listDirn, $listOrder); ?>
+					<?php echo JHtml::_('grid.sort',  'Purchase Date', 'a.created', $listDirn, $listOrder); ?>
 				</th>
                                 
 
@@ -113,39 +113,31 @@ $saveOrder = $listOrder == 'a.ordering';
                     </td>
                     
                     
-					<td data-field="Company">
+					<td data-field="Profile">
 					<?php if (isset($item->checked_out) && $item->checked_out) : ?>
 						<?php echo JHtml::_('jgrid.checkedout', $i, $item->editor, $item->checked_out_time, 'orders.', $canCheckin); ?>
 					<?php endif; ?>
 					<?php if ($canEdit): ?>
 						<a href="<?php echo JRoute::_('index.php?option=com_businesssystem&task=order.edit&id=' . (int) $item->id); ?>">
 
-							<?php echo $this->escape($item->company); ?>
+							<?php echo $this->escape($item->name); ?>
 						</a>
 					<?php else: ?>
-						<?php echo $this->escape($item->company); ?>
+						<?php echo $this->escape($item->name); ?>
 					<?php endif; ?>
 					</td>
 
-                                        <td data-field="Merchant">
-						<?php echo $item->merchant; ?>
+                                        <td data-field="Product">
+						<?php echo $item->product; ?>
 					</td>
                                         
-                                        <td data-field="BDS">
-						<?php echo $item->cpa; ?>
+                                        <td data-field="Order Number">
+						<?php echo $item->order_number; ?>
 					</td>
                                         
                                      
-                                        <td data-field="Image">
-                                            <?php if($item->image){ 
-                                                $img = JUri::root() . $item->image; 
-                                                JHTML::_('behavior.modal'); 
-                                            ?>
-                                                <a href="<?php echo $img; ?>" class="modal" rel="{size: {x: 700, y: 300}}">
-                                                    <img width="40px" src="<?php echo $img; ?>" alt="" />
-                                                </a>
-                                            <?php } ?>
-						
+                                        <td data-field="Status">
+                                           <?php echo $item->order_status; ?>
 					</td>
                                         
                                         <td data-field="Date">

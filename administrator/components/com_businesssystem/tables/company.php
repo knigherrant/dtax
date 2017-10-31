@@ -37,10 +37,7 @@ class BusinessSystemTableCompany extends JTable
 	public function bind($array, $ignore = '')
 	{
             
-                if(!$array['maincpa']) if($mainCpa = jSont::isMainBDS()) $array['maincpa'] = $mainCpa->id;
-                if(!$array['cpaid'])  if($cpa = jSont::isChildBDS()) $array['cpaid'] = $cpa->id;
-		if(!$array['customer_id'])  if($customer = jSont::isCustomer()) $array['customer_id'] = $customer->id;
-
+              
 		if(!$array['created'] || $array['created'] = '0000-00-00 00:00:00') $array['created'] = JFactory::getDate ()->toSql ();
 
                 

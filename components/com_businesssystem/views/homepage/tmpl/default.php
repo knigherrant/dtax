@@ -17,82 +17,68 @@ $document->addStyleSheet('components/com_businesssystem/assets/css/businesssyste
 
 $user = JFactory::getUser();
 $userId = $user->get('id');
-$listOrder = $this->state->get('list.ordering');
-$listDirn = $this->state->get('list.direction');
-$canOrder = $user->authorise('core.edit.state', 'com_businesssystem');
-$saveOrder = $listOrder == 'a.ordering';
+$orders = $this->items;
+$alerts = JST::getAlerts();
+$company = JST::getCompanies();
 ?>
 <?php echo JST::header(); ?>
-<?php echo JST::toolbar(); ?>
 <form action="<?php echo JRoute::_('index.php?option=com_businesssystem&view=expenses'); ?>" method="post" name="adminForm" id="adminForm">
     <div class="wrapcontent">
-        <div id="profile">
-            <?php echo JST::profile(); ?>
-        </div>
-        <div class="clearfix"></div>
-        <div id="static">
-            <div class="block block1">
-                <div class="bcontent">
-                    <?php if(JST::isBDS()){ ?>
-                        <p class="key">Total Invoices</p>
-                        <p class="value"><?php echo JST::getInvoices()->total ; ?></p>
-                    <?php }else{ ?>
-                        <p class="key">Total Expenses</p>
-                        <p class="value">$<?php echo (int)JST::getExpenses()->total ; ?></p>
+        <div class="contenBlock">
+            <div class="blockOrders">
+                <div class="blockHeader ordersHeader">
+                    Orders In Progress
+                </div>
+                <div class="blockContent ordersContent">
+                <?php if($orders){ ?>
+                    <?php foreach ($orders as $order){ ?>
+                        <p><?php echo $order->order_status;?></p>
                     <?php } ?>
+                <?php } ?>
                 </div>
             </div>
-            <div class="block block2">
-                <div class="bcontent">
-                    <?php if(JST::isBDS()){ ?>
-                        <p class="key">Tax Returns</p>
-                        <p class="value"><?php echo JST::getTaxs()->total ; ?></p>
-                    <?php }else{ ?>
-                        <p class="key">Total Receipts</p>
-                        <p class="value">$<?php echo (int)JST::getReceipts()->total ; ?></p>
-                    <?php } ?>
+            <div class="blockAlerts">
+                <div class="blockHeader alertsHeader">
+                    Alerts
                 </div>
-            </div>
-            <div class="block block3">
-                <div class="bcontent">
-                    <?php if(JST::isBDS()){ ?>
-                        <p class="key">Customer</p>
-                        <p class="value"><?php echo JST::getCustomer()->total ; ?></p>
-                    <?php }else{ ?>
-                        <p class="key">Total Mileages</p>
-                        <p class="value"><?php echo JST::getMileages()->total ; ?></p>
+                <div class="blockContent alertsContent">
+                <?php if($alerts){ ?>
+                    <?php foreach ($alerts as $a){ ?>
+                        <p><?php echo $a->alerts;?></p>
                     <?php } ?>
+                <?php } ?>
                 </div>
             </div>
         </div>
-        <div class="clearfix"></div>
-        <div class="chartContent">
-            <div class="heading">
-                <h4>STATISTICS</h4>
+        <div class="blockCompany">
+            <div class="blockHeader companyHeader">
+                My Company
             </div>
-            <div class="chartx">
-                <?php echo JST::getChart(); ?>
+            <div class="blockContent companyContent">
+                <table>
+                    <tr>
+                        <th>Company</th>
+                        <th>Classification</th>
+                        <th>Fiscal Year End</th>
+                    </tr>
+                    <?php if($company){ ?>
+                        <?php foreach ($company as $c){ ?>
+                        <tr>
+                            <td><?php echo $c->business_name1; ?></td>
+                            <td><?php echo $c->title; ?></td>
+                            <td><?php echo $c->fiscal_year; ?></td>
+                        </tr>
+                        <?php } ?>
+                    <?php } ?>
+                </table>
             </div>
-        </div>
-        <div class="clearfix"></div>
-        <div class="message">
-            <div class="inbox">
-                <div class="inbox-head">
-                    <h4>MESSAGE</h4>
-                </div>
-            </div> 
             
-            <div class="sendmsg">
-                <textarea></textarea>
-                
-            </div>
         </div>
     </div>
     <div>
         <input type="hidden" name="task" value="" />
         <input type="hidden" name="boxchecked" value="0" />
-        <input type="hidden" name="filter_order" value="<?php echo $listOrder; ?>" />
-        <input type="hidden" name="filter_order_Dir" value="<?php echo $listDirn; ?>" />
+
         <?php echo JHtml::_('form.token'); ?>
     </div>
 </form>

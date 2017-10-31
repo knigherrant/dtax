@@ -16,20 +16,20 @@
 jQuery(function($){
         var 
             formProducts = 'formProducts',
-            cOrderStatuss = 'cOrderStatuss',
+            //cOrderStatuss = 'cOrderStatuss',
             //expensesCategories = 'expensesCategories',
             //receiptCategories = 'receiptCategories',
             listProducts = $('.'+formProducts).val(),
-            taxformJson = {},
-            listInvoice = $('.'+cOrderStatuss).val(),
-            invoiceJson = {}
+            taxformJson = {}
+            //listInvoice = $('.'+cOrderStatuss).val(),
+           // invoiceJson = {}
             //listExpenses = $('.'+expensesCategories).val(),
             //expensesJson = {},
             //listReceipt = $('.'+receiptCategories).val(),
             //receiptJson = {}
         ;
         if(listProducts.length > 3) taxformJson = JSON.parse(listProducts);
-        if(listInvoice.length > 3) invoiceJson = JSON.parse(listInvoice);
+        //if(listInvoice.length > 3) invoiceJson = JSON.parse(listInvoice);
         //if(listExpenses.length > 3) expensesJson = JSON.parse(listExpenses);
         //if(listReceipt.length > 3) receiptJson = JSON.parse(listReceipt);
 
@@ -41,12 +41,13 @@ jQuery(function($){
         $('input.addItem').click(function(){
             jvConfigs.addItem(1,{},$(this).data('id'));
         });
-       
+       /*
         if(invoiceJson){
             $.each(invoiceJson, function(key, item){
                 jvConfigs.addItem(key, item, cOrderStatuss);
             })
         }
+    */
          /*
         if(expensesJson){
             $.each(expensesJson, function(key, item){

@@ -2,9 +2,7 @@
 <form>
     <fieldset name="basic" >
 
-        <field name="id" type="hidden" default="0" label="COM_BUSINESSSYSTEM_FORM_LBL_OFFICE_LOCATION_ID"
-            readonly="true" class="readonly"
-            description="JGLOBAL_FIELD_ID_DESC" /> 
+        
 
        <field name="account_id" type="account" size="40" class="inputbox" label="Account" description="Account" hint="Account"  filter="safehtml" /> 
        <field name="product" type="product" size="40" class="inputbox" hint="Product" label="Product" description="Product" /> 
@@ -12,14 +10,6 @@
        <field name="purchase_date" type="text" size="40" class="inputbox" hint="Purchase Date" label="Purchase Date" description="Purchase Date" /> 
        <field name="order_number" type="text" size="40" class="inputbox" hint="Order Mumber" label="Order Mumber" description="Order Mumber" /> 
        <field name="total" type="text" size="40" class="inputbox" hint="Total" label="Total" description="Total" /> 
-       
-       <field name="requirements" type="text" size="40" class="inputbox" hint="Requirements" label="Requirements" description="Requirements" /> 
-       <field name="alerts" type="text" size="40" class="inputbox" hint="Alerts" label="Alerts" description="Alerts" /> 
-       
-       <field name="doc_title" type="text" size="40" class="inputbox" hint="Document Title" label="Document Title" description="Document Title" /> 
-       <field name="doc_file" type="jkfile" size="40" class="inputbox" hint="Document File" label="Document File" description="Document File" /> 
-       
-       
        
        <field name="status_business" type="text" size="40" class="inputbox" hint="Status Forming Business" label="Status Forming Business" description="Status Forming Business" /> 
        <field name="type_business" type="text" size="40" class="inputbox" hint="Type Of Business" label="Type Of Business" description="Type Of Business" /> 
@@ -34,7 +24,28 @@
                 <option value="No">JNO</option>
         </field>
        
-      <field name="business_desc" type="text" size="40" class="inputbox" hint="Business Description" label="Business Description" description="Business Description" /> 
+       <field name="requirements" type="text" size="40" class="inputbox" hint="Requirements" label="Requirements" description="Requirements" /> 
+       <field name="alerts" type="text" size="40" class="inputbox" hint="Alerts" label="Alerts" description="Alerts" /> 
+       
+       <field name="doc_title" type="text" size="40" class="inputbox" hint="Document Title" label="Document Title" description="Document Title" /> 
+       
+       <field name="file_from" type="list" hint="File From" label="File From" description="File From" size="1" default="0">
+            <option value="1">Url File</option>
+            <option value="0">Local File</option>
+        </field>
+       <field name="doc_file" type="media" size="40" class="inputbox" hint="Document File" label="Document File" description="Document File" /> 
+       <field name="link_file" type="text" size="40" class="inputbox" hint="File URL" label="Document File" description="File URL" /> 
+       
+       
+       
+       
+      <field name="id" type="hidden" default="0" label="COM_BUSINESSSYSTEM_FORM_LBL_OFFICE_LOCATION_ID"
+            readonly="true" class="readonly"
+            description="JGLOBAL_FIELD_ID_DESC" /> 
+ </fieldset> 
+
+ <fieldset name="info" >
+     <field name="business_desc" type="text" size="40" class="inputbox" hint="Business Description" label="Business Description" description="Business Description" /> 
       <field name="main_owner" type="text" size="40" class="inputbox" hint="Main Owner" label="Main Owner" description="Main Owner" /> 
       <field name="number_employee" type="text" size="40" class="inputbox" hint="Number Of Employees" label="Number Of Employees" description="Number Of Employees" /> 
       <field name="fiscal_year" type="text" size="40" class="inputbox" hint="Fiscal Year" label="Fiscal Year" description="Fiscal Year" /> 
@@ -54,7 +65,7 @@
        <field name="partner_3" type="text" size="40" class="inputbox" hint="Partner 3" label="Partner 3" description="Partner 3"   filter="safehtml" /> 
        <field name="title_3" type="text" size="40" class="inputbox" hint="Title" label="Title" description="Title"   filter="safehtml" /> 
        
- </fieldset> 
+ </fieldset>
 
 
 </form>

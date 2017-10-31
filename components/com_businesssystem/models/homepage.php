@@ -93,16 +93,20 @@ class BusinessSystemModelHomepage extends JModelList {
         // Create a new query object.
         $db = $this->getDbo();
         $query = $db->getQuery(true);
-
+        $profile = JST::getProfile();
         // Select the required fields from the table.
         $query->select(
                 $this->getState(
                         'list.select', 'DISTINCT a.*'
                 )
         );
-        $query->from('`#__businesssystem_expenses` AS a');
-        $query->select('CONCAT(c.firstname, " " ,c.midname, " " ,c.lastname) as cpa ' );
-        $query->join( 'LEFT', '`#__businesssystem_cpas` AS c ON c.id=a.cpaid');
+        $query->from('`#__businesssystem_orders` AS a');
+       $query->select('CONCAT(ac.firstname," ",ac.midname," ",ac.lastname) as name');
+        $query->join('LEFT', '`#__businesssystem_accounts` AS ac ON ac.id = a.account_id');
+        
+        $query->select('c.title as order_status');
+        $query->join('LEFT', '`#__businesssystem_categories` AS c ON c.id = a.order_status');
+        
         // Filter by search in title
         $search = $this->getState('filter.search');
         if (!empty($search)) {
@@ -113,7 +117,7 @@ class BusinessSystemModelHomepage extends JModelList {
                 $query->where('LOWER(a.company) LIKE ' . $search . ' OR LOWER(cpa) LIKE ' . $search);
             }
         }
-        JST::dbwhere($query, 'expenses', 'a');
+        $query->where('a.account_id = ' . (int) $profile->id);
         // Add the list ordering clause.
         $orderCol = $this->state->get('list.ordering');
         $orderDirn = $this->state->get('list.direction');

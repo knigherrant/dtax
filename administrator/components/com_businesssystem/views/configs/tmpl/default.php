@@ -25,7 +25,7 @@ $doc->addScript(JUri::base() . 'components/com_businesssystem/assets/js/jsconfig
 
             if (task != 'configs.cancel' && document.formvalidator.isValid(document.id('configs-form'))) {
                 jvConfigs.setValueItems('formProducts');
-                jvConfigs.setValueItems('cOrderStatuss');
+                //jvConfigs.setValueItems('cOrderStatuss');
                 //jvConfigs.setValueItems('expensesCategories');orderstatus
                 //jvConfigs.setValueItems('receiptCategories');
                 Joomla.submitform(task, document.getElementById('configs-form'));
@@ -54,12 +54,28 @@ $doc->addScript(JUri::base() . 'components/com_businesssystem/assets/js/jsconfig
                             <textarea style="display:none" class="formProducts" name="products"><?php echo $this->item->products; ?></textarea>
                             <input type="button" name="button" data-id="formProducts" class="btn btn-small btn-success addItem button-hero" value="Add">
                      </div>  
+                    <!--
                     <div id="configOrderStatus" class="span3">
                         <legend>Order Status</legend>
                             <div id="cOrderStatuss"></div>
                             <textarea style="display:none" class="cOrderStatuss" name="orderstatus"><?php echo $this->item->orderstatus; ?></textarea>
                             <input type="button" name="button" data-id="cOrderStatuss" class="btn btn-small btn-success addItem button-hero" value="Add">
-                     </div>        
+                     </div>  
+                    -->
+                    
+                    <div id="link" class="span6">
+                        <legend>Link Menu</legend>
+                        <div class="control-group">
+                            <div class="control-label"><?php echo $this->form->getLabel('menu1'); ?></div>
+                            <div class="controls"><?php echo $this->form->getInput('menu1'); ?><?php echo $this->form->getInput('text1'); ?></div>
+                        </div>
+                        <div class="control-group">
+                            <div class="control-label"><?php echo $this->form->getLabel('menu2'); ?></div>
+                            <div class="controls"><?php echo $this->form->getInput('menu2'); ?><?php echo $this->form->getInput('text2'); ?></div>
+                        </div>
+                       
+                     </div>  
+                    
                 </div>
                 
                  <br/>

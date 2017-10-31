@@ -32,6 +32,23 @@ JHtml::_('formbehavior.chosen', 'select', null, array('disable_search_threshold'
                 }
             }
 
+        function loadSelectFile(){
+            var select = jQuery('#jform_file_from');
+            if(select.val() == 1){
+                    jQuery('.doc_file').hide();
+                    jQuery('.link_file').show();
+            }else{
+                    jQuery('.doc_file').show();
+                    jQuery('.link_file').hide();
+            }
+        }
+
+        jQuery(function($){
+            loadSelectFile();
+            $('#jform_file_from').change(function(){
+                loadSelectFile();
+            })
+        })
 </script>
 
 <form action="<?php echo JRoute::_('index.php?option=com_businesssystem&layout=edit&id=' . (int) $this->item->id); ?>" method="post" enctype="multipart/form-data" name="adminForm" id="order-form" class="form-validate">
@@ -49,7 +66,7 @@ JHtml::_('formbehavior.chosen', 'select', null, array('disable_search_threshold'
                 <div class="clearfix fltlft span6 full">
                     <legend><?php echo JText::_('Order');?></legend>
                     <?php foreach ($this->form->getFieldset('basic') as $field) : ?>
-                           <div class="control-group">
+                           <div class="control-group <?php echo $field->fieldname; ?>">
                                     <div class="control-label">
                                             <?php echo $field->label; ?>
                                     </div>
@@ -61,8 +78,8 @@ JHtml::_('formbehavior.chosen', 'select', null, array('disable_search_threshold'
                         
                 </div>
                 <div class="clearfix fltlft span6">
-                    <legend><?php echo JText::_('TRAVEL');?></legend>
-                    <?php foreach ($this->form->getFieldset('travel') as $field) : ?>
+                    <legend><?php echo JText::_('Business');?></legend>
+                    <?php foreach ($this->form->getFieldset('info') as $field) : ?>
                            <div class="control-group">
                                     <div class="control-label">
                                             <?php echo $field->label; ?>

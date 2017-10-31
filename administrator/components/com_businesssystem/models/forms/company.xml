@@ -1,83 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <form>
-	<fieldset name="basic" >
+    <fieldset name="basic" >
 
-        <field name="id" type="hidden" default="0" label="COM_BUSINESSSYSTEM_FORM_LBL_OFFICE_LOCATION_ID"
+        
+
+       <field name="account_id" type="account" size="40" class="inputbox" label="Account" description="Account" hint="Account"  filter="safehtml" /> 
+       <field name="product" type="product" size="40" class="inputbox" hint="Product" label="Product" description="Product" /> 
+       <field name="order_status" type="orderstatus" size="40" class="inputbox" hint="Order Status" label="Order Status" description="Order Status" /> 
+       <field name="purchase_date" type="text" size="40" class="inputbox" hint="Purchase Date" label="Purchase Date" description="Purchase Date" /> 
+       <field name="order_number" type="text" size="40" class="inputbox" hint="Order Mumber" label="Order Mumber" description="Order Mumber" /> 
+       <field name="total" type="text" size="40" class="inputbox" hint="Total" label="Total" description="Total" /> 
+       
+       <field name="status_business" type="text" size="40" class="inputbox" hint="Status Forming Business" label="Status Forming Business" description="Status Forming Business" /> 
+       <field name="type_business" type="text" size="40" class="inputbox" hint="Type Of Business" label="Type Of Business" description="Type Of Business" /> 
+       
+       <field name="isnew_business" type="radio"
+                class="btn-group btn-group-yesno"
+                label="Is it a new business"
+                description="Is it a new business"
+                default="No"
+        >
+                <option value="Yes">JYES</option>
+                <option value="No">JNO</option>
+        </field>
+       
+       <field name="business_desc" type="text" size="40" class="inputbox" hint="Business Description" label="Business Description" description="Business Description" /> 
+      <field name="main_owner" type="text" size="40" class="inputbox" hint="Main Owner" label="Main Owner" description="Main Owner" /> 
+      <field name="number_employee" type="text" size="40" class="inputbox" hint="Number Of Employees" label="Number Of Employees" description="Number Of Employees" /> 
+      <field name="fiscal_year" type="text" size="40" class="inputbox" hint="Fiscal Year" label="Fiscal Year" description="Fiscal Year" /> 
+       
+       
+      <field name="id" type="hidden" default="0" label="COM_BUSINESSSYSTEM_FORM_LBL_OFFICE_LOCATION_ID"
             readonly="true" class="readonly"
             description="JGLOBAL_FIELD_ID_DESC" /> 
+ </fieldset> 
 
-       <field name="userid" type="user" hint="Select User" label="Select User" description="Select User"  filter="safehtml" /> 
-       <field name="maincpa" type="maincpa" hint="Select Main BDS" label="Select Main BDS" description="Select Main BDS"  filter="safehtml" /> 
-       <field name="cpaid" type="cpa" hint="Select BDS" label="Select BDS" description="Select BDS"  filter="safehtml" /> 
-       <field name="customer_id" type="customer" hint="Select Customer" label="Select Customer" description="Select Customer"  filter="safehtml" /> 
-       <field name="company" type="text"  size="40" class="inputbox" hint="Company" label="Company" description="Company"   filter="safehtml" /> 
-       <field name="firstname" type="text"  size="40" class="inputbox" hint="First Name" label="First Name" description="First Name"   filter="safehtml" /> 
-       <field name="midname" type="text"  size="40" class="inputbox" hint="Middle Name" label="Middle Name" description="Middle Name"  filter="safehtml" /> 
-       <field name="lastname" type="text"  size="40" class="inputbox" hint="Last Name" label="Last Name" description="Last Name"   default=""  filter="safehtml" /> 
-       <field name="address1" type="text" size="40" class="inputbox" hint="Address 1" label="Address 1" description="Address 1"  filter="safehtml" /> 
-       <field name="address2" type="text" label="Address 2" hint="Address 2" description="Address 2"  filter="safehtml" /> 
-       <field name="city" type="text" size="40" class="inputbox" hint="City" label="City" description="City"   filter="safehtml" /> 
+ <fieldset name="info" >
+     
+      <field name="business_address" type="text" size="40" class="inputbox" hint="Business Address" label="Business Address" description="Business Address" /> 
+      <field name="city" type="text" size="40" class="inputbox" hint="City" label="City" description="City"   filter="safehtml" /> 
        <field name="state" type="text" size="40" class="inputbox" hint="State" label="State" description="State"   filter="safehtml" /> 
        <field name="zip" type="text" size="40" class="inputbox" hint="Zip Code" label="Zip Code" description="Zip Code"  filter="safehtml" /> 
-       <field name="phone" type="text" size="40" class="inputbox" hint="Phone" label="Phone" description="Phone"   default=""  filter="safehtml" /> 
-       <field name="cell_phone" type="text" size="40" class="inputbox" hint="Cell Phone" label="Cell Phone" description="Cell Phone"  filter="safehtml" /> 
-       <field name="fax" type="text" label="Fax" description="Fax" hint="Fax"  filter="safehtml" /> 
-       <field name="email" type="text"  size="40" class="inputbox" hint="Email" label="Email" description="Email"   filter="safehtml" /> 
-       <field name="url" type="text"  size="40" class="inputbox" hint="Url" label="Url" description="Url"   filter="safehtml" /> 
        
-       <field name="federal_id" type="text"  size="40" class="inputbox" hint="Federal ID" label="Federal ID" description="Federal ID"  filter="safehtml" /> 
-       <field name="first_tax" type="text"  size="40" class="inputbox" hint="First Month In Tax Year" label="First Month In Tax Year" description="First Month In Tax Year"  filter="safehtml" /> 
-       <field name="first_fiscal" type="text"  size="40" class="inputbox" hint="First Month In Fiscal Year" label="First Month In Fiscal Year" description="First Month In Fiscal Year"  filter="safehtml" /> 
-       <field name="income_tax_form" type="text"  size="40" class="inputbox" hint="Income Tax From User" label="Income Tax From User" description="Income Tax From User"  filter="safehtml" /> 
-       <field name="tax_exempt_form" type="jkfile"  size="40" class="inputbox" hint="Tax Exempt Form" label="Tax Exempt Form" description="Tax Exempt Form"  filter="safehtml" />
-       <field name="logo" type="jkfile"  size="40" class="inputbox" hint="Logo" label="Logo" description="Logo"  filter="safehtml" /> 
+       <field name="business_name1" type="text" size="40" class="inputbox" hint="Business Name 1" label="Business Name 1" description="Business Name 1"   filter="safehtml" /> 
+       <field name="business_name2" type="text" size="40" class="inputbox" hint="Business Name 2" label="Business Name 2" description="Business Name 2"   filter="safehtml" /> 
        
-       <field name="location_id" type="hidden"  size="40" class="inputbox" hint="Location" label="Location" description="Location"  filter="safehtml" /> 
+       <field name="partner_1" type="text" size="40" class="inputbox" hint="Partner 1" label="Partner 1" description="Partner 1"   filter="safehtml" /> 
+       <field name="title_1" type="text" size="40" class="inputbox" hint="Title" label="Title" description="Title"   filter="safehtml" /> 
+       <field name="partner_2" type="text" size="40" class="inputbox" hint="Partner 2" label="Partner 2" description="Partner 2"   filter="safehtml" /> 
+       <field name="title_2" type="text" size="40" class="inputbox" hint="Title" label="Title" description="Title"   filter="safehtml" /> 
+       <field name="partner_3" type="text" size="40" class="inputbox" hint="Partner 3" label="Partner 3" description="Partner 3"   filter="safehtml" /> 
+       <field name="title_3" type="text" size="40" class="inputbox" hint="Title" label="Title" description="Title"   filter="safehtml" /> 
        
-       <field name="created" type="calendar" class="inputbox" hint="Date" label="Date" description="Date"  filter="safehtml" /> 
-       
-        <field name="latitude" type="hidden" size="40" hint="Latitude" class="inputbox"                        
-            label="Latitude"
-            description="Latitude"  
-                                                    filter="safehtml" /> 
+ </fieldset>
 
-       <field name="longitude" type="hidden" size="40" class="inputbox" hint="Longitude" label="Longitude"
-            description="Longitude" 
-                                                
-                                                    
-                                                    filter="safehtml" /> 
-       
-       <field name="notes" type="textarea" size="40" hint="Notes" class="inputbox" label="Notes" description="Notes"/> 
-       
-       <field name="featured" type="radio"
-                class="btn-group btn-group-yesno"
-                label="JFEATURED"
-                description="JFEATURED"
-                default="0"
-        >
-                <option value="1">JYES</option>
-                <option value="0">JNO</option>
-        </field>
-       
-       <field name="account" type="radio"
-                class="btn-group btn-group-yesno"
-                label="Account Type"
-                description="Account Type"
-                default="0"
-        >
-                <option value="1">VIP</option>
-                <option value="0">Free</option>
-        </field>
-
-    </fieldset> 
-    
-    <fieldset name="server" >
-       <field name="serverip" type="text" size="40" class="inputbox" hint="Server IP" label="Server IP" description="Server IP"   default=""  filter="safehtml" /> 
-       <field name="dbname" type="text" size="40" class="inputbox" hint="Database Name" label="Database Name" description="Database Name"  filter="safehtml" /> 
-       <field name="dbuser" type="text" label="Database User" hint="Database User" description="Database User"  filter="safehtml" /> 
-       <field name="dbpass" type="text" size="40" class="inputbox" hint="Database Password" label="Database Password" description="Database Password"   filter="safehtml" /> 
-       <field name="banner" type="jkfile" size="40" class="inputbox" hint="Banner Ads" label="Banner Ads" description="Banner Ads"   filter="safehtml" /> 
-        <field name="created_by" type="user" class="inputbox" hint="Created By" label="Created By" description="Created By"  filter="safehtml" /> 
-    </fieldset>
 
 </form>

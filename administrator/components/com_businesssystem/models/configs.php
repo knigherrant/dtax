@@ -105,11 +105,13 @@ class BusinessSystemModelConfigs extends JModelAdmin {
         //$post  = JFactory::getApplication()->input->get('post');
         
         $post = JRequest::get('post');
+        $post['params'] = $post['jform'];
         $post['params'] = JFactory::getApplication()->input->get('params', '', 'raw');
         $post['params'] = json_encode($post['params']);
         //$post['notify_tax_sn'] = $_POST['notify_tax_sn'];
         //$post['notify_tax_en'] = $_POST['notify_tax_en'];
 
+        if($post['jform']) foreach ($post['jform'] as $k=>$v) $post[$k] = $v;
         $table = JTable::getInstance('config','BusinessSystemTable');
         $table->load(1);
         $table->bind($post);

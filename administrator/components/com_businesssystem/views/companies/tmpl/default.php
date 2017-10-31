@@ -53,29 +53,18 @@ $saveOrder = $listOrder == 'a.ordering';
                     <?php echo JHtml::_('grid.checkall'); ?>
                 </th>
                 
-                 <th width="80" class='left'>
-				<?php echo JHtml::_('grid.sort',  'Featured', 'a.featured', $listDirn, $listOrder); ?>
-				</th>
-             
+                
                                 <th class="left">
-					<?php echo JHtml::_('grid.sort',  'Company', 'a.company', $listDirn, $listOrder); ?>
+					<?php echo JHtml::_('grid.sort',  'Owner', 'ac.firstname', $listDirn, $listOrder); ?>
 				</th>
                                 
+			
 				<th class="left">
-					<?php echo JHtml::_('grid.sort',  'Name', 'a.firstname', $listDirn, $listOrder); ?>
+					<?php echo JHtml::_('grid.sort',  'Buseness Name', 'a.business_name1', $listDirn, $listOrder); ?>
 				</th>
-				<th class="left">
-					<?php echo JHtml::_('grid.sort',  'Phone', 'a.phone', $listDirn, $listOrder); ?>
-				</th>
-				<th class="left">
-					<?php echo JHtml::_('grid.sort',  'Main BDS', 'maincpa', $listDirn, $listOrder); ?>
-				</th>
+				
                                 <th class="left">
-					<?php echo JHtml::_('grid.sort',  'BDS', 'cpa', $listDirn, $listOrder); ?>
-				</th>
-
-                                <th class="left">
-					<?php echo JHtml::_('grid.sort',  'Customer', 'customer', $listDirn, $listOrder); ?>
+					<?php echo JHtml::_('grid.sort',  'Status', 'c.title', $listDirn, $listOrder); ?>
 				</th>
 				
                                 <th class="left">
@@ -117,51 +106,28 @@ $saveOrder = $listOrder == 'a.ordering';
                     <td data-field="" class="center">
                         <?php echo JHtml::_('grid.id', $i, $item->id); ?>
                     </td>
-                    <td>
-                    <?php if($item->featured){ ?>
-                                        <a href="#" onclick="return listItemTask('cb1','companies.unfeatured')" title="Toggle to change article state to 'Unfeatured'"></a>
-                                        <a href="#" onclick="return listItemTask('cb<?php echo $i; ?>','companies.unfeatured')" class="btn btn-micro hasTooltip active" title="" data-original-title="Toggle featured status.">
-                                            <span class="icon-featured"></span>
-                                        </a>
-                                    <?php }else{ ?>
-                                        <a href="#" onclick="return listItemTask('cb<?php echo $i; ?>','companies.featured')" class="btn btn-micro hasTooltip" title="" data-original-title="Toggle featured status.">
-                                            <span class="icon-unfeatured"></span>
-                                        </a>
-                                    <?php } ?>
-                                </td>
                     
-                    
-					<td data-field="Company">
+					<td data-field="Owner">
 					<?php if (isset($item->checked_out) && $item->checked_out) : ?>
 						<?php echo JHtml::_('jgrid.checkedout', $i, $item->editor, $item->checked_out_time, 'companies.', $canCheckin); ?>
 					<?php endif; ?>
 					<?php if ($canEdit): ?>
 						<a href="<?php echo JRoute::_('index.php?option=com_businesssystem&task=company.edit&id=' . (int) $item->id); ?>">
 
-							<?php echo $this->escape($item->company); ?>
+							<?php echo $this->escape($item->name); ?>
 						</a>
 					<?php else: ?>
-						<?php echo $this->escape($item->company); ?>
+						<?php echo $this->escape($item->name); ?>
 					<?php endif; ?>
 					</td>
 
-                                        <td data-field="Name">
-						<?php echo $item->name; ?>
+                                        <td data-field="Business Name">
+						<?php echo $item->business_name1; ?>
 					</td>
                                         
-                                        <td data-field="Phone">
-						<?php echo $item->phone; ?>
-					</td>
-                                        <td data-field="Main BDS">
-						<?php echo $item->maincpa; ?>
-					</td>
-                                        
-                                        <td data-field="BDS">
-						<?php echo $item->cpa; ?>
-					</td>
-                                        
+                                      
                                         <td data-field="Customer">
-						<?php echo $item->customer; ?>
+						<?php echo $item->title; ?>
 					</td>
                                         
                                         <td data-field="Date">
